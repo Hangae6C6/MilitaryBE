@@ -1,12 +1,18 @@
-const express = require("express");
-const router = express.Router();
 const { Challenge } = require("../models");
-const authMiddleware = require("../middleware/authMiddleWare");
 
-//메인페이지 챌린지 보여주기
+//메인페이지 챌린지 보여주기 (회원, 비회원 구분X)
 const mainPage = async (req, res) => {
   const challenge = await Challenge.findAll();
   return res.status(201).json(challenge);
 };
 
-module.exports = { mainPage };
+//로그인한 회원의 챌린지 보여주기
+const userChallenge = async (req, res) => {
+  const userChallenge = res.locals;
+  const challenge = await Challenge.findOne(userChallenge[0]);
+
+  console.log(res.locals);
+  return res.status(201).json(challenge);
+};
+
+module.exports = { mainPage, userChallenge };
