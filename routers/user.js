@@ -4,6 +4,7 @@ const { User } = require("../models");
 const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const authMiddleware = require("../middleware/authMiddleWare");
+require("dotenv").config();
 
 router.post("/signUp", async (req, res) => {
   const { userId, userPw, userPwCheck, userNick } = req.body;
