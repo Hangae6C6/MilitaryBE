@@ -2,15 +2,20 @@ const jwt = require("jsonwebtoken");
 const { User } = require("../models");
 
 module.exports = (req, res, next) => {
-  const Token = req.headers.authorization;
-  const logInToken = Token.replace("Bearer", "");
-  try {
-    const token = jwt.verify(logInToken);
-    const userId = token.userId;
+  const { authorization } = req.headers;
+  const [authType, authToken] = (authorization || "").split(" ");
 
+  if (!authToken || authType !== "Bearer") {
+    res.status(401).send({
+      errorMessage: "로그인 후 이용 가능한 기능입니다.",
+    });
+    return;
+  }
+
+  try {
+    const { userId } = jwt.verify(authToken, process.env.SECRET_KEY);
     User.findByPk(userId).then((user) => {
       res.locals.user = user;
-      res.locals.token = logInToken;
       next();
     });
   } catch (error) {

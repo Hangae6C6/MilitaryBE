@@ -60,7 +60,15 @@ router.post("/login", async (req, res) => {
   const token = jwt.sign({ userId: user.userId }, process.env.SECRET_KEY);
   res.send({
     token,
+    userId,
+    msg: "로그인에 성공했습니다.",
   });
+});
+
+router.get("/loginCheck", authMiddleware, (req, res) => {
+  const { user } = res.locals;
+  console.log(user);
+  res.json(user);
 });
 
 module.exports = router;
