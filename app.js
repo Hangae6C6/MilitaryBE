@@ -2,14 +2,12 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
-const { User } = require("./models");
 const port = 3000;
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
 const userDataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-const detailRouter = require("./routers/detail");
 
 //접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -35,7 +33,7 @@ app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
 
 //라우터 연결
-app.use("/api", [userRouter, userDataRouter, mainRouter, detailRouter]);
+app.use("/api", [userRouter, userDataRouter, mainRouter]);
 
 //서버 열기
 app.listen(port, () => {

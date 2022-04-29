@@ -10,7 +10,7 @@ router.post("/login", login);
 
 router.get("/loginCheck", authMiddleware, (req, res) => {
   const { user } = res.locals;
-  console.log(user);
+  // console.log(user);
   res.json(user);
 });
 

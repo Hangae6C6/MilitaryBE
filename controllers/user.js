@@ -3,6 +3,7 @@ const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+//회원가입 로직
 const signUp = async (req, res) => {
   const { userId, userPw, userPwCheck, userNick } = req.body;
 
@@ -43,9 +44,12 @@ const signUp = async (req, res) => {
   res.status(201).send({});
 };
 
+//로그인 로직
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
   const user = await User.findOne({ where: { userId, userPw } });
+  //토큰 옵션 설정 - 유효기간 1일 설정
+  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" };
 
   if (!user) {
     res.status(400).send({
@@ -54,9 +58,13 @@ const login = async (req, res) => {
     return;
   }
 
-  const token = jwt.sign({ userId: user.userId }, process.env.SECRET_KEY);
+  const loginToken = jwt.sign(
+    { userId: user.userId },
+    process.env.SECRET_KEY,
+    tokenOptions
+  );
   res.send({
-    token,
+    loginToken,
     userId,
     msg: "로그인에 성공했습니다.",
   });
