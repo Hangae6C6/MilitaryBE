@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const userdataSchema = mongoose.Schema({
-    userName: {
+    userId: {
         type:String,
         required: true,
+        unique : true,
     },
     startDate: {
         type:String,
@@ -21,22 +22,10 @@ const userdataSchema = mongoose.Schema({
         type:String,
         required: true,
     },
-    Q1: {
-        type:Number,
-        required: true,
-    },
-    Q2: {
-        type:Number,
-        required: true,
-    },
-    Q3: {
-        type:Number,
-        required: true,
-    },
-    Q4: {
-        type:Number,
-        required: true,
-    },
+    // totalDate : {
+    //     type:String,
+    //     required: true,
+    // }
 })
 
 module.exports = mongoose.model("Userdata", userdataSchema)

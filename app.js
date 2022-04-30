@@ -3,6 +3,10 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const app = express()
 const port = 3000
+const connect = require("./schemas");
+connect();
+
+
 
 //라우터 불러오기
 const userRouter = require('./routers/user')
@@ -35,11 +39,13 @@ app.use(express.urlencoded({ extended : false}))
 
 //라우터 연결
 app.use("/api", [
-    userRouter,
     userdataRouter,
     mainRouter,
     detailRouter,
 ])
+app.use("/user",[userRouter])
+
+
 
 //서버 열기
 app.listen(port, ()=> {

@@ -1,11 +1,16 @@
 const jwt = require('jsonwebtoken')
 const User = require('../schemas/user')
+const fs = require ("fs");
+const myKey = fs.readFileSync(__dirname + "/key.txt").toString();
 
 module.exports = (req,res,next)=> {
     const Token = req.headers.authorization
+    // console.log("111111",Token);
+
     const logInToken = Token.replace('Bearer', '')
+    // console.log("222222,",logInToken)
     try {
-        const token = jwt.verify(logInToken)
+        const token = jwt.verify(logInToken, myKey)
         const userId = token.userId
 
         User.findOne({userId})

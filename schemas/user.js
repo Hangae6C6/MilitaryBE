@@ -9,6 +9,12 @@ const userSchema = mongoose.Schema({
         type:String,
         required: true,
     },
+    userNick: {
+        type: String
+      },
+    from:{
+        type: String
+      }
 })
 
 module.exports = mongoose.model("User", userSchema)
