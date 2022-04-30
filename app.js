@@ -9,6 +9,7 @@ const userRouter = require('./routers/user')
 const userdataRouter = require('./routers/userdata')
 const mainRouter = require('./routers/main')
 const detailRouter = require('./routers/detail')
+const calRouter = require('./routers/cal')
 
 //접속 로그 남기기
 const requestMiddleware = (req,res,next)=> {
@@ -39,6 +40,7 @@ app.use("/api", [
     userdataRouter,
     mainRouter,
     detailRouter,
+    calRouter,
 ])
 
 //서버 열기
