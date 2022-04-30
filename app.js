@@ -1,5 +1,6 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const connect = require("./schemas/index");
 const cors = require('cors')
 const app = express()
 const port = 3000
@@ -11,6 +12,7 @@ const mainRouter = require('./routers/main')
 const detailRouter = require('./routers/detail')
 const calRouter = require('./routers/cal')
 
+connect()
 //접속 로그 남기기
 const requestMiddleware = (req,res,next)=> {
     console.log(

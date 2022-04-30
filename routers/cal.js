@@ -26,7 +26,7 @@ router.get('/endDay1', async (req,res)=> {
 router.post('/endDay', async(req,res)=> {
     try {
         const {endDay} = req.body
-        const calAmount = await Cal.findOne();
+        const calAmount = await Cal.find();
         if (calAmount.length) {
             const calSorted = calAmount.sort((a, b) => b.calNum - a.calNum);
             const MaxCalNum = calSorted[0]["calNum"];
@@ -34,7 +34,7 @@ router.post('/endDay', async(req,res)=> {
             const createdCal = await Cal.create({endDay,calNum})
         }else {
             const calNum = 1;
-            const createdCal = await Cal.create({endDay,calNum,})
+            const createdCal = await Cal.create({endDay})
         }
         res.status(201).json({result:true,msg:"전역일 입력완료"})
     }catch(error) {
