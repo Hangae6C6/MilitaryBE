@@ -15,4 +15,9 @@ const userChallenge = async (req, res) => {
   return res.status(201).json(challenge);
 };
 
-module.exports = { mainPage, userChallenge };
+//세부사항 확인 필요
+// const myTcp = async (req, res) => {
+//   const {hasTarget, } = req.body;
+// }
+
+module.exports = { mainPage, userChallenge, myTcp };
