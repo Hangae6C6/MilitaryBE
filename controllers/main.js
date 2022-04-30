@@ -15,7 +15,7 @@ const userChallenge = async (req, res) => {
   return res.status(201).json(challenge);
 };
 
-//세부사항 확인 필요
+//세부사항 수정 및 확인 필요
 // const myTcp = async (req, res) => {
 //   const {hasTarget, } = req.body;
 // }
