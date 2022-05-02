@@ -15,7 +15,7 @@ router.post("/signUp", async (req, res) => {
     
         // Validation Check
         let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/ //2~15자 한글,영문,숫자
-        let userPwReg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,15}$/; //4~15자 영문+숫자
+        let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //4~15자 영문+숫자
     
         
         const existUsers = await User.find({
