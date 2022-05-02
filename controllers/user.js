@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-//회원가입 로직
+//회원가입 라우터
 const signUp = async (req, res) => {
   const { userId, userPw, userPwCheck, userNick } = req.body;
 
@@ -44,7 +44,7 @@ const signUp = async (req, res) => {
   res.status(201).send({});
 };
 
-//로그인 로직
+//로그인 라우터
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
   const user = await User.findOne({ where: { userId, userPw } });
@@ -70,4 +70,14 @@ const login = async (req, res) => {
   });
 };
 
-module.exports = { signUp, login };
+//로그인 확인 라우터
+const loginCheck = async (req, res) => {
+  try {
+    const { user } = res.locals;
+    res.json(user);
+  } catch (err) {
+    res.status(401).send("로그인 상태가 아닙니다. : ", err);
+  }
+};
+
+module.exports = { signUp, login, loginCheck };
