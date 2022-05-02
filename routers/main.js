@@ -10,7 +10,7 @@ const authMiddleware = require("../middleware/authMiddleWare");
 
 router.get("/main", mainPage);
 
-router.get("/main/Challenge", authMiddleware, userChallenge);
+router.get("/main/challenge", authMiddleware, userChallenge);
 
 router.post("/main/preTest", authMiddleware, preTest);
 
