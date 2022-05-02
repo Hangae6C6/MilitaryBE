@@ -28,7 +28,6 @@ const preTest = async (req, res) => {
       userId: userId,
     },
   });
-  // await User.update(userTestData);
   res.status(201).send({});
 };
 
