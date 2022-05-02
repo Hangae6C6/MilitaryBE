@@ -39,11 +39,12 @@ app.use(express.urlencoded({ extended : false}))
 
 //라우터 연결
 app.use("/api", [
+    userRouter,
     userdataRouter,
     mainRouter,
     detailRouter,
 ])
-app.use("/user",[userRouter])
+// app.use("/user",[userRouter])
 
 
 

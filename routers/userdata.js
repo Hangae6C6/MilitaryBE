@@ -28,12 +28,12 @@ router.post("/api/schemas/userdata"), authMiddleWare, async(req,res) => {
    )
 }
 
-function dateCalc(A,B){
-    var startDate = new Date(A);
-    var endDate = new Date(B);
-    var dateGap = endDate.getTime() - startDate.getTime();
-    return Math.ceil(dateGap/(1000 * 60 * 60 * 24));
-  }
+// function dateCalc(A,B){
+//     var startDate = new Date(A);
+//     var endDate = new Date(B);
+//     var dateGap = endDate.getTime() - startDate.getTime();
+//     return Math.ceil(dateGap/(1000 * 60 * 60 * 24));
+//   }
 
 module.exports = router;
 
