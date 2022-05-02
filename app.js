@@ -10,9 +10,9 @@ connect();
 
 //라우터 불러오기
 const userRouter = require('./routers/user')
-const userdataRouter = require('./routers/userdata')
-const mainRouter = require('./routers/main')
-const detailRouter = require('./routers/detail')
+// const userdataRouter = require('./routers/userdata')
+// const mainRouter = require('./routers/main')
+// const detailRouter = require('./routers/detail')
 
 //접속 로그 남기기
 const requestMiddleware = (req,res,next)=> {
@@ -40,11 +40,11 @@ app.use(express.urlencoded({ extended : false}))
 //라우터 연결
 app.use("/api", [
     userRouter,
-    userdataRouter,
-    mainRouter,
-    detailRouter,
-])
-// app.use("/user",[userRouter])
+    // userdataRouter,
+    // mainRouter,
+    // detailRouter,
+]);
+
 
 
 

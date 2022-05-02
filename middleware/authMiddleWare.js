@@ -1,31 +1,24 @@
-const jwt = require('jsonwebtoken')
-const User = require('../schemas/user')
-const fs = require ("fs");
-const myKey = fs.readFileSync(__dirname + "/key.txt").toString();
-
-module.exports = (req,res,next)=> {
-    const Token = req.headers.authorization
-    // console.log("111111",Token);
-
-    const logInToken = Token.replace('Bearer', '')
-    // console.log("222222,",logInToken)
-    try {
-        const token = jwt.verify(logInToken, myKey)
-        const userId = token.userId
-
-        User.findOne({userId})
-          .exec()
-          .then((user)=> {
-              res.locals.user = user
-
-              res.locals.token = logInToken
-
-              next()
-          })
-    }catch (error) {
-        console.log(error)
-        console.log('authMiddleWare.js -> 여기서 에러 발생함')
-        res.status(401).json({result:"토큰이 유효하지 않습니다."})
-        return
-    }
-}
+const jwt = require("jsonwebtoken");
+const { User } = require("../models");
+module.exports = (req, res, next) => {
+  const { authorization } = req.headers;
+  const [authType, authToken] = (authorization || "").split(" ");
+  if (!authToken || authType !== "Bearer") {
+    res.status(401).send({
+      errorMessage: "로그인 후 이용 가능한 기능입니다.",
+    });
+    return;
+  }
+  try {
+    const { userId } = jwt.verify(authToken, process.env.KEY);
+    User.findByPk(userId).then((user) => {
+      res.locals.user = user;
+      next();
+    });
+  } catch (error) {
+    console.log("사용자 인증 미들웨어 에러");
+    console.log(error);
+    res.status(401).json({ result: "토큰이 유효하지 않습니다." });
+    return;
+  }
+};

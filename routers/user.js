@@ -8,7 +8,7 @@ router.post("/signUp", signUp);
 
 router.post("/login", login);
 
-router.post("/loginCheck",authMiddleWare, loginCheck);
+router.get("/loginCheck",authMiddleWare, loginCheck);
 
 
 module.exports = router;

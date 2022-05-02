@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         unique: true,
       },
-      userPwCheck : DataTypes.STRING, // ? 이것도 마춰야 되는지
+     
       userPw: DataTypes.STRING,
       userTestData: DataTypes.STRING, // 이건 어디서 나온거지
     },

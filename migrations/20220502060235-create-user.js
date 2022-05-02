@@ -23,13 +23,12 @@ module.exports = {
       createdAt: {
         allowNull: true,
         type: Sequelize.DATE,
-        default: Sequelize.now(),
       },
       updatedAt: {
         allowNull: true,
         type: Sequelize.DATE,
-        default: Sequelize.now(),
       },
+     
     });
   },
   async down(queryInterface, Sequelize) {

@@ -1,5 +1,5 @@
 const {User} = require("../models");
-const { OP } = require("sequelize");
+const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const fs = require ("fs");
@@ -12,15 +12,17 @@ require("dotenv").config();
 const signUp = async (req, res) => {
     
     const {userId, userPw, userNick, userPwCheck } = req.body;
+    console.log(userId, userPw, userNick, userPwCheck);
     
     // Validation Check
     let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/ //2~15자 한글,영문,숫자
     let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //4~15자 영문+숫자
 
     
-    const existUsers = await User.find({
-        $or: [ {userId}, {userNick} ],
+    const existUsers = await User.findAll({
+        where:{[Op.or]:[ {userId}, {userNick} ]},
     }); 
+    console.log(existUsers);
 
     if(userId === "" || userId === undefined || userId ===null){
         res.status(400).send({
@@ -63,8 +65,8 @@ const signUp = async (req, res) => {
     // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)
     const from = 'webSite'
     const hashed = await bcrypt.hash(userPw,10);
-    const user = new User({ userId, userNick, userPw : hashed, from})
-    await user.save();
+    // const user = new User({ userId, userNick, userPw : hashed, from})
+    await User.create({ userId, userNick, userPw, from });
     //  console.log("user",user)
     res.status(200).json({
         result:"true",
@@ -74,31 +76,46 @@ const signUp = async (req, res) => {
 
 // 로그인
 const login = async (req,res) => {
-
+    // console.log();
     const{ userId, userPw } = req.body;
-    const user = await User.findOne({userId});
-    
-    
+    const hashed = await bcrypt.hash(userPw,10);
+    const user = await User.findOne({ where : { userId,userPw }});
+    console.log("d",hashed===User.userPw);
+    // const encodedPW = user.userPw;
+   
     // body passowrd = unHashPassword -->true
-    const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
+    // const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
     
-    if(user.userId !== userId || unHashPw==false) {
+    
+    // console.log("--------->",user.userId);
+    if(!user) {
         res.status(400).send({
             errorMessage : "아이디 또는 비밀번호를 확인해주세요."
         });
         return;
     };
 
-    const tokenOption = { expiresIn : "1d", issuer: "SoldierProject"};
-    const payload = { userId };
-    const secret = myKey;
+    // const tokenOption = { expiresIn : "1d", issuer: "SoldierProject"};
+    // const payload = { userId };
+    // const secret = myKey;
 
-    const logInToken = jwt.sign(payload, secret, tokenOption); 
-    res.status(200).json({
-        result:true,
-        logInToken : logInToken,
-        msg:'로그인성공'
-    });
+    const loginToken = jwt.sign(
+        { userId: user.userId },
+        process.env.KEY
+        // tokenOption
+      );
+      res.send({
+        loginToken,
+        userId,
+        msg: "로그인에 성공했습니다.",
+      });
+
+    // const logInToken = jwt.sign(payload, secret, tokenOption); 
+    // res.status(200).json({
+    //     result:true,
+    //     logInToken : logInToken,
+    //     msg:'로그인성공'
+    // });
 
 };
 
