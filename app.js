@@ -11,6 +11,7 @@ const userdataRouter = require('./routers/userdata')
 const mainRouter = require('./routers/main')
 const detailRouter = require('./routers/detail')
 const calRouter = require('./routers/cal')
+const mypageRouter = require('./routers/mypage')
 
 connect()
 //접속 로그 남기기
@@ -43,6 +44,7 @@ app.use("/api", [
     mainRouter,
     detailRouter,
     calRouter,
+    mypageRouter,
 ])
 
 //서버 열기
