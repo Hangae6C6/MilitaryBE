@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   mainPage,
   userChallenge,
-  myTcp,
+  preTest,
   search,
 } = require("../controllers/main");
 const authMiddleware = require("../middleware/authMiddleWare");
@@ -12,7 +12,7 @@ router.get("/main", mainPage);
 
 router.get("/main/Challenge", authMiddleware, userChallenge);
 
-router.post("/main/myTcp", myTcp);
+router.post("/main/preTest", authMiddleware, preTest);
 
 router.get("/search", search);
 

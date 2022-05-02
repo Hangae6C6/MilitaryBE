@@ -1,4 +1,4 @@
-const { Challenge } = require("../models");
+const { Challenge, User } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like } = sequelize.Op;
 
@@ -8,7 +8,7 @@ const mainPage = async (req, res) => {
   return res.status(201).json(challenge);
 };
 
-//로그인한 회원의 챌린지 보여주기
+//로그인한 회원의 챌린지 현황 보여주기
 const userChallenge = async (req, res) => {
   const userChallenge = res.locals;
   const challenge = await Challenge.findOne(userChallenge[0]);
@@ -17,8 +17,20 @@ const userChallenge = async (req, res) => {
   return res.status(201).json(challenge);
 };
 
-//세부사항 수정 및 확인 필요
-const myTcp = async (req, res) => {};
+//사전 테스트 입력
+const preTest = async (req, res) => {
+  const userTestData = req.body;
+  const { userId } = res.locals.user;
+
+  //DB에 사용자 데이터 저장
+  await User.update(userTestData, {
+    where: {
+      userId: userId,
+    },
+  });
+  // await User.update(userTestData);
+  res.status(201).send({});
+};
 
 //검색기능
 const search = async (req, res) => {
@@ -45,4 +57,4 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-module.exports = { mainPage, userChallenge, myTcp, search };
+module.exports = { mainPage, userChallenge, preTest, search };
