@@ -72,12 +72,8 @@ const login = async (req, res) => {
 
 //로그인 확인 라우터
 const loginCheck = async (req, res) => {
-  try {
-    const { user } = res.locals;
-    res.json(user);
-  } catch (err) {
-    res.status(401).send("로그인 상태가 아닙니다. : ", err);
-  }
+  const { user } = res.locals;
+  res.json(user);
 };
 
 module.exports = { signUp, login, loginCheck };
