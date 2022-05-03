@@ -5,6 +5,8 @@ const userOptioalData = async (req, res) => {
   const { startDate, endDate, armyCategory, rank } = req.body;
   const { userId } = res.locals.user;
 
+  console.log(startDate, endDate, armyCategory, rank);
+
   //DB에 사용자 추가 데이터 저장
   await UserData.create({ startDate, endDate, armyCategory, rank, userId });
 
