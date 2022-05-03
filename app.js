@@ -10,7 +10,7 @@ const morgan = require("morgan");
 const userRouter = require("./routers/user");
 const userDataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-const detailRouter = require("./routers/detail");
+// const detailRouter = require("./routers/detail");
 
 //접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
