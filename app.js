@@ -3,11 +3,14 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
 const port = 3000;
+const helmet = require("helmet");
+const morgan = require("morgan");
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
 const userDataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
+const detailRouter = require("./routers/detail");
 
 //접속 로그 남기기
 const requestMiddleware = (req, res, next) => {

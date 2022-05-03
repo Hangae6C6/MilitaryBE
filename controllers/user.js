@@ -2,8 +2,6 @@ const { User } = require("../models");
 const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const fs = require("fs");
-const myKey = fs.readFileSync(__dirname + "/../middleware/key.txt").toString();
 require("dotenv").config();
 
 // 회원가입
@@ -67,7 +65,6 @@ const signUp = async (req, res) => {
   const hashed = await bcrypt.hash(userPw, 10);
   // const user = new User({ userId, userNick, userPw : hashed, from})
   await User.create({ userId, userNick, userPw, from });
-  //  console.log("user",user)
   res.status(200).json({
     result: "true",
     msg: "회원가입성공",
@@ -88,33 +85,25 @@ const login = async (req, res) => {
 
   // console.log("--------->",user.userId);
   if (!user) {
-    res.status(400).send({
+    res.status(400).json({
       errorMessage: "아이디 또는 비밀번호를 확인해주세요.",
     });
     return;
   }
 
-  // const tokenOption = { expiresIn : "1d", issuer: "SoldierProject"};
-  // const payload = { userId };
-  // const secret = myKey;
+  // body passowrd = unHashPassword -->true
+  // const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
 
   const loginToken = jwt.sign(
     { userId: user.userId },
     process.env.KEY
     // tokenOption
   );
-  res.send({
+  res.json({
     loginToken,
     userId,
     msg: "로그인에 성공했습니다.",
   });
-
-  // const logInToken = jwt.sign(payload, secret, tokenOption);
-  // res.status(200).json({
-  //     result:true,
-  //     logInToken : logInToken,
-  //     msg:'로그인성공'
-  // });
 };
 
 // 로그인체크
