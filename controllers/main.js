@@ -60,4 +60,11 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-module.exports = { mainPage, userChallenge, preTest, search };
+//챌린지 개설
+openChallenge = async (req, res) => {
+  const { user } = res.locals;
+  const { challengeTitle, challengeLmage, challengeType, challengeContent } =
+    req.body;
+};
+
+module.exports = { mainPage, userChallenge, preTest, search, openChallenge };

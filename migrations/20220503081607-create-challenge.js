@@ -1,10 +1,7 @@
 "use strict";
-
-const { now } = require("sequelize/types/utils");
-
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Challenges", {
+    await queryInterface.createTable("challenges", {
       challengeNum: {
         allowNull: false,
         autoIncrement: true,
@@ -42,16 +39,14 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        default: now(),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        default: now(),
       },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Challenges");
+    await queryInterface.dropTable("challenges");
   },
 };
