@@ -22,7 +22,8 @@
     "mysql2": "^2.3.3",
     "nunjucks": "^3.2.3",
     "request": "^2.88.2",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "winston": "^3.7.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

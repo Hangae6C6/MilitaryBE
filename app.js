@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const helmet = require("helmet");
 const morgan = require("morgan");
+const winston = require("winston");
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -26,6 +27,33 @@ const requestMiddleware = (req, res, next) => {
   );
   next();
 };
+
+//winston 라이브러리 사용하여 로그 남기기
+const logger = winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  defaultMeta: { service: "user-service" },
+  transports: [
+    //
+    // - Write all logs with importance level of `error` or less to `error.log`
+    // - Write all logs with importance level of `info` or less to `combined.log`
+    //
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
+});
+
+//
+// If we're not in production then log to the `console` with the format:
+// `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
+//
+if (process.env.NODE_ENV !== "production") {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    })
+  );
+}
 
 //각종 미들웨어
 app.use(cors());
