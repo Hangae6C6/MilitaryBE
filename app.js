@@ -3,14 +3,16 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const app = express()
 const port = 3000
-const connect = require("./schemas");
-connect();
+// const connect = require("./schemas");
+const helmet = require('helmet');
+const morgan = require('morgan');
+// connect();
 
 
 
 //라우터 불러오기
 const userRouter = require('./routers/user')
-// const userdataRouter = require('./routers/userdata')
+const userdataRouter = require('./routers/userdata')
 // const mainRouter = require('./routers/main')
 // const detailRouter = require('./routers/detail')
 
@@ -36,11 +38,13 @@ app.use(express.urlencoded())
 app.use(cookieParser())
 app.use(requestMiddleware)
 app.use(express.urlencoded({ extended : false}))
+app.use(helmet());
+app.use(morgan('tiny'));
 
 //라우터 연결
 app.use("/api", [
     userRouter,
-    // userdataRouter,
+    userdataRouter,
     // mainRouter,
     // detailRouter,
 ]);
