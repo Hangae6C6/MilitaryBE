@@ -1,19 +1,24 @@
 const express = require("express");
 const router = express.Router();
+const {
+  mainPage,
+  userChallenge,
+  preTest,
+  search,
+  openChallenge,
+} = require("../controllers/main");
+const authMiddleware = require("../middleware/authMiddleWare");
 
+router.get("/main", mainPage);
 
+//회원님 참여 챌린지
+router.get("/main/challenge", authMiddleware, userChallenge);
 
+router.post("/main/preTest", authMiddleware, preTest);
 
+router.get("/search", search);
 
-// router.post("/api/challenge", authMiddleware, async(req,res) => {
-//       const {user} = res.locals;
-//       const {challengeTitle, challengeLmage, challengeType, challengeContent} = req.body;
-       
-
-// }); 
-
-
-
-
+//챌린지 개설
+router.post("/challenge", authMiddleware, openChallenge);
 
 module.exports = router;
