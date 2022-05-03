@@ -57,6 +57,7 @@ const search = async (req, res) => {
       .status(401)
       .json({ message: "검색과 일치하는 챌린지가 없습니다." });
   }
+  console.log("searchChallenge: ", searchChallenge);
   return res.status(201).json(searchChallenge);
 };
 
