@@ -77,7 +77,7 @@ const login = async (req, res) => {
   const { userId, userPw } = req.body;
   const hashed = await bcrypt.hash(userPw, 10);
   const user = await User.findOne({ where: { userId, userPw } });
-  console.log("d", hashed === User.userPw);
+  // console.log("d", hashed === User.userPw);
   // const encodedPW = user.userPw;
 
   // body passowrd = unHashPassword -->true
