@@ -17,7 +17,7 @@ const userChallenge = async (req, res) => {
   return res.status(201).json(challenge);
 };
 
-//사전 테스트 입력 라우터
+//사전 테스트 입력 라우터  
 const preTest = async (req, res) => {
   const userTestData = req.body;
   const { userId } = res.locals.user;
@@ -61,11 +61,24 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-//챌린지 개설
-openChallenge = async (req, res) => {
-  const { user } = res.locals;
-  const { challengeTitle, challengeLmage, challengeType, challengeContent } =
-    req.body;
+
+
+// //챌린지 개설 -- 첼린지만 따로 controllers 
+const openChallenge = async (req, res) => {
+  const { userId } = res.locals.user;
+  const { challengeTitle, challengeType, challengeContent } = req.body;
+   
+  
+  await Challenge.create({ challengeTitle, challengeContent, challengeType, userId }) 
+  // joinchallenge -- max challengeNum? 내가 2번째 첼린지를 만들었다. 1번은 다른사람이 만들고 나는 2번이라는 첼린저를 만듬과 동시에 참여를하니까
+  // 그래서 challengeNum 2번이라는 값이 필요할거같다. 
+  
+  // await joinChallenge.create({ challengeNum,userId }).sort(-1);  -- 가장높은 값을 찾아야된다. 
+
+ res.status(201).json({
+   result: true,
+   msg: "첼린지개설완료"
+ });
 };
 
 module.exports = { mainPage, userChallenge, preTest, search, openChallenge };
