@@ -71,6 +71,7 @@ const {sequelize} = require('./models')
 //라우터 불러오기
 const userRouter = require('./routers/user')
 const authRouter = require('./routers/auth')
+const mainRouter = require('./routers/main')
 // const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
 // const calRouter = require('./routers/cal')
@@ -108,6 +109,7 @@ app.disable('x-powered-by');
 app.use("/api", [
     userRouter,
     authRouter,
+    mainRouter,
     // userdataRouter,
     // detailRouter,
     // calRouter,

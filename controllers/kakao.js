@@ -1,25 +1,27 @@
 const express = require('express');
-const router = express.Router();
-// const dotenv = require("dotenv").config();
 const rp = require('request-promise');
-const User = require("../schemas/user");
+const {User} = require("../models");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
 
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
     redirectUri	: 'http://localhost:3000/user/kakao'
 }
+
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
-router.get('/kakao',(req,res)=>{
+
+const  kakaoLogin = async (req,res) => {
     const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao.clientid}&redirect_uri=${kakao.redirectUri}`
     res.redirect(kakaoAuthURL);
-});
+};
 
 // kakao register --> REDIRECT URI
-router.get('/kakao', async (req,res) => {
+const kakaoRegister = async (req,res) => {
+
     const { code } = req.query;
-    console.log('code-->' , code);
     const options = {
         url : "https://kauth.kakao.com/oauth/token",
         method : 'POST',
@@ -35,7 +37,7 @@ router.get('/kakao', async (req,res) => {
         json: true
     }
    const kakaotoken = await rp(options);
-//    console.log('token', token)
+
    const options1 = {
         url : "https://kapi.kakao.com/v2/user/me",
         method : 'GET',
@@ -46,35 +48,27 @@ router.get('/kakao', async (req,res) => {
         json: true
     }
     const userInfo = await rp(options1);
-    // console.log('userInfo->', userInfo);
+   
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
-    // console.log('userId-->',userId);
-    // console.log('userNick-->',userNick);
     const existUser = await User.find({userId});
-    // console.log('existUser-->', existUser)
 
     if(!existUser.length){
         const from = 'kakao'
         const user = new User({ userId, userNick, from })
-        // console.log('user-->',user);
         await user.save();
     }
 
     const loginUser = await User.find({userId});
-    // console.log('loginUser-->', loginUser)
     const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
-    // console.log('kakaotoken-->',token)
     res.status(200).send({
         token,
         userId,
         userNick
     });
-    // console.log('User-->' , token, userId, userNick)
-
-});
+};
 
 
 
 
-module.exports = router;
+module.exports = {kakaoLogin,kakaoRegister};
