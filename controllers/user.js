@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
+//dotenv는 환경변수를 .env파일에 저장하고 process.env로 로드하는 의존성 모듈이다.
 require("dotenv").config();
 
 //회원가입 라우터
@@ -41,15 +42,15 @@ const signUp = async (req, res) => {
 
   //DB에 사용자 데이터 저장
   await User.create({ userId, userNick, userPw });
-  res.status(201).send({});
+  res.status(201).json({result:true,msg:"회원가입이 완료되었습니다."});
 };
 
 //로그인 라우터
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
   const user = await User.findOne({ where: { userId, userPw } });
-  //토큰 옵션 설정 - 유효기간 1일 설정
-  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" };
+//토큰 옵션 설정 - 유효기간 1일 설정
+const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" };
 
   if (!user) {
     res.status(400).send({

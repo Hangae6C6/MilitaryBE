@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     challengeProgress : DataTypes.STRING,
-    challengeImage : DataTypes.STRING,
     challengeTitle : DataTypes.STRING,
     challengeType : DataTypes.STRING,
     challengeCnt : DataTypes.STRING,
