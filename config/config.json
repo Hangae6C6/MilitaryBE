@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "12345678",
-    "database": "soldierChallengers",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "hanghae99",
+    "database": "soldierChallengers_Node",
+    "host": "soldierchallengers.ct6f9issjscy.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "hanghae99",
+    "database": "soldierChallengers_Node",
+    "host": "soldierchallengers.ct6f9issjscy.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "hanghae99",
+    "database": "soldierChallengers_Node",
+    "host": "soldierchallengers.ct6f9issjscy.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

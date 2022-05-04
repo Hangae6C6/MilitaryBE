@@ -1,12 +1,24 @@
 const express = require("express");
 const router = express.Router();
+const {
+  mainPage,
+  userChallenge,
+  preTest,
+  search,
+  openChallenge,
+} = require("../controllers/main");
+const authMiddleware = require("../middleware/authMiddleWare");
 
-const {} = require("../controllers/main");
+router.get("/main", mainPage);
 
-//메인페이지 조회
-router.get("/readMain");
+//회원님 참여 챌린지
+router.get("/main/challenge", authMiddleware, userChallenge);
 
-//메인페이지 검색
-router.get("/searchMain");
+router.post("/main/preTest", authMiddleware, preTest);
+
+router.get("/search", search);
+
+//챌린지 개설
+router.post("/challenge", authMiddleware, openChallenge);
 
 module.exports = router;

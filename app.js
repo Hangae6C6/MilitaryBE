@@ -2,32 +2,16 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
-const path = require("path");
-const morgan = require("morgan");
-const nunjucks = require("nunjucks");
-
-const { sequelize } = require("./models");
 const port = 3000;
+const helmet = require("helmet");
+const morgan = require("morgan");
+const winston = require("winston");
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
-const userdataRouter = require("./routers/userdata");
+const userDataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-const detailRouter = require("./routers/detail");
-
-nunjucks.configure("views", {
-  express: app,
-  watch: true,
-});
-//시퀄라이즈를 싱크해줘야 데이터베이스에 연결이 됨
-sequelize
-  .sync({ force: false })
-  .then(() => {
-    console.log("데이터베이스 연결 성공");
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// const detailRouter = require("./routers/detail");
 
 //접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -44,9 +28,34 @@ const requestMiddleware = (req, res, next) => {
   next();
 };
 
+//winston 라이브러리 사용하여 로그 남기기
+const logger = winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  defaultMeta: { service: "user-service" },
+  transports: [
+    //
+    // - Write all logs with importance level of `error` or less to `error.log`
+    // - Write all logs with importance level of `info` or less to `combined.log`
+    //
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
+});
+
+//
+// If we're not in production then log to the `console` with the format:
+// `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
+//
+if (process.env.NODE_ENV !== "production") {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    })
+  );
+}
+
 //각종 미들웨어
-app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -55,7 +64,7 @@ app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
 
 //라우터 연결
-app.use("/api", [userRouter, userdataRouter, mainRouter, detailRouter]);
+app.use("/api", [userRouter, userDataRouter, mainRouter]);
 
 //서버 열기
 app.listen(port, () => {

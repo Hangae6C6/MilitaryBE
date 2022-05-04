@@ -1,26 +1,26 @@
-const jwt = require('jsonwebtoken')
-const User = require('../schemas/user')
+const jwt = require("jsonwebtoken");
+const { User } = require("../models");
 
-module.exports = (req,res,next)=> {
-    const Token = req.headers.authorization
-    const logInToken = Token.replace('Bearer', '')
-    try {
-        const token = jwt.verify(logInToken)
-        const userId = token.userId
+module.exports = (req, res, next) => {
+  const { authorization } = req.headers;
+  const [authType, authToken] = (authorization || "").split(" ");
 
-        User.findOne({userId})
-          .exec()
-          .then((user)=> {
-              res.locals.user = user
-
-              res.locals.token = logInToken
-
-              next()
-          })
-    }catch (error) {
-        console.log(error)
-        console.log('authMiddleWare.js -> 여기서 에러 발생함')
-        res.status(401).json({result:"토큰이 유효하지 않습니다."})
-        return
-    }
-}
+  if (!authToken || authType !== "Bearer") {
+    res.status(401).send({
+      errorMessage: "로그인 후 이용 가능한 기능입니다.",
+    });
+    return;
+  }
+  try {
+    const { userId } = jwt.verify(authToken, process.env.KEY);
+    User.findByPk(userId).then((user) => {
+      res.locals.user = user;
+      next();
+    });
+  } catch (error) {
+    console.log("사용자 인증 미들웨어 에러");
+    console.log(error);
+    res.status(401).json({ result: "토큰이 유효하지 않습니다." });
+    return;
+  }
+};
