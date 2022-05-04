@@ -74,27 +74,24 @@ const signUp = async (req, res) => {
 // 로그인
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
-  // console.log(req); // { userId: 'test0007', userPw: 't12345678' }
+  // console.log(req.body); // { userId: 'test0007', userPw: 't12345678' }
   
-  const user = await User.findOne({ where: { userId:userId } });
+
+
+  // const user = await User.findOne({where : {userId,userPw}});
+  const user = await User.findOne( { where : { userId,userPw } });
   console.log("user--->",user);
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
    
   // body passowrd = unHashPassword -->true
-  const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
+  const unHashPw = bcrypt.compare(userPw, user.userPw);
+  console.log(unHashPw,userPw,user.userPw);
   
   if(user.userId !== userId || unHashPw===false) {
     res.status(401).json({
         msg:"아이디 혹은 비밀번호가 안맞습니다."
     })
   };
-
-  // if (!user) {
-  //   res.status(400).json({
-  //     errorMessage: "아이디 또는 비밀번호를 확인해주세요.",
-  //   });
-  //   return;
-  // }
 
   const loginToken = jwt.sign(
     { userId: user.userId },

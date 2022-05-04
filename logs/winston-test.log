@@ -660,3 +660,133 @@ SyntaxError: Unexpected token '{'
 2022-05-04T09:02:32.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:16.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:26.271Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:41:23.634Z [winston-test] error: uncaughtException: Cannot find module 'passport'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/controllers/passportAuth.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/routers/auth.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+Error: Cannot find module 'passport'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/controllers/passportAuth.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/routers/auth.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/passportAuth.js:1:18)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T11:41:44.966Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:41:55.076Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:43:16.233Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:43:19.937Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:44:23.210Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:44:27.230Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:105:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:45:10.955Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:45:14.454Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:105:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:47:37.148Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:47:40.628Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:48:32.061Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:48:35.890Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:50:00.986Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:50:04.092Z [winston-test] error: uncaughtException: data and hash arguments required
+Error: data and hash arguments required
+    at Object.compareSync (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/bcrypt.js:166:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:51:33.837Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:51:37.233Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:53:46.082Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:53:49.743Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:55:03.268Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:55:09.241Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:56:27.133Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:56:30.291Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T11:58:07.004Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T11:58:10.627Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T12:06:28.213Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T12:06:32.077Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:106:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-04T12:07:28.329Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T12:10:37.004Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T12:11:15.967Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T12:11:54.442Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
