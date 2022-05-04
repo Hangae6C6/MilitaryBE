@@ -95,4 +95,6 @@ module.exports = { myPage,
     userProfileread,
     userProfilepatch,
     myPageChallengeread,
+    // preTestread,
+    // preTestpatch
  };
