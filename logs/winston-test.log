@@ -660,3 +660,25 @@ SyntaxError: Unexpected token '{'
 2022-05-04T09:02:32.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:16.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:26.271Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T12:27:40.843Z [winston-test] error: uncaughtException: Cannot find module 'passport'
+Require stack:
+- /home/ubuntu/MilitaryBE/controllers/passportAuth.js
+- /home/ubuntu/MilitaryBE/routers/auth.js
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module 'passport'
+Require stack:
+- /home/ubuntu/MilitaryBE/controllers/passportAuth.js
+- /home/ubuntu/MilitaryBE/routers/auth.js
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/controllers/passportAuth.js:1:18)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:80:39)
+2022-05-04T12:28:03.337Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T13:15:08.282Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
