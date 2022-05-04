@@ -1,0 +1,662 @@
+2022-05-03T05:42:21.724Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T05:47:19.990Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T05:47:37.447Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T05:47:51.163Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T05:54:47.531Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T05:57:03.409Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T06:03:51.800Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T06:05:39.042Z [winston-test] error: uncaughtException: Cannot find module '../logger'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module '../logger'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-03T06:05:50.936Z [winston-test] error: uncaughtException: Cannot find module '../logger'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module '../logger'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\passportAuth.js:2:16)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-03T06:06:10.461Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T06:06:22.022Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T07:08:47.833Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T07:09:31.844Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T07:10:43.996Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T07:16:54.496Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T07:17:31.277Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T08:15:54.257Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T08:16:25.982Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T08:18:03.562Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T12:52:00.042Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:12:43.783Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:15:01.528Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:15:47.524Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:16:38.808Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:16:59.401Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:17:30.107Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:17:36.020Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:18:06.608Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:19:47.947Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:19:57.532Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:20:01.807Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:21:35.961Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:22:09.399Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:22:46.639Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:23:49.501Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:24:03.541Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:24:11.474Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:27:27.121Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:27:48.113Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:27:58.723Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:28:07.577Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:28:34.903Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:32:06.901Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:32:27.444Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:33:12.412Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:33:17.279Z [winston-test] error: uncaughtException: userProfileread is not defined
+ReferenceError: userProfileread is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:89:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-05-03T13:33:20.552Z [winston-test] error: uncaughtException: userProfileread is not defined
+ReferenceError: userProfileread is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:89:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-05-03T13:33:33.565Z [winston-test] error: uncaughtException: userProfileread is not defined
+ReferenceError: userProfileread is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:89:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-05-03T13:33:41.018Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:34:13.590Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:34:42.444Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:34:43.842Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:35:08.012Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:36:41.799Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:36:50.925Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-03T13:39:12.218Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:46:43.908Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:47:01.256Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:47:28.117Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:51:15.233Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:51:44.959Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:51:58.107Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:52:12.062Z [winston-test] error: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\route.js:202:15)
+    at Function.proto.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:516:19)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:16:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:18:22)
+2022-05-04T00:52:15.883Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:55:04.323Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T00:55:28.463Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:11:05.725Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:12:21.250Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:13:04.336Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:13:30.080Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:14:13.346Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:15:56.023Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:16:00.322Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:16:30.215Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:16:35.700Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:21:19.361Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:21:41.888Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:25:17.595Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:25:35.996Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:26:19.541Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:26:37.376Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:26:53.376Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:27:00.322Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:27:09.214Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:27:21.779Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:28:59.554Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:29:05.029Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:29:08.058Z [winston-test] error: uncaughtException: Unexpected end of input
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:100
+    // preTestpatch };
+                      
+
+SyntaxError: Unexpected end of input
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T01:29:20.686Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:31:46.703Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:32:41.042Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:33:01.987Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:33:11.041Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:33:42.974Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:34:58.363Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:35:06.889Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:35:15.307Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:35:24.707Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:35:29.410Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:36:07.772Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:36:16.134Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:36:34.545Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:39:28.776Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:39:52.734Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:40:31.646Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:40:44.250Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:40:55.656Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:41:04.476Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:41:16.194Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:41:26.470Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:41:36.284Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:42:22.283Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:42:34.398Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:43:00.803Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:44:34.133Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:44:58.577Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:45:16.666Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:45:29.549Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:45:45.843Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:46:03.736Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:46:15.935Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:46:42.676Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:47:16.693Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:47:35.534Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:48:14.542Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:48:27.605Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:48:40.657Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:48:56.287Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:49:50.779Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:50:04.970Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:50:57.705Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:51:01.773Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:51:34.669Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:51:52.752Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:52:05.339Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:52:19.268Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:55:30.391Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:55:46.659Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:56:41.777Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:57:10.787Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:57:43.520Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:57:48.560Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:58:17.886Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:58:29.352Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:59:21.765Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T01:59:32.870Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:00:14.177Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:01:18.207Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:01:55.182Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:03:06.041Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:04:16.031Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:04:38.502Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:07:54.226Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:08:00.141Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T02:08:18.656Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:48:23.793Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:49:11.012Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:52:29.164Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:54:58.030Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:55:26.659Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:55:49.172Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:56:09.925Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:57:15.302Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:57:29.139Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:58:27.585Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T04:58:51.132Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:01:40.825Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:03:09.263Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:05:24.512Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:05:49.533Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:06:03.137Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:06:20.258Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:06:30.591Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:06:47.049Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:06:59.880Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:07:01.535Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:07:15.274Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:07:55.330Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:08:04.616Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:08:25.232Z [winston-test] error: uncaughtException: Unexpected token '['
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:13
+        console.log(userchallenge.["userId"])
+                                  ^
+
+SyntaxError: Unexpected token '['
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T05:08:54.875Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:09:35.954Z [winston-test] error: uncaughtException: Unexpected token ')'
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:13
+        console.log(userchallenge.)
+                                  ^
+
+SyntaxError: Unexpected token ')'
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T05:09:37.190Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T05:09:57.415Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T07:11:47.199Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:32:35.479Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2022-05-04T08:33:13.438Z [winston-test] error: uncaughtException: Cannot find module '/env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module '/env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2022-05-04T08:33:22.615Z [winston-test] error: uncaughtException: Unexpected end of input
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\.env:4
+DOMAIN : http://localhost:3000/api/auth/naver/callback
+                                                      
+
+SyntaxError: Unexpected end of input
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T08:33:27.550Z [winston-test] error: uncaughtException: Unexpected end of input
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\.env:4
+DOMAIN : http://localhost:3000/api/auth/naver/callback
+                                                      
+
+SyntaxError: Unexpected end of input
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T08:34:14.515Z [winston-test] error: uncaughtException: soldierChallenge is not defined
+ReferenceError: soldierChallenge is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\.env:1:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-05-04T08:34:48.463Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:34:52.907Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:35:11.345Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:35:30.499Z [winston-test] error: uncaughtException: Unexpected end of input
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\.env:4
+DOMAIN : http://localhost:3000/api/auth/naver/callback
+                                                      
+
+SyntaxError: Unexpected end of input
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T08:35:34.888Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:35:40.442Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2022-05-04T08:36:12.235Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:12:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2022-05-04T08:36:20.743Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:36:26.805Z [winston-test] error: uncaughtException: createServer is not defined
+ReferenceError: createServer is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:19:20)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-04T08:36:33.580Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:37:53.423Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:41:56.412Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:42:08.618Z [winston-test] error: uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:94:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-04T08:42:10.575Z [winston-test] error: uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:94:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-04T08:42:27.404Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:42:31.801Z [winston-test] error: uncaughtException: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module './env'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport.js:5:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-04T08:42:35.725Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:48:41.411Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:49:55.173Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:50:53.890Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:52:36.020Z [winston-test] error: uncaughtException: Unexpected token '{'
+C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mypage.js:66
+        await Challenge.update({}.{
+                                  ^
+
+SyntaxError: Unexpected token '{'
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
+    at Module._compile (node:internal/modules/cjs/loader:1065:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mypage.js:9:5)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+2022-05-04T08:52:57.414Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:53:36.536Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:54:25.043Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:57:05.832Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:57:28.329Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:58:18.550Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:59:35.973Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T08:59:55.827Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:00:17.821Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:00:29.199Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:01:31.054Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:02:13.919Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:02:19.359Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:02:32.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:03:16.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-04T09:03:26.271Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
