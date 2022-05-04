@@ -101,20 +101,8 @@ app.use(express.urlencoded({ extended : false}))
 app.use(bodyParser.json())
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
 app.use(morgan('combined')) // morgan http 로그 미들웨어 추가
-// app.use(helmet());
+app.use(helmet());
 app.disable('x-powered-by');
-// app.use(helmet.hpkp());
-// app.use(helmet.contentSecurityPolicy());
-app.use(helmet.dnsPrefetchControl());
-app.use(helmet.expectCt());
-app.use(helmet.frameguard());
-app.use(helmet.hidePoweredBy());
-app.use(helmet.hsts());
-app.use(helmet.ieNoOpen());
-app.use(helmet.noSniff());
-app.use(helmet.permittedCrossDomainPolicies());
-app.use(helmet.referrerPolicy());
-app.use(helmet.xssFilter());
 
 //라우터 연결
 app.use("/api", [

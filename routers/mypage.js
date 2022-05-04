@@ -4,8 +4,6 @@ const {myPage,
     userProfileread,
     userProfilepatch,
     myPageChallengeread,
-    // preTestread,
-    // preTestpatch,
 } = require("../controllers/mypage");
 const authMiddleware = require("../middleware/authMiddleWare");
 
@@ -18,16 +16,11 @@ router.get("/myPage", authMiddleware, myPage);
 router.get("/myPage/userProfile", authMiddleware, userProfileread);
 
 //프로필 수정하기
-//썬더클라이언트 테스트 완료
+//썬더클라이언트 수정 필요
 router.put("/myPage/userProfile", authMiddleware, userProfilepatch);
 
 //마이페이지 - 나의챌린지 수정 query(userNum)
+//썬더클라이언트 테스트 완료
 router.put("/myPage/userChallenge", authMiddleware, myPageChallengeread);
-
-// //나의 목표페이지 조회하기
-// router.get("/mypage/preTest", authMiddleware, preTestread);
-
-// //나의 목표페이지 수정하기
-// router.patch("/mypage/preTest", authMiddleware, preTestpatch);
 
 module.exports = router;
