@@ -1,5 +1,5 @@
-// const express = require('express')
-// const router = express.Router()
+const express = require('express')
+const router = express.Router()
 // const moment = require('moment')
 // const Cal = require('../schemas/cal')
 
@@ -45,4 +45,4 @@
 // })
 
 
-// module.exports = router
+module.exports = router
