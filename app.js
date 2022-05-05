@@ -1,19 +1,31 @@
-const express = require('express')
- //요청과 함께들어온 쿠키를 해석하여 곧바로 req.cookies 객체로 만든다.
-const cookieParser = require('cookie-parser')
+const express = require("express");
+//요청과 함께들어온 쿠키를 해석하여 곧바로 req.cookies 객체로 만든다.
+const cookieParser = require("cookie-parser");
 //폼 데이터 또는 AJAX 요청으로 온 POST데이터를 처리한다.
-const bodyParser = require('body-parser')
-const morgan = require('morgan') // 요청과 응답에 대한 정보를 추가로 자세히 콘솔에 기록
-const winston = require('./config/winston')
-const helmet = require('helmet');
-const cors = require('cors')
-const app = express()
-const port = 3000
+const bodyParser = require("body-parser");
+const morgan = require("morgan"); // 요청과 응답에 대한 정보를 추가로 자세히 콘솔에 기록
+const winston = require("./config/winston");
+const helmet = require("helmet");
+const cors = require("cors");
+const http = require("http");
+const https = require("https");
+const fs = require("fs");
+
+const HTTP_PORT = 8080;
+const HTTPS_PORT = 8443;
+
+const port = 3000;
 // const {Server} = require('socket.io')
 // const env = require('./env')
-const logger = require('./logger')
+const logger = require("./logger");
 // const configurePassport = require('./passport')
-const {sequelize} = require('./models')
+const { sequelize } = require("./models");
+
+const options = {
+  key: fs.readFileSync("./rootca.key"),
+  cert: fs.readFileSync("./rootca.crt"),
+};
+const app = express();
 
 //채팅방
 
@@ -51,8 +63,6 @@ const {sequelize} = require('./models')
 //         socketMoim.leave()
 //     })
 
-
-
 //     socketMoim.on('enterNweRoom',async (newRoom, userNickName)=> {
 //         //DB의 고유 roomId를 참고하여 방에 join시킨다.
 //         console.log('newRoom',newRoom)
@@ -69,54 +79,66 @@ const {sequelize} = require('./models')
 // })
 
 //라우터 불러오기
-const userRouter = require('./routers/user')
-const authRouter = require('./routers/auth')
-const userdataRouter = require('./routers/userdata')
-const mainRouter = require('./routers/main')
+const userRouter = require("./routers/user");
+const authRouter = require("./routers/auth");
+const userdataRouter = require("./routers/userdata");
+const mainRouter = require("./routers/main");
 // const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
-const calRouter = require('./routers/cal')
-const mypageRouter = require('./routers/mypage')
+const calRouter = require("./routers/cal");
+const mypageRouter = require("./routers/mypage");
 
 // 접속 로그 남기기
-const requestMiddleware = (req,res,next)=> {
-    console.log(
-        "[Ip address]:",
-        req.ip,
-        "[method]:",
-        req.method,
-        "Request URL:",
-        req.originalUrl,
-        " - ",
-        new Date().toISOString()
-    )
-    next()
-}
+const requestMiddleware = (req, res, next) => {
+  console.log(
+    "[Ip address]:",
+    req.ip,
+    "[method]:",
+    req.method,
+    "Request URL:",
+    req.originalUrl,
+    " - ",
+    new Date().toISOString()
+  );
+  next();
+};
 
 //각종 미들웨어
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 // app.use(express.urlencoded())
-app.use(cookieParser())
-app.use(requestMiddleware)
-app.use(express.urlencoded({ extended : false}))
-app.use(bodyParser.json())
+app.use(cookieParser());
+app.use(requestMiddleware);
+app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
-app.use(morgan('combined')) // morgan http 로그 미들웨어 추가
+app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
 app.use(helmet());
-app.disable('x-powered-by');
+app.disable("x-powered-by");
 
 //라우터 연결
-app.use("/api", [
-    userRouter,
-    authRouter,
-    userdataRouter,
-    mainRouter,
-    // userdataRouter,
-    // detailRouter,
-    calRouter,
-    mypageRouter,
-])
+// Default route for server status
+app.get("/", (req, res) => {
+  res.json({
+    message: `Server is running on port ${req.secure ? HTTPS_PORT : HTTP_PORT}`,
+  });
+});
 
-//서버 열기
-app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+app.use("/api", [
+  userRouter,
+  authRouter,
+  userdataRouter,
+  mainRouter,
+  // userdataRouter,
+  // detailRouter,
+  calRouter,
+  mypageRouter,
+]);
+
+// // Create an HTTP server.
+// http.createServer(app).listen(HTTP_PORT);
+// Create an HTTPS server.
+https.createServer(options, app).listen(HTTPS_PORT);
+
+// //서버 열기
+// app.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
