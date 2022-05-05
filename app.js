@@ -9,8 +9,8 @@ const helmet = require('helmet');
 const cors = require('cors')
 const app = express()
 const port = 3000
-const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
 // const {Server} = require('socket.io')
 // const env = require('./env')
 const logger = require("./logger");
@@ -60,8 +60,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
 app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
-app.use(helmet());
-app.disable("x-powered-by");
+// app.use(helmet());
+// app.disable("x-powered-by");
 
 //라우터 연결
 app.use("/api", [
@@ -76,5 +76,5 @@ app.use("/api", [
 ]);
 
 //서버 열기..
-http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+server.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
