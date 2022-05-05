@@ -56,7 +56,7 @@ const kakaoRegister = async (req,res) => {
    
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
-    const existUser = await User.findAll({userId});
+    const existUser = await User.findOne({userId});
 
      console.log("--------->",existUser);
 
