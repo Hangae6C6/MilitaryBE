@@ -9,64 +9,20 @@ const helmet = require('helmet');
 const cors = require('cors')
 const app = express()
 const port = 3000
+const http = require('http').createServer(app)
+const io = require('socket.io')(http)
 // const {Server} = require('socket.io')
 // const env = require('./env')
 const logger = require('./logger')
 // const configurePassport = require('./passport')
 const {sequelize} = require('./models')
 
-//채팅방
+io.on('connection', socket => {
+    socket.on('message', ({name,message})=> {
+        io.emit('meeage',{name,message})
+    })
+})
 
-// const httpServer = createServer(app)
-// const io = new Server(httpServer, {cors: {origin: '*'}})
-// app.set('io', io)
-// app.use('/chatt', (req,res)=>res.render('chatIndex'))
-// app.use('/chat/:moimId', (req,res)=> res.render('chatIndex'))
-
-// const moimNamespace = io.of('/chat')
-// app.set('moimNamespeace', moimNamespace)
-
-// let roomId = '';
-//특정 네임스페이스 지정시의 코드
-//Namespace : 말 그래도 이름이 붙은 공간이며, 소켓을 묶어주는 단위라고 생각하면된다.
-// moimNamespace.on('connect', (socketMoim)=> {
-//     console.log('moim 네임스페이스 접속')
-
-//     socketMoim.on('enterNewUser', async (userNickName, targetRoomId)=> {
-//         socketMoim.name = userNickName;
-//         console.log('방 입장유저 닉네임', socketMoim.name)
-//         roomId = targetRoomId;
-//         socketMoim.join(roomId)
-//         const msg = `${userNickName}님이 채팅방에 참가했습니다.`
-
-//         moimNamespace.to(roomId).emit('updateMsg', {
-//             name:'SERVER',
-//             msg,
-//         })
-//     })
-
-//채팅방 퇴장할때
-//     socketMoim.on('leaveRoom', async(userNickName,targetRoomId)=> {
-//         //프론트로부터 전달 받은 roomId를 타겟으로 하여 방에서 leave시킨다.
-//         socketMoim.leave()
-//     })
-
-
-
-//     socketMoim.on('enterNweRoom',async (newRoom, userNickName)=> {
-//         //DB의 고유 roomId를 참고하여 방에 join시킨다.
-//         console.log('newRoom',newRoom)
-//         const roomId = newRoom.disable
-
-//         socketMoim.join(roomId)
-//         const msg = `${userNickName}님이 채팅방에 참가했습니다.`
-
-//         moimNamespace.to(roomId).emit('updateMsg', {
-//             name: 'SERVER',
-//             msg,
-//         })
-//     })
-// })
 
 //라우터 불러오기
 const userRouter = require('./routers/user')
@@ -120,3 +76,4 @@ app.use("/api", [
 
 //서버 열기
 app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
