@@ -17,7 +17,7 @@ const logger = require("./logger");
 // const configurePassport = require('./passport')
 const { sequelize } = require("./models");
 
-const io = socketIo(server, {
+const io = socketIo(http, {
     cors : {
         origin:"*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
         methods: ["GET","POST"],
