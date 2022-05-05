@@ -7,7 +7,7 @@ require("dotenv").config();
 // 회원가입
 const signUp = async (req, res) => {
   const { userId, userPw, userNick, userPwCheck } = req.body;
-  console.log(userId, userPw, userNick, userPwCheck);
+  // console.log(userId, userPw, userNick, userPwCheck);
 
   // Validation Check
   let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/; //2~15자 한글,영문,숫자
@@ -73,14 +73,19 @@ const signUp = async (req, res) => {
 // 로그인
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
-
-  const user = await User.findOne({ where: { userId } });
-  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
+  // console.log(req); 잘받아고
+  // const hashed =  bcrypt.hashSync(userPw, 10);
+  // console.log("12321312213123",hashed);
+  const user = await User.findOne({where: {  userId:userId }}); 
+  console.log("1111111111",user);
+  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; 
+  //  console.log("user: ", user); // 토큰옵션
 
   console.log(user);
   // body passowrd = unHashPassword -->true
-  const unHashPw = bcrypt.compare(userPw, user.userPw);
-
+  const unHashPw = bcrypt.compareSync(userPw, user.userPw);
+  
+  console.log("----------->",userPw, user);
   if (user.userId !== userId || unHashPw === false) {
     res.status(401).json({
       msg: "아이디 혹은 비밀번호가 안맞습니다.",
@@ -100,7 +105,8 @@ const login = async (req, res) => {
   });
 };
 
-// 로그인체크
+// 로그인체크 
+// 체크
 const loginCheck = async (req, res) => {
   const { user } = res.locals;
   res.status(200).json({
