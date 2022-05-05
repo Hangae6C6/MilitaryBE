@@ -11,12 +11,11 @@ const signUp = async (req, res) => {
 
   // Validation Check
   let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/; //2~15자 한글,영문,숫자
-  let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //4~15자 영문+숫자
+  let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //8자 이상 영문+숫자
 
   const existUsers = await User.findAll({
     where: { [Op.or]: [{ userId }, { userNick }] },
   });
-  console.log(existUsers);
 
   if (userId === "" || userId === undefined || userId === null) {
     res.status(400).send({
@@ -64,7 +63,7 @@ const signUp = async (req, res) => {
   const from = "webSite";
   const hashed = await bcrypt.hash(userPw, 10);
   // const user = new User({ userId, userNick, userPw : hashed, from})
-  await User.create({ userId, userNick, userPw, from });
+  await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
     result: "true",
     msg: "회원가입성공",
@@ -73,32 +72,26 @@ const signUp = async (req, res) => {
 
 // 로그인
 const login = async (req, res) => {
-  // console.log();
   const { userId, userPw } = req.body;
-  const hashed = await bcrypt.hash(userPw, 10);
+
   const user = await User.findOne({ where: { userId, userPw } });
-  // console.log("d", hashed === User.userPw);
-  // const encodedPW = user.userPw;
+  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
 
   // body passowrd = unHashPassword -->true
-  // const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
+  const unHashPw = bcrypt.compare(userPw, user.userPw);
 
-  // console.log("--------->",user.userId);
-  if (!user) {
-    res.status(400).json({
-      errorMessage: "아이디 또는 비밀번호를 확인해주세요.",
+  if (user.userId !== userId || unHashPw === false) {
+    res.status(401).json({
+      msg: "아이디 혹은 비밀번호가 안맞습니다.",
     });
-    return;
   }
-
-  // body passowrd = unHashPassword -->true
-  // const unHashPw = await bcrypt.compareSync(userPw, user.userPw);
 
   const loginToken = jwt.sign(
     { userId: user.userId },
-    process.env.KEY
-    // tokenOption
+    process.env.KEY,
+    tokenOptions
   );
+
   res.json({
     loginToken,
     userId,

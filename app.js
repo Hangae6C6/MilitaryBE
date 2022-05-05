@@ -72,6 +72,8 @@ const {sequelize} = require('./models')
 const userRouter = require('./routers/user')
 const authRouter = require('./routers/auth')
 const userdataRouter = require('./routers/userdata')
+const mainRouter = require('./routers/main')
+// const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
 const calRouter = require('./routers/cal')
 const mypageRouter = require('./routers/mypage')
@@ -109,6 +111,8 @@ app.use("/api", [
     userRouter,
     authRouter,
     userdataRouter,
+    mainRouter,
+    // userdataRouter,
     // detailRouter,
     calRouter,
     mypageRouter,
