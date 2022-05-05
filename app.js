@@ -20,6 +20,7 @@ const { sequelize } = require("./models");
 io.on('connection', socket => {
     socket.on('message', ({name,message})=> {
         io.emit('meeage',{name,message})
+        console.log("연결은 잘되었나??")
     })
 })
 
