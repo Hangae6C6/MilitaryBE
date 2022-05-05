@@ -61,7 +61,7 @@ const signUp = async (req, res) => {
   // bcrypt module -> 암호화
   // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)
   const from = "webSite";
-  const hashed = await bcrypt.hash(userPw, 10);
+  const hashed = bcrypt.hash(userPw, 10);
   // const user = new User({ userId, userNick, userPw : hashed, from})
   await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
@@ -74,9 +74,10 @@ const signUp = async (req, res) => {
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
 
-  const user = await User.findOne({ where: { userId, userPw } });
+  const user = await User.findOne({ where: { userId } });
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
 
+  console.log(user);
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compare(userPw, user.userPw);
 
