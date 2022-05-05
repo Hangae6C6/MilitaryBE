@@ -1240,3 +1240,15 @@ SyntaxError: C:\Users\황인호\Desktop\Military_BE\MilitaryBE\config\config.jso
 2022-05-05T07:37:36.041Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:37:53.239Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:38:30.593Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:23:10.679Z [winston-test] error: uncaughtException: User.init is not a function
+TypeError: User.init is not a function
+    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/models/index.js:27:6)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/app.js:16:21)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
