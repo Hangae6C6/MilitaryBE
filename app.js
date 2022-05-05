@@ -62,6 +62,11 @@ app.use(bodyParser.json());
 app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
 // app.use(helmet());
 // app.disable("x-powered-by");
+app.use(function(req, res, next) {  
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+}); 
 
 //라우터 연결
 app.use("/api", [
