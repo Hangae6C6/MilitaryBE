@@ -135,10 +135,10 @@ app.use("/api", [
   mypageRouter,
 ]);
 
-// // Create an HTTP server.
-// http.createServer(app).listen(HTTP_PORT);
-// Create an HTTPS server.
-https.createServer(options, app).listen(HTTPS_PORT);
+// // // Create an HTTP server.
+// // http.createServer(app).listen(HTTP_PORT);
+// // Create an HTTPS server.
+// https.createServer(options, app).listen(HTTPS_PORT);
 
-// //서버 열기
-// app.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+//서버 열기
+app.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));

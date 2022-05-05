@@ -77,6 +77,7 @@ const login = async (req, res) => {
   const user = await User.findOne({ where: { userId, userPw } });
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
 
+  console.log("user: ", user);
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compare(userPw, user.userPw);
 
