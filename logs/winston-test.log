@@ -1294,3 +1294,4 @@ Error: WHERE parameter "userId" has invalid "undefined" value
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:17:21)
 2022-05-05T08:36:51.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:55:52.741Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
