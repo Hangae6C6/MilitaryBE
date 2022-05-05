@@ -87,12 +87,11 @@ io.on('connection', socket => {
 
     socket.on("join_room", (data)=> {
         socket.join(data)
-        console.log("여기를 지나갔어요")
+        console.log("join_room->여기를 지나갔어요")
     })
 
     socket.on('send_message', (data)=> {
         socket.to(data.room).emit("receive_message")
-        console.log("연결은 잘되었나??") 
-        console.log("연결이 잘된거같아요") 
+        console.log("send_message -> 메세지 전달이잘돼요") 
     })
 })
