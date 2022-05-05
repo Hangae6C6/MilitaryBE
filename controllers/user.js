@@ -7,7 +7,7 @@ require("dotenv").config();
 // 회원가입
 const signUp = async (req, res) => {
   const { userId, userPw, userNick, userPwCheck } = req.body;
-  console.log(userId, userPw, userNick, userPwCheck);
+  // console.log(userId, userPw, userNick, userPwCheck);
 
   // Validation Check
   let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/; //2~15자 한글,영문,숫자

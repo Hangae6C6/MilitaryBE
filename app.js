@@ -29,10 +29,10 @@ const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
 const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-// const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
 const calRouter = require("./routers/cal");
-const mypageRouter = require("./routers/mypage");
+const mypageRouter = require('./routers/mypage')
+const kakaoRouter = require('./routers/kakaoLogin')
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -77,7 +77,9 @@ app.use("/api", [
   // detailRouter,
   calRouter,
   mypageRouter,
+  kakaoRouter,
 ]);
+
 
 //서버 열기..
 http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
@@ -95,3 +97,14 @@ io.on('connection', socket => {
         console.log("send_message -> 메세지 전달이잘돼요") 
     })
 })
+
+  
+
+
+app.get("/", async (req, res) => {
+    console.log("main_page")    
+    res.sendFile(__dirname + "/index.html");
+   });
+
+//서버 열기
+app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
