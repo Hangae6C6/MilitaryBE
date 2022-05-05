@@ -71,9 +71,9 @@ const {sequelize} = require('./models')
 //라우터 불러오기
 const userRouter = require('./routers/user')
 const authRouter = require('./routers/auth')
-// const userdataRouter = require('./routers/userdata')
+const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
-// const calRouter = require('./routers/cal')
+const calRouter = require('./routers/cal')
 const mypageRouter = require('./routers/mypage')
 
 // 접속 로그 남기기
@@ -86,7 +86,7 @@ const requestMiddleware = (req,res,next)=> {
         "Request URL:",
         req.originalUrl,
         " - ",
-        new Date()
+        new Date().toISOString()
     )
     next()
 }
@@ -108,9 +108,9 @@ app.disable('x-powered-by');
 app.use("/api", [
     userRouter,
     authRouter,
-    // userdataRouter,
+    userdataRouter,
     // detailRouter,
-    // calRouter,
+    calRouter,
     mypageRouter,
 ])
 

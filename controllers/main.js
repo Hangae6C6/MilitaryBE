@@ -81,4 +81,50 @@ const openChallenge = async (req, res) => {
  });
 };
 
+//챌린지 참여하기 기능(미들웨어 거쳐야함))
+const joinChallenge = async(req,res)=> {
+  if (!res.locals.user) {
+    res.status(401).json({
+      result:false,msg:"로그인 후 사용하세요",
+    })
+    return
+  }
+  try {
+    const {user} = res.locals.user
+    const {userId} = req.query
+    const statusChallenge = await Challenge.findAll({userId}, {
+      where:{
+        userId:userId,
+      }
+    })
+    if (challengeparticipate) {
+      await Challenge.update({},{})
+    }
+    res.status(200).json({result:true,msg:"챌린지 참여하기 성공"})
+  }catch(error) {
+    console.log(error)
+    console.log('main.js 챌린지 참여하기 -> 여기서 오류발생함')
+    res.status(400).json({result:false,msg:"챌린지 참여 실패..."})
+  }
+}
+
+
+//챌린지 참여하기 취소 기능(미들웨어 거쳐야함))
+const joinCancelChallenge = async(req,res)=> {
+  if (!res.locals.user){
+    res.status(400).json({result:false,msg:"로그인 후 사용하세요"})
+  }
+  try {
+    const {userId} = req.query
+    
+    await Challenge.delete()
+    res.stauts(200).json({result:true,msg:"챌린치 취소 성공"})
+  }catch(error) {
+    console.log(error)
+    console.log('main.js 챌린치 참여하기 취소 -> 여기서 에러발생함')
+    res.status(400).json({result:false,msg:"챌린지 취소 실패"})
+  }
+
+}
+
 module.exports = { mainPage, userChallenge, preTest, search, openChallenge };
