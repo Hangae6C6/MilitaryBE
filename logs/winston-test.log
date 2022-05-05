@@ -1264,3 +1264,271 @@ StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorizati
     at endReadableNT (node:internal/streams/readable:1346:12)
     at processTicksAndRejections (node:internal/process/task_queues:83:21)
 2022-05-05T11:41:19.144Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:49:22.508Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T11:49:29.387Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:49:32.082Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T11:49:51.600Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:18:23.252Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:19:02.961Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:19:54.121Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:19:56.623Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:21:10.638Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:21:13.527Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:21:35.565Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:21:38.330Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:22:28.402Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:22:30.975Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userId')
+TypeError: Cannot read properties of null (reading 'userId')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:83:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:24:19.404Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:24:23.480Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:95:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:24:49.873Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:24:52.847Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:95:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:24:52.848Z [winston-test] error: uncaughtException: data and hash arguments required
+Error: data and hash arguments required
+    at Object.compare (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/bcrypt.js:208:17)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+    at Object.module.exports.promise (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/promises.js:20:12)
+    at Object.compare (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/bcrypt.js:204:25)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:80:27)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:25:54.152Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:25:58.142Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:81:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:26:12.707Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:26:15.649Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userId')
+TypeError: Cannot read properties of null (reading 'userId')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:29:24.602Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:29:26.099Z [winston-test] error: uncaughtException: userNick is not defined
+ReferenceError: userNick is not defined
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:76:70)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:341:12)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:174:3)
+    at router (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:323:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:341:12)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:275:10)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:442:6)
+    at xXssProtectionMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:321:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+    at referrerPolicyMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:212:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+    at xPermittedCrossDomainPoliciesMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:307:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+2022-05-05T12:29:50.439Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:29:53.063Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:81:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:30:11.606Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:30:14.337Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:96:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:30:14.338Z [winston-test] error: uncaughtException: data and hash arguments required
+Error: data and hash arguments required
+    at Object.compare (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/bcrypt.js:208:17)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+    at Object.module.exports.promise (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/promises.js:20:12)
+    at Object.compare (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/bcrypt/bcrypt.js:204:25)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:81:27)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:33:30.468Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:34:08.747Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:81:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:34:47.630Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:34:50.713Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:81:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:36:37.325Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:36:39.865Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:37:02.800Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:37:05.317Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:37:32.787Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:37:33.571Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:76:27)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:341:12)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:174:3)
+    at router (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:323:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:341:12)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:275:10)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:442:6)
+    at xXssProtectionMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:321:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+    at referrerPolicyMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:212:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+    at xPermittedCrossDomainPoliciesMiddleware (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:307:3)
+    at internalNext (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/helmet/dist/cjs/index.js:440:6)
+2022-05-05T12:40:51.432Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:40:55.038Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:97:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:41:26.243Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:41:27.287Z [winston-test] error: uncaughtException: Invalid value { userId: 'test222' }
+Error: Invalid value { userId: 'test222' }
+    at Object.escape (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sql-string.js:52:11)
+    at MySQLQueryGenerator.escape (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:709:22)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:71
+    at Array.map (<anonymous>)
+    at MySQLQueryGenerator._whereParseSingleValueObject (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:52)
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1721:19)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:76:16)
+2022-05-05T12:41:42.760Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:41:43.776Z [winston-test] error: uncaughtException: Invalid value { userId: 'test222' }
+Error: Invalid value { userId: 'test222' }
+    at Object.escape (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sql-string.js:52:11)
+    at MySQLQueryGenerator.escape (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:709:22)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:71
+    at Array.map (<anonymous>)
+    at MySQLQueryGenerator._whereParseSingleValueObject (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:52)
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1721:19)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:76:16)
+2022-05-05T12:44:42.949Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:44:46.333Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:45:40.051Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:45:58.721Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:46:50.553Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:46:54.250Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:46:58.828Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:47:01.559Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:82:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:49:42.313Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:49:46.316Z [winston-test] error: uncaughtException: Unknown column 'User.hashed' in 'where clause'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:77:16)
+2022-05-05T12:50:22.552Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:50:25.600Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:83:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:51:03.492Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:51:06.270Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:51:20.747Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:51:24.156Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:53:12.460Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:53:15.894Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T12:55:01.590Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T12:55:26.365Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
