@@ -74,10 +74,6 @@ app.use("/api", [
   mypageRouter,
 ]);
 
-//서버 열기
-<<<<<<< HEAD
+//서버 열기..
 app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
-=======
-app.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
->>>>>>> 9dd08bd28f28c8419d8641adad4a7c1f706ac9b1
