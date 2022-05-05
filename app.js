@@ -11,11 +11,11 @@ const app = require('express')()
 const port = 3000
 const http = require('http').createServer(app)
 const socketIo = require('socket.io')
+const logger = require("./logger");
+const { sequelize } = require("./models");
 // const {Server} = require('socket.io')
 // const env = require('./env')
-const logger = require("./logger");
 // const configurePassport = require('./passport')
-const { sequelize } = require("./models");
 
 const io = socketIo(http, {
     cors : {
@@ -84,8 +84,13 @@ http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`)
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
 
 io.on('connection', socket => {
-    socket.on('message', ({name,message})=> {
-        io.emit('meeage',{name,message})
+
+    socket.on("join_room", (data)=> {
+        socket.join(data)
+    })
+
+    socket.on('send_message', (data)=> {
+        socket.to(data.room).emit("receive_message")
         console.log("연결은 잘되었나??")
     })
 })
