@@ -794,3 +794,84 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
 2022-05-04T13:11:10.538Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T13:13:34.793Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T13:58:06.492Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:07:12.664Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:10:10.603Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:11:03.753Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:12:08.598Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:13:42.022Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:13:57.759Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:14:38.152Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:15:52.148Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:17:11.434Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:18:55.569Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:23:30.420Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:23:58.655Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:24:16.997Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:24:49.191Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:24:54.159Z [winston-test] error: uncaughtException: Cannot read properties of undefined (reading 'dataValues')
+TypeError: Cannot read properties of undefined (reading 'dataValues')
+    at userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:21:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T02:25:04.056Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:25:30.701Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:25:51.227Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:27:01.639Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:27:33.750Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:27:37.936Z [winston-test] error: uncaughtException: Cannot read properties of undefined (reading 'dataValues')
+TypeError: Cannot read properties of undefined (reading 'dataValues')
+    at userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:24:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T02:28:23.975Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:28:35.903Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:30:04.063Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:30:22.099Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:31:40.480Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:31:47.693Z [winston-test] error: uncaughtException: Cannot read properties of undefined (reading 'challengeProgress')
+TypeError: Cannot read properties of undefined (reading 'challengeProgress')
+    at userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:17:30)
+    at Layer.handle [as handle_request] (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T02:32:07.044Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T02:33:01.538Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:02:42.208Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:03:23.635Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:04:08.920Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:04:49.072Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:17:03.397Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:23:21.263Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:23:25.257Z [winston-test] error: uncaughtException: Invalid value { userId: 'test999' }
+Error: Invalid value { userId: 'test999' }
+    at Object.escape (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/sql-string.js:52:11)
+    at MySQLQueryGenerator.escape (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:709:22)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:71
+    at Array.map (<anonymous>)
+    at MySQLQueryGenerator._whereParseSingleValueObject (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1905:52)
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1721:19)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+2022-05-05T03:26:51.758Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:29:10.343Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:30:11.360Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:30:15.116Z [winston-test] error: uncaughtException: Invalid status code: 53
+RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 53
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.writeHead (node:_http_server:274:11)
+    at ServerResponse.writeHead (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/on-headers/index.js:44:26)
+    at ServerResponse._implicitHeader (node:_http_server:265:8)
+    at write_ (node:_http_outgoing:766:9)
+    at ServerResponse.end (node:_http_outgoing:855:5)
+    at ServerResponse.send (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/express/lib/response.js:221:10)
+    at ServerResponse.json (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:32:26)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T03:30:43.523Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T03:34:01.983Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:15:54.479Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:18:31.688Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:20:37.148Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:21:11.599Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:21:49.629Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
