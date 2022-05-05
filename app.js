@@ -7,23 +7,22 @@ const morgan = require('morgan') // 요청과 응답에 대한 정보를 추가�
 const winston = require('./config/winston')
 const helmet = require('helmet');
 const cors = require('cors')
-const app = express()
+const app = require('express')()
 const port = 3000
-const server = require('http').createServer(app)
-const io = require('socket.io')(server)
+const http = require('http').createServer(app)
+const socketIo = require('socket.io')
 // const {Server} = require('socket.io')
 // const env = require('./env')
 const logger = require("./logger");
 // const configurePassport = require('./passport')
 const { sequelize } = require("./models");
 
-io.on('connection', socket => {
-    socket.on('message', ({name,message})=> {
-        io.emit('meeage',{name,message})
-        console.log("연결은 잘되었나??")
-    })
+const io = socketIo(server, {
+    cors : {
+        origin:"*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+        methods: ["GET","POST"],
+    },
 })
-
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -81,5 +80,12 @@ app.use("/api", [
 ]);
 
 //서버 열기..
-server.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
+
+io.on('connection', socket => {
+    socket.on('message', ({name,message})=> {
+        io.emit('meeage',{name,message})
+        console.log("연결은 잘되었나??")
+    })
+})
