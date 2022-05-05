@@ -19,7 +19,7 @@ const endDay = async (req,res)=> {
                 endDate:endDate,
             }
         })
-        const now = today.format('YYYY-MM-DD', endDate)
+        const now = today.format('YYYY-MM-DD')
         const a = today.diff(endDate, 'days')
         console.log(today,now,endDate)
         // console.log(now.diff(endDates, 'days'))
