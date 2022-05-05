@@ -1222,3 +1222,45 @@ StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorizati
 2022-05-05T11:11:22.865Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T11:17:34.650Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T11:18:59.672Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:24:18.738Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:24:37.345Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async User.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:71:9)
+2022-05-05T11:26:45.625Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:26:49.745Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=aRibC3Go90Tt92NAZ6mADYjI9vZeg0ZJ0L13deM8cXmz3LbjBvsPCcrhzxbKDRGmo5lR5Ao9dJcAAAGAk_bsqw","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=aRibC3Go90Tt92NAZ6mADYjI9vZeg0ZJ0L13deM8cXmz3LbjBvsPCcrhzxbKDRGmo5lR5Ao9dJcAAAGAk_bsqw","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T11:27:02.027Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:40:27.654Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:40:43.362Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=bRcaCuYTxrUUevdh4wYD2IzgJkqBqmeRD5i8FZ2vrwRdZV-8MlRPFS7WBXW_HV8OGzElqgorDNQAAAGAlAWMUQ","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=bRcaCuYTxrUUevdh4wYD2IzgJkqBqmeRD5i8FZ2vrwRdZV-8MlRPFS7WBXW_HV8OGzElqgorDNQAAAGAlAWMUQ","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T11:41:19.144Z [winston-test] info: 3000 포트로 서버가 켜졌어요!

@@ -24,7 +24,7 @@ const  kakaoLogin = async (req,res) => {
 const kakaoRegister = async (req,res) => {
 
     const { code } = req.query;
-    console.log("123213213213123",code);
+    // console.log("123213213213123",code);
     const options = {
         url : "https://kauth.kakao.com/oauth/token",
         method : 'POST',
@@ -52,33 +52,39 @@ const kakaoRegister = async (req,res) => {
         json: true
     }
     const userInfo = await rp(options1);
-    console.log("1111111111",userInfo);
+    // console.log("1111111111",userInfo);
    
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
     const existUser = await User.findOne({userId});
 
-     console.log("--------->",existUser);
+    //  console.log("--------->",existUser);
 
 
     //  const existUsers = await User.findAll({
     //       where: { [Op.eq]: [{ userId }, { userNick }] },
     //      });
-     
-    if(!existUser.length){
-        const from = 'kakao'
-        const user = new User({ userId, userNick, from })
-        await User.create({ userId, userNick, from });
-    }
-
-    const loginUser = await User.findOne({userId});
-    const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
-
-    res.status(200).json({
-        token,
-        userId,
-        userNick
-    });
+     try{
+        if(!existUser.dataValues){
+            const from = 'kakao'
+            const user = new User({ userId, userNick, from })
+            await User.create({ userId, userNick, from });
+        }
+    
+        const loginUser = await User.findOne({userId});
+        const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
+    
+        res.status(200).json({
+            token,
+            userId,
+            userNick
+        });
+     } catch(error) {
+        console.log("카카오로그인오류"); 
+        console.log(error); 
+        res.status(400).json({ result: "이미 등록된 유저입니다."}); 
+        return;
+     }
 };
 
 module.exports = {kakaoLogin,kakaoRegister};
