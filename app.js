@@ -105,6 +105,7 @@ app.get("/", async (req, res) => {
     console.log("main_page")    
     res.sendFile(__dirname + "/index.html");
    });
+//서버 열기..
+http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+// app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
 
-//서버 열기
-app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
