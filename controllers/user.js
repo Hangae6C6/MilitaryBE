@@ -80,7 +80,8 @@ const login = async (req, res) => {
   console.log("1111111111",user);
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; 
   //  console.log("user: ", user); // 토큰옵션
-
+   
+  
   console.log(user);
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compareSync(userPw, user.userPw);
