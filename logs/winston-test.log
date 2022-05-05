@@ -875,3 +875,348 @@ RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 53
 2022-05-05T06:20:37.148Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T06:21:11.599Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T06:21:49.629Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T06:42:10.247Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:09:49.486Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:22:10.931Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:25:03.219Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:25:15.807Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:26:36.837Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:27:23.435Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:28:33.366Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:30:18.811Z [winston-test] error: uncaughtException: Cannot find module 'request-promise'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/routers/kakaoLogin.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+Error: Cannot find module 'request-promise'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/routers/kakaoLogin.js
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:2:12)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-05T08:30:44.146Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:464:13)
+    at Function.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:220:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:217:7)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T08:36:54.761Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:464:13)
+    at Function.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:220:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:217:7)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T08:37:47.696Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:464:13)
+    at Function.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:220:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:217:7)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T08:44:10.704Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:44:36.683Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:45:22.117Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:464:13)
+    at Function.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:220:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:217:7)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T08:46:28.518Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:48:10.233Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:48:24.635Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:49:05.576Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:49:27.711Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:50:15.839Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:54:01.727Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:56:12.131Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T08:56:21.700Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:56:24.168Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T08:57:07.764Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:57:17.185Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T08:57:42.609Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:57:49.216Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:57:34)
+2022-05-05T08:58:28.249Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:58:28.497Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=53zDaa_PL4SGERR9zuVfMK1gYlrZZxDZHgpRSL9HMtFW72gwSJiIMobALKh_w-E6dBpR1AopcBQAAAGAk3DcOQ","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=53zDaa_PL4SGERR9zuVfMK1gYlrZZxDZHgpRSL9HMtFW72gwSJiIMobALKh_w-E6dBpR1AopcBQAAAGAk3DcOQ","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T09:00:03.235Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:00:08.190Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:57:34)
+2022-05-05T09:01:38.263Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:01:43.313Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:58:34)
+2022-05-05T09:02:25.194Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:02:27.118Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=qNd-DLgm-rOOt_IadBfwo-rl0hlKE_kz8JZIG3IV88-tGEhgjZ8iEgh9OilnfufQK5mMBgorDNMAAAGAk3QhxA","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=qNd-DLgm-rOOt_IadBfwo-rl0hlKE_kz8JZIG3IV88-tGEhgjZ8iEgh9OilnfufQK5mMBgorDNMAAAGAk3QhxA","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T09:03:21.059Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:03:22.821Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=yB58RCruJ12EpIRRwuYFx55dkie37lxh0jWPzfdiyLFX-j4aXN0r0-B2k-yffLO7r_9emgopcJ8AAAGAk3TciQ","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=yB58RCruJ12EpIRRwuYFx55dkie37lxh0jWPzfdiyLFX-j4aXN0r0-B2k-yffLO7r_9emgopcJ8AAAGAk3TciQ","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T09:03:42.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:03:46.687Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:59:34)
+2022-05-05T09:07:24.357Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T09:07:28.655Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=C1uMjatEjeFdajufr9dbZjM9y0MiVdSSu3eb8BUWu3A6OwCq-HpfLEC_i9czS9D2niJojgo9dJkAAAGAk3kvTg","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=C1uMjatEjeFdajufr9dbZjM9y0MiVdSSu3eb8BUWu3A6OwCq-HpfLEC_i9czS9D2niJojgo9dJkAAAGAk3kvTg","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T10:37:56.352Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T10:38:06.169Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:59:34)
+2022-05-05T10:47:35.917Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T10:47:42.686Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=XTyQFxk0k42aoTjeRDkBHMkviB5PURmbukGfHx5ac24X556rCZx_poba-w20_ri3ShkwXwo9cuoAAAGAk9Satw","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=XTyQFxk0k42aoTjeRDkBHMkviB5PURmbukGfHx5ac24X556rCZx_poba-w20_ri3ShkwXwo9cuoAAAGAk9Satw","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T10:48:15.626Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T10:48:20.910Z [winston-test] error: uncaughtException: User.find is not a function
+TypeError: User.find is not a function
+    at kakaoRegister (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:59:34)
+2022-05-05T10:49:49.928Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T10:49:52.686Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=RVE7iiU_ABH_hCpYkrIfFxKwAJz353-reYvVX4DFMR_I3hUljmfXIEihePhUdS2FI6-1gQo9dGkAAAGAk9XALQ","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=RVE7iiU_ABH_hCpYkrIfFxKwAJz353-reYvVX4DFMR_I3hUljmfXIEihePhUdS2FI6-1gQo9dGkAAAGAk9XALQ","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T10:57:55.858Z [winston-test] error: uncaughtException: sequelize is not defined
+ReferenceError: sequelize is not defined
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:6:31)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/kakaoLogin.js:3:36)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:79:21)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T10:59:29.536Z [winston-test] error: uncaughtException: sequelize is not defined
+ReferenceError: sequelize is not defined
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:6:31)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/kakaoLogin.js:3:36)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:78:21)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T11:00:02.476Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:00:07.908Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=Fu8MqY-XPpc7x6NFCDpjd79HayXO2SeQI99-i2h6gbsd7sAXtA1HYLVW0mbZYbaqqktcswopb9UAAAGAk9c1Pg","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=Fu8MqY-XPpc7x6NFCDpjd79HayXO2SeQI99-i2h6gbsd7sAXtA1HYLVW0mbZYbaqqktcswopb9UAAAGAk9c1Pg","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T11:00:41.699Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:03:05.772Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:03:33.965Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:03:47.767Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:05:36.255Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:07:28.662Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:07:30.872Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=ijTCHbaGuoyY2vsfKPv1vYNzzcy5Ux6rQWTXBKHFXu7Q5MKpEMGlRqqFf3vTfmg5WjS34go9cusAAAGAk-WfdA","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=ijTCHbaGuoyY2vsfKPv1vYNzzcy5Ux6rQWTXBKHFXu7Q5MKpEMGlRqqFf3vTfmg5WjS34go9cusAAAGAk-WfdA","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T11:07:43.816Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:09:28.089Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T11:09:30.208Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=tsSYv1fNKfKuP_7WdANQjzqzA8G-W13L1GsnlInVYXxIg8UrUUTSCCI0ZGkH6D5fEl58vwo9dJkAAAGAk-eMbw","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_grant","error_description":"authorization code not found for code=tsSYv1fNKfKuP_7WdANQjzqzA8G-W13L1GsnlInVYXxIg8UrUUTSCCI0ZGkH6D5fEl58vwo9dJkAAAGAk-eMbw","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-05T11:11:22.865Z [winston-test] info: 3000 포트로 서버가 켜졌어요!

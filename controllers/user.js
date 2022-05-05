@@ -7,7 +7,7 @@ require("dotenv").config();
 // 회원가입
 const signUp = async (req, res) => {
   const { userId, userPw, userNick, userPwCheck } = req.body;
-  console.log(userId, userPw, userNick, userPwCheck);
+  // console.log(userId, userPw, userNick, userPwCheck);
 
   // Validation Check
   let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/; //2~15자 한글,영문,숫자
@@ -62,7 +62,6 @@ const signUp = async (req, res) => {
   // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)
   const from = "webSite";
   const hashed = await bcrypt.hash(userPw, 10);
-  // const user = new User({ userId, userNick, userPw : hashed, from})
   await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
     result: "true",

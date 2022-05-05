@@ -13,7 +13,6 @@ const port = 3000
 // const env = require('./env')
 const logger = require('./logger')
 // const configurePassport = require('./passport')
-const {sequelize} = require('./models')
 
 //채팅방
 
@@ -76,6 +75,7 @@ const mainRouter = require('./routers/main')
 // const detailRouter = require('./routers/detail')
 // const calRouter = require('./routers/cal')
 const mypageRouter = require('./routers/mypage')
+const kakaoRouter = require('./routers/kakaoLogin')
 
 // 접속 로그 남기기
 const requestMiddleware = (req,res,next)=> {
@@ -114,7 +114,14 @@ app.use("/api", [
     // detailRouter,
     // calRouter,
     mypageRouter,
+    kakaoRouter,
 ])
+
+
+app.get("/", async (req, res) => {
+    console.log("main_page")    
+    res.sendFile(__dirname + "/index.html");
+   });
 
 //서버 열기
 app.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
