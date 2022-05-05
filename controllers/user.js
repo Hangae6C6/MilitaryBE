@@ -11,12 +11,11 @@ const signUp = async (req, res) => {
 
   // Validation Check
   let userNickReg = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,15}$/; //2~15자 한글,영문,숫자
-  let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //4~15자 영문+숫자
+  let userPwReg = /^(?=.*[a-zA-Z])(?=.*\d)[\w]{8,}$/; //8자 이상 영문+숫자
 
   const existUsers = await User.findAll({
     where: { [Op.or]: [{ userId }, { userNick }] },
   });
-  console.log(existUsers);
 
   if (userId === "" || userId === undefined || userId === null) {
     res.status(400).send({
@@ -62,9 +61,9 @@ const signUp = async (req, res) => {
   // bcrypt module -> 암호화
   // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)
   const from = "webSite";
-  const hashed = await bcrypt.hash(userPw, 10);
+  const hashed = bcrypt.hash(userPw, 10);
   // const user = new User({ userId, userNick, userPw : hashed, from})
-  await User.create({ userId, userNick, userPw : hashed, from });
+  await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
     result: "true",
     msg: "회원가입성공",
@@ -74,31 +73,26 @@ const signUp = async (req, res) => {
 // 로그인
 const login = async (req, res) => {
   const { userId, userPw } = req.body;
-  // console.log(req.body); // { userId: 'test0007', userPw: 't12345678' }
-  
 
-
-  // const user = await User.findOne({where : {userId,userPw}});
-  const user = await User.findOne( { where : { userId,userPw } });
-  console.log("user--->",user);
+  const user = await User.findOne({ where: { userId } });
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; // 토큰옵션
-   
+
+  console.log(user);
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compare(userPw, user.userPw);
-  console.log(unHashPw,userPw,user.userPw);
-  
-  if(user.userId !== userId || unHashPw===false) {
+
+  if (user.userId !== userId || unHashPw === false) {
     res.status(401).json({
-        msg:"아이디 혹은 비밀번호가 안맞습니다."
-    })
-  };
+      msg: "아이디 혹은 비밀번호가 안맞습니다.",
+    });
+  }
 
   const loginToken = jwt.sign(
     { userId: user.userId },
     process.env.KEY,
     tokenOptions
   );
-  console.log(loginToken);
+
   res.json({
     loginToken,
     userId,

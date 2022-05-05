@@ -660,35 +660,7 @@ SyntaxError: Unexpected token '{'
 2022-05-04T09:02:32.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:16.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:26.271Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-<<<<<<< HEAD
-<<<<<<< HEAD
-2022-05-04T12:27:40.843Z [winston-test] error: uncaughtException: Cannot find module 'passport'
-Require stack:
-- /home/ubuntu/MilitaryBE/controllers/passportAuth.js
-- /home/ubuntu/MilitaryBE/routers/auth.js
-- /home/ubuntu/MilitaryBE/app.js
-Error: Cannot find module 'passport'
-Require stack:
-- /home/ubuntu/MilitaryBE/controllers/passportAuth.js
-- /home/ubuntu/MilitaryBE/routers/auth.js
-- /home/ubuntu/MilitaryBE/app.js
-    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
-    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (/home/ubuntu/MilitaryBE/controllers/passportAuth.js:1:18)
-    at Module._compile (node:internal/modules/cjs/loader:1105:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:80:39)
-2022-05-04T12:28:03.337Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T13:15:08.282Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-=======
-2022-05-04T11:41:23.634Z [winston-test] error: uncaughtException: Cannot find module 'passport'
-=======
 2022-05-04T12:51:16.266Z [winston-test] error: uncaughtException: Cannot find module 'bcrypt'
->>>>>>> bcb7dded8c679d4f358cf110add374e445453e4b
 Require stack:
 - C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\user.js
 - C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\user.js
@@ -1320,36 +1292,6 @@ Error: WHERE parameter "userId" has invalid "undefined" value
     at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
     at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-<<<<<<< HEAD
-2022-05-04T12:07:28.329Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T12:10:37.004Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T12:11:15.967Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T12:11:54.442Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T12:25:47.350Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T13:11:10.538Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T13:13:34.793Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
->>>>>>> 9463d2f68d97ed168961b1f96c5bfec23a99de83
-2022-05-04T13:21:41.676Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-04T14:46:36.623Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-05T12:12:36.390Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-=======
     at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:17:21)
 2022-05-05T08:36:51.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T08:55:52.741Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
->>>>>>> bcb7dded8c679d4f358cf110add374e445453e4b
-2022-05-05T13:35:14.243Z [winston-test] error: uncaughtException: Cannot find module 'socket.io'
-Require stack:
-- /home/ubuntu/MilitaryBE/app.js
-Error: Cannot find module 'socket.io'
-Require stack:
-- /home/ubuntu/MilitaryBE/app.js
-    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
-    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:13:18)
-    at Module._compile (node:internal/modules/cjs/loader:1105:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
-    at Module._compile (node:internal/modules/cjs/loader:1105:14)
