@@ -1240,6 +1240,7 @@ SyntaxError: C:\Users\황인호\Desktop\Military_BE\MilitaryBE\config\config.jso
 2022-05-05T07:37:36.041Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:37:53.239Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:38:30.593Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+<<<<<<< HEAD
 2022-05-05T08:04:03.785Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T08:06:01.249Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T08:07:36.667Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
@@ -1247,3 +1248,60 @@ SyntaxError: C:\Users\황인호\Desktop\Military_BE\MilitaryBE\config\config.jso
 2022-05-05T08:10:06.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T08:40:48.692Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T08:41:28.506Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+=======
+2022-05-05T08:31:45.081Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:32:04.891Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+2022-05-05T08:33:06.036Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:35:03.498Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:35:06.767Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:16:21)
+2022-05-05T08:36:06.892Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:36:10.331Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:16:21)
+2022-05-05T08:36:21.174Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:36:24.742Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:17:21)
+2022-05-05T08:36:51.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+>>>>>>> 491eaae68f1396ed6613fda0095676bebf042c16
+2022-05-05T08:44:56.957Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
