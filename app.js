@@ -112,9 +112,9 @@ io.on("connection", (socket) => {
   
 io.on("connection", (socket)=> {
     console.log("연결이되었습니다.")
-    // socket.on("init", (payload) => {
-    //     console.log(payload)
-    // })
+    socket.on("init", (payload) => {
+        console.log(payload)
+    })
     socket.on("send message", (item) => {//send message 이벤트 발생
         console.log(item.name + " : " + item.message);
        io.emit("receive message", { name: item.name, message: item.message });
