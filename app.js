@@ -7,15 +7,30 @@ const morgan = require("morgan"); // 요청과 응답에 대한 정보를 추가
 const winston = require("./config/winston");
 const helmet = require("helmet");
 const cors = require("cors");
-const app = require("express")();
 const port = 3000;
-const http = require("http").createServer(app);
 const socketIo = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
 // const {Server} = require('socket.io')
 // const env = require('./env')
 // const configurePassport = require('./passport')
+const fs = require("fs");
+const http = require("http");
+const https = require("https");
+const httpProt = 80;
+const httpsPort = 43;
+
+const privateKey = fs.readFileSync(__dirname + "/private.key", "utf8");
+const certificate = fs.readFileSync(__dirname + "/certificate.crt", "utf8");
+const ca = fs.readFileSync(__dirname + "/ca_bundle.crt", "utf8");
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca,
+};
+
+const app_low = express();
+const app = express();
 
 const io = socketIo(http, {
   cors: {
@@ -106,11 +121,29 @@ app.get(
   }
 );
 
+app_low.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
+    console.log(to);
+    res.redirect(to);
+  }
+});
+
 app.get("/", async (req, res) => {
   console.log("main_page");
   res.sendFile(__dirname + "/index.html");
 });
 
 //서버 열기..
-http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+//http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
+
+http.createServer(app_low).listen(httpProt, () => {
+  console.log("http 서버가 켜졌어요!");
+});
+
+https.createServer(credentials, app).listen(httpsPort, () => {
+  console.log("https 서버가 켜졌어요!");
+});
