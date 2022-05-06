@@ -110,17 +110,6 @@ io.on("connection", (socket) => {
   });
 });
 
-//
-app.get(
-  "/.well-known/pki-validation/039A86379893849170952659C172F8EC.txt",
-  (req, res) => {
-    res.sendFile(
-      __dirname +
-        "/well-known/pki-validation/039A86379893849170952659C172F8EC.txt"
-    );
-  }
-);
-
 app_low.use((req, res, next) => {
   if (req.secure) {
     next();
@@ -135,6 +124,36 @@ app.get("/", async (req, res) => {
   console.log("main_page");
   res.sendFile(__dirname + "/index.html");
 });
+// io.on('connection', socket => {
+
+//     socket.on("join_room", (data)=> {
+//         socket.join(data)
+//         console.log("join_room->여기를 지나갔어요")
+//     })
+
+//     socket.on('send_message', (data)=> {
+//         socket.to(data.room).emit("receive_message")
+//         console.log("send_message -> 메세지 전달이잘돼요")
+//     })
+// })
+
+io.on("connection", (socket) => {
+  console.log("연결이되었습니다.");
+  socket.on("init", (payload) => {
+    console.log(payload);
+  });
+  socket.on("send message", (item) => {
+    //send message 이벤트 발생
+    console.log(item.name + " : " + item.message);
+    io.emit("receive message", { name: item.name, message: item.message });
+    //클라이언트에 이벤트를 보냄
+  });
+});
+
+// app.get("/", async (req, res) => {
+//   console.log("main_page");
+//   res.sendFile(__dirname + "/index.html");
+// });
 
 //서버 열기..
 //http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
