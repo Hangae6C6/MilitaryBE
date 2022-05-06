@@ -120,6 +120,16 @@ app_low.use((req, res, next) => {
   }
 });
 
+app.get(
+  "/.well-known/pki-validation/88DF9438ABFAE300A34528327DDA260020CBBB3424BD269497B0B490F79ED79E.txt",
+  (req, res) => {
+    res.sendFile(
+      __dirname +
+        "/well-known/pki-validation/88DF9438ABFAE300A34528327DDA260020CBBB3424BD269497B0B490F79ED79E.txt"
+    );
+  }
+);
+
 app.get("/", async (req, res) => {
   console.log("main_page");
   res.sendFile(__dirname + "/index.html");
