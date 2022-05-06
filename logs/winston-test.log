@@ -1510,3 +1510,4 @@ SequelizeValidationError: string violation: userPw cannot be an array or an obje
 2022-05-05T15:01:11.688Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-06T07:38:05.878Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 4292a39b0bf02a2d5211b5b2ee691409c9a8c97e
+2022-05-06T09:47:05.418Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
