@@ -124,10 +124,10 @@ io.on("connection", (socket)=> {
 
 
 
-app.get("/", async (req, res) => {
-  console.log("main_page");
-  res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", async (req, res) => {
+//   console.log("main_page");
+//   res.sendFile(__dirname + "/index.html");
+// });
 
 //서버 열기..
 http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
