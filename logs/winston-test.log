@@ -1365,3 +1365,133 @@ Error: listen EADDRINUSE: address already in use :::3000
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
     at node:internal/main/run_main_module:17:47
+2022-05-05T14:09:54.629Z [winston-test] error: uncaughtException: Listen method has been called more than once without closing.
+Error [ERR_SERVER_ALREADY_LISTEN]: Listen method has been called more than once without closing.
+    at new NodeError (node:internal/errors:371:5)
+    at Server.listen (node:net:1416:11)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:109:6)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:09:54.632Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:10:38.359Z [winston-test] error: uncaughtException: Listen method has been called more than once without closing.
+Error [ERR_SERVER_ALREADY_LISTEN]: Listen method has been called more than once without closing.
+    at new NodeError (node:internal/errors:371:5)
+    at Server.listen (node:net:1416:11)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:109:6)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:10:38.361Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:18:13.005Z [winston-test] error: uncaughtException: Listen method has been called more than once without closing.
+Error [ERR_SERVER_ALREADY_LISTEN]: Listen method has been called more than once without closing.
+    at new NodeError (node:internal/errors:371:5)
+    at Server.listen (node:net:1416:11)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:109:6)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:18:13.009Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:24:43.053Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:26:08.173Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:26:52.018Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:27:26.974Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:102:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T14:30:46.820Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:31:19.959Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:31:23.456Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:101:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T14:34:52.663Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:34:56.010Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:101:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T14:36:10.065Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:36:13.217Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:101:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T14:43:51.423Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:43:53.868Z [winston-test] error: uncaughtException: string violation: userPw cannot be an array or an object
+SequelizeValidationError: string violation: userPw cannot be an array or an object
+    at InstanceValidator._validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async User.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2360:7)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async signUp (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:66:3)
+2022-05-05T14:45:21.054Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:45:51.550Z [winston-test] error: uncaughtException: string violation: userPw cannot be an array or an object
+SequelizeValidationError: string violation: userPw cannot be an array or an object
+    at InstanceValidator._validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async User.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2360:7)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async signUp (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:66:3)
+2022-05-05T14:49:46.661Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:49:50.207Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'length')
+TypeError: Cannot read properties of null (reading 'length')
+    at signUp (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:35:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-05T14:50:39.494Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:50:42.339Z [winston-test] error: uncaughtException: string violation: userPw cannot be an array or an object
+SequelizeValidationError: string violation: userPw cannot be an array or an object
+    at InstanceValidator._validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async User.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2360:7)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async signUp (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:66:3)
+2022-05-05T14:53:28.407Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:53:31.728Z [winston-test] error: uncaughtException: string violation: userPw cannot be an array or an object
+SequelizeValidationError: string violation: userPw cannot be an array or an object
+    at InstanceValidator._validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async User.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2360:7)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async signUp (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:66:3)
+2022-05-05T14:53:59.460Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:54:28.216Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:55:28.066Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:59:43.280Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:59:57.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T15:01:11.688Z [winston-test] info: 3000 포트로 서버가 켜졌어요!

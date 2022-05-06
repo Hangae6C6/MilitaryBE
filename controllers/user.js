@@ -57,11 +57,11 @@ const signUp = async (req, res) => {
     });
     return;
   }
-
+  // console.log('111');
   // bcrypt module -> 암호화
-  // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)
+  // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)ß
   const from = "webSite";
-  const hashed = bcrypt.hash(userPw, 10);
+  const hashed = await bcrypt.hash(userPw, 10);
   // const user = new User({ userId, userNick, userPw : hashed, from})
   await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
@@ -81,12 +81,11 @@ const login = async (req, res) => {
   const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; 
   //  console.log("user: ", user); // 토큰옵션
    
-  
   console.log(user);
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compareSync(userPw, user.userPw);
   
-  console.log("----------->",userPw, user);
+  console.log("----------->",unHashPw);
   if (user.userId !== userId || unHashPw === false) {
     res.status(401).json({
       msg: "아이디 혹은 비밀번호가 안맞습니다.",
