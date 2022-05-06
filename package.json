@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon app.js",
+    "start": "ng serve --ssl --ssl-key rootca.key --ssl-cert rootca.crt"
   },
   "keywords": [],
   "author": "",

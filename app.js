@@ -4,15 +4,11 @@ const cookieParser = require("cookie-parser");
 //폼 데이터 또는 AJAX 요청으로 온 POST데이터를 처리한다.
 const bodyParser = require("body-parser");
 const morgan = require("morgan"); // 요청과 응답에 대한 정보를 추가로 자세히 콘솔에 기록
-const winston = require("./config/winston");
 const helmet = require("helmet");
 const cors = require("cors");
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
-
-const HTTP_PORT = 8080;
-const HTTPS_PORT = 8443;
 
 const port = 3000;
 // const {Server} = require('socket.io')
@@ -77,12 +73,12 @@ const app = express();
 //         })
 //     })
 
-const io = socketIo(http, {
-  cors: {
-    origin: "*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
-    methods: ["GET", "POST"],
-  },
-});
+// const io = socketIo(http, {
+//   cors: {
+//     origin: "*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+//     methods: ["GET", "POST"],
+//   },
+// });
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -91,7 +87,6 @@ const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
 const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
-const calRouter = require("./routers/cal");
 const kakaoRouter = require("./routers/kakaoLogin");
 
 // 접속 로그 남기기
@@ -131,13 +126,6 @@ app.use(function (req, res, next) {
 });
 
 //라우터 연결
-// Default route for server status
-app.get("/", (req, res) => {
-  res.json({
-    message: `Server is running on port ${req.secure ? HTTPS_PORT : HTTP_PORT}`,
-  });
-});
-
 app.use("/api", [
   userRouter,
   authRouter,
@@ -149,26 +137,21 @@ app.use("/api", [
   mypageRouter,
 ]);
 
-// // // Create an HTTP server.
-// // http.createServer(app).listen(HTTP_PORT);
-// // Create an HTTPS server.
-// https.createServer(options, app).listen(HTTPS_PORT);
-
 //서버 열기..
 http.listen(port, () => "번 포트로 서버가 켜졌어요!");
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
 
-io.on("connection", (socket) => {
-  socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log("join_room->여기를 지나갔어요");
-  });
+// io.on("connection", (socket) => {
+//   socket.on("join_room", (data) => {
+//     socket.join(data);
+//     console.log("join_room->여기를 지나갔어요");
+//   });
 
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message");
-    console.log("send_message -> 메세지 전달이잘돼요");
-  });
-});
+//   socket.on("send_message", (data) => {
+//     socket.to(data.room).emit("receive_message");
+//     console.log("send_message -> 메세지 전달이잘돼요");
+//   });
+// });
 
 app.get("/", async (req, res) => {
   console.log("main_page");
