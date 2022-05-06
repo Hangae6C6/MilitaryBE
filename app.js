@@ -74,6 +74,7 @@ const authRouter = require('./routers/auth')
 // const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
 // const calRouter = require('./routers/cal')
+const mailtestRouter = require('./routers/mailtest')
 const mypageRouter = require('./routers/mypage')
 
 // 접속 로그 남기기
@@ -111,6 +112,7 @@ app.use("/api", [
     // userdataRouter,
     // detailRouter,
     // calRouter,
+    mailtestRouter,
     mypageRouter,
 ])
 
