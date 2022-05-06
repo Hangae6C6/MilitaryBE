@@ -18,7 +18,7 @@ const fs = require("fs");
 const http = require("http");
 const https = require("https");
 const httpProt = 80;
-const httpsPort = 43;
+const httpsPort = 443;
 
 const privateKey = fs.readFileSync(__dirname + "/private.key", "utf8");
 const certificate = fs.readFileSync(__dirname + "/certificate.crt", "utf8");
