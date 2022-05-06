@@ -1510,4 +1510,23 @@ SequelizeValidationError: string violation: userPw cannot be an array or an obje
 2022-05-05T15:01:11.688Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-06T07:38:05.878Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 4292a39b0bf02a2d5211b5b2ee691409c9a8c97e
+<<<<<<< HEAD
+2022-05-06T08:07:24.477Z [winston-test] error: uncaughtException: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:13:18)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+=======
 2022-05-06T09:47:05.418Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+>>>>>>> f822165e8ad7a835d388a825af8b1716b8f99a27
