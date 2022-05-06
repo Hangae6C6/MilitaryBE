@@ -1240,41 +1240,128 @@ SyntaxError: C:\Users\황인호\Desktop\Military_BE\MilitaryBE\config\config.jso
 2022-05-05T07:37:36.041Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:37:53.239Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-05T07:38:30.593Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-05T08:23:10.679Z [winston-test] error: uncaughtException: User.init is not a function
-TypeError: User.init is not a function
-    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/models/index.js:27:6)
+2022-05-05T08:31:45.081Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:32:04.891Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+2022-05-05T08:33:06.036Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:35:03.498Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:35:06.767Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:16:21)
+2022-05-05T08:36:06.892Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:36:10.331Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:16:21)
+2022-05-05T08:36:21.174Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:36:24.742Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jasonkim/Documents/GitHub/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async userChallenge (/Users/jasonkim/Documents/GitHub/MilitaryBE/controllers/main.js:17:21)
+2022-05-05T08:36:51.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T08:55:52.741Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:44:17.543Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:44:17.553Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/app.js:16:21)
-    at Module._compile (node:internal/modules/cjs/loader:1103:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
-2022-05-05T08:23:48.006Z [winston-test] error: uncaughtException: User.init is not a function
-TypeError: User.init is not a function
-    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/models/index.js:27:6)
-    at Module._compile (node:internal/modules/cjs/loader:1103:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/app.js:16:21)
-    at Module._compile (node:internal/modules/cjs/loader:1103:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
-2022-05-05T08:24:49.400Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-05T09:15:51.192Z [winston-test] error: uncaughtException: ENOENT: no such file or directory, open './rootca.key'
-Error: ENOENT: no such file or directory, open './rootca.key'
-    at Object.openSync (node:fs:585:3)
-    at Object.readFileSync (node:fs:453:35)
-    at Object.<anonymous> (/Users/jasonkim/Documents/GitHub/MilitaryBE/app.js:25:11)
-    at Module._compile (node:internal/modules/cjs/loader:1103:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
     at node:internal/main/run_main_module:17:47
-2022-05-05T09:24:38.477Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-05T12:24:39.529Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:44:33.326Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:44:33.333Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:45:22.191Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:45:22.199Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:49:03.664Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:49:03.673Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:01:32.014Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:01:32.023Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47

@@ -11,13 +11,13 @@ const mainPage = async (req, res) => {
 //로그인한 회원의 챌린지 현황 보여주기 라우터
 //회원이 진행중인 모든 챌린지의 평균 진행률
 const userChallenge = async (req, res) => {
-  const { userId } = res.locals.user.dataValues;
+  const { userId } = req.query;
 
+  console.log(userId);
   const challenge = await Challenge.findAll({
     where: { userId: userId },
   });
   let sum = 0;
-
   for (let i = 0; i < challenge.length; i++) {
     sum += parseInt(challenge[i].dataValues.challengeProgress);
   }

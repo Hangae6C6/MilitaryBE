@@ -76,17 +76,23 @@ const app = express();
 //             msg,
 //         })
 //     })
-// })
+
+const io = socketIo(http, {
+  cors: {
+    origin: "*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+    methods: ["GET", "POST"],
+  },
+});
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
 const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-// const userdataRouter = require('./routers/userdata')
-// const detailRouter = require('./routers/detail')
 const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
+const calRouter = require("./routers/cal");
+const kakaoRouter = require("./routers/kakaoLogin");
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -113,8 +119,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
 app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
-app.use(helmet());
-app.disable("x-powered-by");
+// app.use(helmet());
+// app.disable("x-powered-by");
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 //라우터 연결
 // Default route for server status
@@ -140,5 +154,23 @@ app.use("/api", [
 // // Create an HTTPS server.
 // https.createServer(options, app).listen(HTTPS_PORT);
 
-//서버 열기
-app.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+//서버 열기..
+http.listen(port, () => "번 포트로 서버가 켜졌어요!");
+// app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
+
+io.on("connection", (socket) => {
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log("join_room->여기를 지나갔어요");
+  });
+
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message");
+    console.log("send_message -> 메세지 전달이잘돼요");
+  });
+});
+
+app.get("/", async (req, res) => {
+  console.log("main_page");
+  res.sendFile(__dirname + "/index.html");
+});

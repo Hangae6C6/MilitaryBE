@@ -54,3 +54,5 @@ module.exports = { userOptioalData };
 // console.log('전역까지 남은 일수-->',y);
 // var z = (x-y)/x*100;
 // console.log('군생활 ',z,'%');
+
+
