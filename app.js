@@ -98,7 +98,7 @@ io.on("connection", (socket) => {
 //
 app.get(
   "/.well-known/pki-validation/039A86379893849170952659C172F8EC.txt",
-  async (req, res) => {
+  (req, res) => {
     res.sendFile(
       __dirname +
         "/well-known/pki-validation/039A86379893849170952659C172F8EC.txt"
