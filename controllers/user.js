@@ -104,7 +104,6 @@ const login = async (req, res) => {
 };
 
 // 로그인체크 
-// 체크
 const loginCheck = async (req, res) => {
   const { user } = res.locals;
   res.status(200).json({

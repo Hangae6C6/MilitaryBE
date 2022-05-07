@@ -5,7 +5,7 @@ const {
   userChallenge,
   preTest,
   search,
-  openChallenge,
+  openChallenge1,
 } = require("../controllers/main");
 const authMiddleware = require("../middleware/authMiddleWare");
 
@@ -19,6 +19,8 @@ router.post("/main/preTest", authMiddleware, preTest);
 router.get("/search", search);
 
 //챌린지 개설
-router.post("/challenge", authMiddleware, openChallenge);
+router.post("/challenge", authMiddleware, openChallenge1);
+
+
 
 module.exports = router;
