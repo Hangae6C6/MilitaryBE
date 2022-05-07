@@ -125,7 +125,7 @@ app.get(
   (req, res) => {
     res.sendFile(
       __dirname +
-        "/well-known/pki-validation/783D42BAE9F6B3346E9B9349728243AE.txt"
+        "/.well-known/pki-validation/783D42BAE9F6B3346E9B9349728243AE.txt"
     );
   }
 );
