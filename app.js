@@ -17,7 +17,7 @@ const { sequelize } = require("./models");
 const fs = require("fs");
 const http = require("http");
 const https = require("https");
-const httpProt = 80;
+const httpProt = 3000;
 const httpsPort = 443;
 
 const privateKey = fs.readFileSync(__dirname + "/private.key", "utf8");
