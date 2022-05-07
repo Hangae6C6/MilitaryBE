@@ -110,15 +110,15 @@ io.on("connection", (socket) => {
   });
 });
 
-app_low.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
-    console.log(to);
-    res.redirect(to);
-  }
-});
+// app_low.use((req, res, next) => {
+//   if (req.secure) {
+//     next();
+//   } else {
+//     const to = `https://${req.hostname}:${httpsPort}${req.url}`;
+//     console.log(to);
+//     res.redirect(to);
+//   }
+// });
 
 app.get(
   "/.well-known/pki-validation/783D42BAE9F6B3346E9B9349728243AE.txt",
@@ -173,6 +173,6 @@ http.createServer(app_low).listen(httpProt, () => {
   console.log("http 서버가 켜졌어요!");
 });
 
-https.createServer(credentials, app).listen(httpsPort, () => {
-  console.log("https 서버가 켜졌어요!");
-});
+// https.createServer(credentials, app).listen(httpsPort, () => {
+//   console.log("https 서버가 켜졌어요!");
+// });
