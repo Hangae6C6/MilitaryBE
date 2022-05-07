@@ -49,6 +49,15 @@ const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
 const kakaoRouter = require("./routers/kakaoLogin");
 
+app_low.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
+    console.log(to);
+    res.redirect(to);
+  }
+});
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
   console.log(
@@ -65,15 +74,6 @@ const requestMiddleware = (req, res, next) => {
 };
 
 //각종 미들웨어
-app.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
-    console.log(to);
-    res.redirect(to);
-  }
-});
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded())
@@ -146,18 +146,18 @@ app.get("/", async (req, res) => {
 //     })
 // })
 
-io.on("connection", (socket) => {
-  console.log("연결이되었습니다.");
-  socket.on("init", (payload) => {
-    console.log(payload);
-  });
-  socket.on("send message", (item) => {
-    //send message 이벤트 발생
-    console.log(item.name + " : " + item.message);
-    io.emit("receive message", { name: item.name, message: item.message });
-    //클라이언트에 이벤트를 보냄
-  });
-});
+// io.on("connection", (socket) => {
+//   console.log("연결이되었습니다.");
+//   socket.on("init", (payload) => {
+//     console.log(payload);
+//   });
+//   socket.on("send message", (item) => {
+//     //send message 이벤트 발생
+//     console.log(item.name + " : " + item.message);
+//     io.emit("receive message", { name: item.name, message: item.message });
+//     //클라이언트에 이벤트를 보냄
+//   });
+// });
 
 // app.get("/", async (req, res) => {
 //   console.log("main_page");
@@ -168,10 +168,10 @@ io.on("connection", (socket) => {
 // http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
 
-http.createServer(app).listen(httpProt, () => {
+http.createServer(app_low).listen(httpProt, () => {
   console.log("http 서버가 켜졌어요!");
 });
 
-https.createServer(credentials, app_low).listen(httpsPort, () => {
+https.createServer(credentials, app).listen(httpsPort, () => {
   console.log("https 서버가 켜졌어요!");
 });
