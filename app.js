@@ -122,7 +122,7 @@ app.get(
 
 app.get("/", async (req, res) => {
   console.log("main_page");
-  res.sendFile(__dirname + "/index.html");
+  res.send("index.html");
 });
 // io.on('connection', socket => {
 
