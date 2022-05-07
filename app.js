@@ -85,14 +85,14 @@ app.use("/api", [
 ]);
 
 io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+
   socket.on("join_room", (data) => {
     socket.join(data);
-    console.log("join_room->여기를 지나갔어요");
   });
 
   socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message");
-    console.log("send_message -> 메세지 전달이잘돼요");
+    socket.to(data.room).emit("receive_message", data);
   });
 });
 
