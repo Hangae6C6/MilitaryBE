@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
-// const moment = require('moment')
-// const Cal = require('../schemas/cal')
+const { endDay } = require('../controllers/cal');
+const authMiddleWare = require('../middleware/authMiddleWare');
+
+router.get("/endDay",authMiddleWare, endDay);
 
 // // 남은 일수 가져오기
 // router.get('/endDay', (req,res)=> {
@@ -43,6 +45,5 @@ const router = express.Router()
 //         res.status(400).json({result:false,msg:"전역일 입력 실패..."})
 //     }
 // })
-
 
 module.exports = router

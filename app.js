@@ -73,7 +73,7 @@ const userRouter = require('./routers/user')
 const authRouter = require('./routers/auth')
 // const userdataRouter = require('./routers/userdata')
 // const detailRouter = require('./routers/detail')
-// const calRouter = require('./routers/cal')
+const calRouter = require('./routers/cal')
 const mailtestRouter = require('./routers/mailtest')
 const mypageRouter = require('./routers/mypage')
 
@@ -111,7 +111,7 @@ app.use("/api", [
     authRouter,
     // userdataRouter,
     // detailRouter,
-    // calRouter,
+    calRouter,
     mailtestRouter,
     mypageRouter,
 ])

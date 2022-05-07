@@ -660,3 +660,60 @@ SyntaxError: Unexpected token '{'
 2022-05-04T09:02:32.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:16.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-04T09:03:26.271Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T07:30:29.660Z [winston-test] error: uncaughtException: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js:2:20)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-07T07:30:31.995Z [winston-test] error: uncaughtException: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+Error: Cannot find module 'nodemailer'
+Require stack:
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\mailtest.js
+- C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\mailtest.js:2:20)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-05-07T07:31:11.852Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:42:21.905Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:42:58.648Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:44:23.224Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:44:58.202Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:45:13.987Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:45:25.648Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:45:42.447Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:45:55.125Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T08:45:58.774Z [winston-test] error: uncaughtException: moment is not defined
+ReferenceError: moment is not defined
+    at endDay (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\controllers\cal.js:15:19)
+    at Layer.handle [as handle_request] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\route.js:137:13)
+    at C:\Users\황인호\Desktop\Military_BE\MilitaryBE\middleware\authMiddleWare.js:19:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T08:46:18.501Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
