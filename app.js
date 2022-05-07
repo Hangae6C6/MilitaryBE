@@ -49,15 +49,6 @@ const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
 const kakaoRouter = require("./routers/kakaoLogin");
 
-app_low.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
-    console.log(to);
-    res.redirect(to);
-  }
-});
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
   console.log(
@@ -167,6 +158,16 @@ app.get("/", async (req, res) => {
 //서버 열기..
 // http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
+
+app_low.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
+    console.log(to);
+    res.redirect(to);
+  }
+});
 
 http.createServer(app_low).listen(httpProt, () => {
   console.log("http 서버가 켜졌어요!");
