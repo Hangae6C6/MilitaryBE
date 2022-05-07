@@ -1,6 +1,3 @@
 node_modules
 key.txt
 winston-test.log
-private.key
-ca_bundle.crt
-certificate.crt
