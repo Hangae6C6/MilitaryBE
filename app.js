@@ -65,6 +65,15 @@ const requestMiddleware = (req, res, next) => {
 };
 
 //각종 미들웨어
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
+    console.log(to);
+    res.redirect(to);
+  }
+});
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded())
@@ -108,16 +117,6 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message");
     console.log("send_message -> 메세지 전달이잘돼요");
   });
-});
-
-app.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
-    console.log(to);
-    res.redirect(to);
-  }
 });
 
 app.get(
