@@ -8,28 +8,13 @@ const winston = require("./config/winston");
 const helmet = require("helmet");
 const cors = require("cors");
 const port = 3000;
+const app = require("express")();
+const http = require("http").createServer(app);
 const socketIo = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
-// const {Server} = require('socket.io')
-// const env = require('./env')
-// const configurePassport = require('./passport')
-const app_low = express();
-const app = express();
-const fs = require("fs");
-const http = require("http");
-const https = require("https");
-const httpProt = 3000;
-const httpsPort = 4433;
 
-const privateKey = fs.readFileSync(__dirname + "/private.key", "utf8");
-const certificate = fs.readFileSync(__dirname + "/certificate.crt", "utf8");
-const ca = fs.readFileSync(__dirname + "/ca_bundle.crt", "utf8");
-const credentials = {
-  key: privateKey,
-  cert: certificate,
-  ca: ca,
-};
+
 
 const io = socketIo(http, {
   cors: {
@@ -48,15 +33,7 @@ const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
 const kakaoRouter = require("./routers/kakaoLogin");
 
-app_low.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    const to = `https://${req.hostname}:${httpsPort}${req.url}`;
-    console.log(to);
-    res.redirect(to);
-  }
-});
+
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -76,7 +53,7 @@ const requestMiddleware = (req, res, next) => {
 //각종 미들웨어
 app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded())
+app.use(express.urlencoded())
 app.use(cookieParser());
 app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
@@ -119,59 +96,6 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get(
-  "/.well-known/pki-validation/783D42BAE9F6B3346E9B9349728243AE.txt",
-  (req, res) => {
-    res.sendFile(
-      __dirname +
-        "/well-known/pki-validation/783D42BAE9F6B3346E9B9349728243AE.txt"
-    );
-  }
-);
-
-app.get("/", async (req, res) => {
-  console.log("main_page");
-  res.send("index.html");
-});
-// io.on('connection', socket => {
-
-//     socket.on("join_room", (data)=> {
-//         socket.join(data)
-//         console.log("join_room->여기를 지나갔어요")
-//     })
-
-//     socket.on('send_message', (data)=> {
-//         socket.to(data.room).emit("receive_message")
-//         console.log("send_message -> 메세지 전달이잘돼요")
-//     })
-// })
-
-// io.on("connection", (socket) => {
-//   console.log("연결이되었습니다.");
-//   socket.on("init", (payload) => {
-//     console.log(payload);
-//   });
-//   socket.on("send message", (item) => {
-//     //send message 이벤트 발생
-//     console.log(item.name + " : " + item.message);
-//     io.emit("receive message", { name: item.name, message: item.message });
-//     //클라이언트에 이벤트를 보냄
-//   });
-// });
-
-// app.get("/", async (req, res) => {
-//   console.log("main_page");
-//   res.sendFile(__dirname + "/index.html");
-// });
 
 //서버 열기..
-// http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
-// app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
-
-http.createServer(app_low).listen(httpProt, () => {
-  console.log("http 서버가 켜졌어요!");
-});
-
-https.createServer(credentials, app).listen(httpsPort, () => {
-  console.log("https 서버가 켜졌어요!");
-});
+http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
