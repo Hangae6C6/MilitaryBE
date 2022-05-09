@@ -131,5 +131,35 @@ app.use("/api", [
   kakaoRouter,
 ]);
 
+<<<<<<< HEAD
+
+
+
+io.on('connection', socket => {
+
+    socket.on("join_room", (data)=> {
+        socket.join(data)
+        console.log("join_room->여기를 지나갔어요")
+    })
+
+    socket.on('send_message', (data)=> {
+        socket.to(data.room).emit("receive_message")
+        console.log("send_message -> 메세지 전달이잘돼요") 
+    })
+})
+
+  
+
+
+app.get("/", async (req, res) => {
+    console.log("main_page")    
+    res.sendFile(__dirname + "/index.html");
+   });
+
+//서버 열기..
+http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+// app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
+=======
 //서버 열기..
 server.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+>>>>>>> d83880771f34eb83acdcad1dce3c9c84c2a83dd8
