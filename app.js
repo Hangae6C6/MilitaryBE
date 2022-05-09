@@ -38,35 +38,29 @@ app.post('/send_mail', cors(), async(req,res)=> {
 
 })
 
-app.use(express.static(path.join(__dirname, 'public')));
-let numUsers = 0;
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000", // 여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
-    methods: ["GET", "POST"],
-  },
-});
 
-io.on("connection", (socket) => {
-    let addedUser = false;
+// const io = new Server(server, {
+//   cors: {
+//     origin: "http://localhost:3000", // 여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+//     methods: ["GET", "POST"],
+//   },
+// });
 
-  console.log(`User Connected: ${socket.id}`);
+io.on('connection', (socket) => {
+    socket.on('newUser', (data) => {
+      io.emit('enter', data);
+    });
+  
+    socket.on('message', (data) => {
+      console.log('client가 보낸 데이터: ', data);
+      io.emit('upload', data);
+    });
+  
+    socket.on('leaveUser', (nick) => {
+      io.emit('out', nick);
+    });
+  });
 
-    socket.on("join_room", (data)=> {
-        socket.join(data)
-        console.log(`User with ID: ${socket.id} joined room: ${data}`)
-    })
-
-    socket.on("send_message", (data)=> {
-        socket.to(data.room).emit("receive_message", data)
-        console.log(data)
-    })
-
-    socket.on("leave", (room)=> {
-        socket.leave(room)
-        console.log("방을 떠났슴다.")
-    })
-})
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
