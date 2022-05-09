@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       challengeCnt: DataTypes.INTEGER,
       challengeViewCnt: DataTypes.INTEGER,
       userId: DataTypes.STRING, 
+      lastSavePage:DataTypes.INTEGER,
+      finishFlag:DataTypes.STRING,
+      challengeStep:DataTypes.STRING,
+      challengeEndDt:DataTypes.STRING,
+      challengeStartDt:DataTypes.STRING
     },
     {
       sequelize,

@@ -40,9 +40,26 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      lastSavePage: {
+        allowNull: false,
+        type:Sequelize.INTEGER,
+      },
+      challengeStep: {
+        allowNull: false,
+        type:Sequelize.STRING,
+      },
+      challengeStartDt: {
+        allowNull: false,
+        type:Sequelize.STRING,
+      },
+      challengeEndDt: {
+        allowNull: false,
+        type:Sequelize.STRING,
+      }
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("Challenges");
   },
 };
+

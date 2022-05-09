@@ -1685,3 +1685,258 @@ ReferenceError: openChallenge1 is not defined
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
 2022-05-07T07:12:38.006Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:42:19.585Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:42:22.797Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:99:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:42:56.642Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:46:26.375Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:48:47.846Z [winston-test] error: uncaughtException: Cannot access 'challengeNum' before initialization
+ReferenceError: Cannot access 'challengeNum' before initialization
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:49)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:50:32.801Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:53:34.778Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:53:39.302Z [winston-test] error: uncaughtException: Cannot access 'challengeNum' before initialization
+ReferenceError: Cannot access 'challengeNum' before initialization
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:49)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:54:25.116Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:54:30.999Z [winston-test] error: uncaughtException: challengeNum is not defined
+ReferenceError: challengeNum is not defined
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:46)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:57:31.105Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:57:34.455Z [winston-test] error: uncaughtException: Challenge.findAll(...).sort is not a function
+TypeError: Challenge.findAll(...).sort is not a function
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:58:12.479Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:58:15.368Z [winston-test] error: uncaughtException: Challenge.findAll(...).sort is not a function
+TypeError: Challenge.findAll(...).sort is not a function
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:58:30.825Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:58:33.892Z [winston-test] error: uncaughtException: Challenge.findAll(...).sort is not a function
+TypeError: Challenge.findAll(...).sort is not a function
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:49)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T09:59:00.522Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T09:59:04.198Z [winston-test] error: uncaughtException: Challenge.find is not a function
+TypeError: Challenge.find is not a function
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:37)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:00:09.871Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:00:13.155Z [winston-test] error: uncaughtException: challengeNum is not defined
+ReferenceError: challengeNum is not defined
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:43)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:00:56.973Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:01:01.821Z [winston-test] error: uncaughtException: challengeNum is not defined
+ReferenceError: challengeNum is not defined
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:103:43)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:03:46.455Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:03:48.972Z [winston-test] error: uncaughtException: challengeNum is not defined
+ReferenceError: challengeNum is not defined
+    at openChallenge1 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:104:46)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:04:00.504Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:07:39.928Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:08:16.447Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:11:30.566Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:11:33.531Z [winston-test] error: uncaughtException: Missing where attribute in the options parameter
+AssertionError [ERR_ASSERTION]: Missing where attribute in the options parameter
+    at Function._optionsMustContainWhere (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2070:5)
+    at Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1836:10)
+    at openChallenge2 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:119:19)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:12:44.197Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:12:47.603Z [winston-test] error: uncaughtException: Missing where attribute in the options parameter
+AssertionError [ERR_ASSERTION]: Missing where attribute in the options parameter
+    at Function._optionsMustContainWhere (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2070:5)
+    at Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1836:10)
+    at openChallenge2 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:119:19)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:15:15.229Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:16:30.560Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:16:33.505Z [winston-test] error: uncaughtException: Missing where attribute in the options parameter
+AssertionError [ERR_ASSERTION]: Missing where attribute in the options parameter
+    at Function._optionsMustContainWhere (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2070:5)
+    at Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1836:10)
+    at openChallenge2 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:119:19)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-07T10:21:02.942Z [winston-test] error: uncaughtException: missing ) after argument list
+/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:126
+  where: {challengeNum:challengeNum}
+  ^^^^^
+
+SyntaxError: missing ) after argument list
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1032:15)
+    at Module._compile (node:internal/modules/cjs/loader:1067:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/main.js:12:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+2022-05-07T10:21:52.977Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:26:45.604Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:28:33.077Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:29:43.267Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:32:11.384Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:32:40.043Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:36:22.080Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:36:35.198Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:36:40.048Z [winston-test] error: uncaughtException: Unknown column 'challengeStep' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.bulkUpdate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:355:12)
+    at async Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1950:28)
+    at async openChallenge4 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:158:5)
+2022-05-07T10:36:48.939Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T10:36:51.710Z [winston-test] error: uncaughtException: Unknown column 'challengeStep' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.bulkUpdate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:355:12)
+    at async Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1950:28)
+    at async openChallenge4 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:158:5)
+2022-05-07T10:38:20.027Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:27:06.520Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:47:42.772Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userPw')
+TypeError: Cannot read properties of null (reading 'userPw')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:84:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-09T07:48:34.214Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:49:17.091Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:78:16)
+2022-05-09T07:49:50.658Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:49:51.007Z [winston-test] error: uncaughtException: WHERE parameter "userId" has invalid "undefined" value
+Error: WHERE parameter "userId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:78:16)
+2022-05-09T07:50:10.296Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:50:23.936Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:51:24.776Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:52:26.872Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T07:55:19.806Z [winston-test] error: uncaughtException: ARRAY is missing type definition for its values.
+Error: ARRAY is missing type definition for its values.
+    at Sequelize.normalizeDataType (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:526:15)
+    at Sequelize.normalizeAttribute (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:540:27)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:724:34
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13469:38
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13468:7)
+    at Function.init (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:723:28)
+    at module.exports (/Users/jungdaekyu/Desktop/MilitaryBE/models/challenge.js:14:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:24:54
+2022-05-09T07:55:26.520Z [winston-test] error: uncaughtException: ARRAY is missing type definition for its values.
+Error: ARRAY is missing type definition for its values.
+    at Sequelize.normalizeDataType (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:526:15)
+    at Sequelize.normalizeAttribute (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:540:27)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:724:34
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13469:38
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13468:7)
+    at Function.init (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:723:28)
+    at module.exports (/Users/jungdaekyu/Desktop/MilitaryBE/models/challenge.js:14:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:24:54
+2022-05-09T07:57:36.197Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T08:08:26.541Z [winston-test] error: uncaughtException: ARRAY is missing type definition for its values.
+Error: ARRAY is missing type definition for its values.
+    at Sequelize.normalizeDataType (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:526:15)
+    at Sequelize.normalizeAttribute (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:540:27)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:724:34
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13469:38
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/lodash/lodash.js:13468:7)
+    at Function.init (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:723:28)
+    at module.exports (/Users/jungdaekyu/Desktop/MilitaryBE/models/challenge.js:14:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:24:54
+2022-05-09T08:11:50.574Z [winston-test] error: uncaughtException: VARCHAR is not defined
+ReferenceError: VARCHAR is not defined
+    at module.exports (/Users/jungdaekyu/Desktop/MilitaryBE/models/challenge.js:28:31)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:24:54
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:23:4)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2022-05-09T08:12:16.550Z [winston-test] error: uncaughtException: STRING is not defined
+ReferenceError: STRING is not defined
+    at module.exports (/Users/jungdaekyu/Desktop/MilitaryBE/models/challenge.js:28:31)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:24:54
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/models/index.js:23:4)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+2022-05-09T08:30:42.685Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T08:31:20.893Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T08:33:25.187Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T08:37:08.417Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T08:37:12.222Z [winston-test] error: uncaughtException: WHERE parameter "challengeNum" has invalid "undefined" value
+Error: WHERE parameter "challengeNum" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.whereQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1626:24)
+    at MySQLQueryGenerator.updateQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:320:116)
+    at MySQLQueryInterface.bulkUpdate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:350:37)
+    at Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1950:54)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async openChallenge4 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:158:5)

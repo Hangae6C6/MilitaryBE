@@ -93,47 +93,90 @@ const search = async (req, res) => {
 
 // //챌린지 조건설정 1-1
 const openChallenge1 = async (req, res) => {
-  // const { userId } = res.locals.user;
-  // const { challengeTitle } = req.body;
+  const { userId } = res.locals.user;
+  const { challengeTitle } = req.body;
   
-  // await Challenge.create({
-  //   challengeTitle,
-  //   userId,
-  // });
-  
+  await Challenge.create({
+    challengeTitle,
+    userId,
+  });
 
-  // // const challengeNum = await Challenge.findOne({challengeNum}).sort(-1).challengeNum; //challengeNum을 1-2로 넘겨주기위해 디비에서 빼옴
-  // res.status(201).json({
-  //   result: true,
-  //   // challengeNum,
-  //   msg: "일단첼린지개설완료",
-  // });
+  const challenge = await Challenge.findAll({
+    order: [[ 'challengeNum','DESC' ]] //sort개념
+  }) //challengeNum을 1-2로 넘겨주기위해 디비에서 빼옴
+  // console.log("12312321123",challenge);
+  res.status(201).json({
+    result: true,
+    challengeNum:challenge[0].challengeNum,
+    msg: "일단첼린지개설완료",
+  });
 };
 
 // 챌린지 조건설정 1-2 참여인원(challengeCnt) , 시작일(challengeStartDt), 종료일(challengeEndDt)
-// const openChallenge2 = async (req,res) => {
-//   const { challengeCnt,challengeStartDt,challengeEndDt,challengeNum} = req.body;
+const openChallenge2 = async (req,res) => {
+  const { challengeCnt,challengeStartDt,challengeEndDt,challengeNum} = req.body;
+  // console.log( req.body);
+  await Challenge.update(
+    {
+    challengeCnt:challengeCnt,
+    challengeStartDt:challengeStartDt,
+    challengeEndDt:challengeEndDt,
+    lastSavePage:2
+  },
+  {where: {challengeNum:challengeNum}}
+  );
+  res.status(201).json({
+      result:true,
+      challengeNum,
+      msg : "인원,시작,종료일단넘어가면성공"
+  });
+};
 
-//   await Challenge.update({
-//     where: {
-//       challengeNum
-//     },
-//     challengeCnt,
-//     challengeStartDt,
-//     challengeEndDt
-//   });
-//   res.status(201).json({
-//       result:true,
+//챌린지 조건설정 1-3 주제(type)
+const openChallenge3 = async (req,res) => {
+  const {challengeNum,challengeType} = req.body;
 
-//       msg : "일단넘어가면성공"
-//   });
-// };
+  await Challenge.update(
+    {
+    challengeType:challengeType,
+    lastSavePage:3
+  },
+  {where: {challengeNum:challengeNum}}
+  );
+  res.status(201).json({
+    result:true,
+    challengeNum,
+    msg : "타입일단넘어가면성공"
+});
+};
 
-// 챌린지 조건설정 1-3 
-// const openChallenge3 = async (req,res) => {
- 
-// };
 
+//챌린짖 조건설정 1-4(step)
+const openChallenge4 = async (req,res) => {
+    const {challengeNum,challengeStep} = req.body;
+    console.log("test110",challengeStep);
+    await Challenge.update(
+      {
+      challengeStep:challengeStep, // 배열로 challengeStep:[{step1,text},{step2,text}......] --> challengeStep[0].
+      lastSavePage:4
+    },
+    {where: {challengeNum:challengeNum}}
+    );
+    
+    const openChallengeArray = [];
+    openChallengeArray.push(challengeStep)
+    console.log("tetetet",openChallengeArray);
+    res.status(201).json({
+      result:true,
+      challengeNum,
+      msg : "스탭일단넘어가면성공"
+  });
+};
+
+// 챌린지 개설하기를 눌렀는데 lastSavePage가 존재하는지 확인 1-1에서 취소하면 아예 취소되게
+const findChallenge = async (req,res) => {
+  
+};
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
 const joinChallenge = async (req, res) => {
@@ -186,4 +229,4 @@ const joinCancelChallenge = async (req, res) => {
 
 
 
-module.exports = { mainPage, userChallenge, preTest, search, openChallenge1 };
+module.exports = { mainPage, userChallenge, preTest, search, openChallenge1,openChallenge2,openChallenge3,openChallenge4,findChallenge };
