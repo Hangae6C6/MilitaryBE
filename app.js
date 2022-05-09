@@ -64,6 +64,8 @@ io.on("connection", (socket) => {
       socket.leave(room)
       console.log(`${socket.id}님께서 나가셨습니다.`)
     })
+
+    socket.emit("disconnect",msg)
   });
 
 //라우터 불러오기
