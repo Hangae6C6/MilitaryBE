@@ -1353,3 +1353,259 @@ Require stack:
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+2022-05-05T13:36:33.631Z [winston-test] error: uncaughtException: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:13:18)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+2022-05-05T13:39:52.966Z [winston-test] error: uncaughtException: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module 'socket.io'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:13:18)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+2022-05-05T13:40:24.420Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:40:24.435Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:43:02.044Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:43:02.060Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:46:24.397Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:46:24.410Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:48:33.756Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:48:33.769Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:50:06.251Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:85:6)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:50:06.257Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:52:26.138Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:52:26.153Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:52:38.228Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:52:38.243Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:53:17.002Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:53:17.014Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:53:25.430Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:53:25.445Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T13:59:18.709Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T13:59:18.724Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:04:08.553Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:04:08.568Z [winston-test] error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/home/ubuntu/MilitaryBE/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:110:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-05T14:05:55.714Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:14:11.854Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-05T14:28:04.890Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-06T00:39:44.778Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-06T00:46:01.939Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T02:04:12.086Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T07:03:52.769Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-07T07:28:33.706Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T10:15:57.785Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
