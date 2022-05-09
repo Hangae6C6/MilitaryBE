@@ -103,4 +103,4 @@ app.use("/api", [
 ]);
 
 //서버 열기..
-http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+server.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
