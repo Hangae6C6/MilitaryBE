@@ -9,11 +9,11 @@ const helmet = require("helmet");
 const cors = require("cors");
 const port = 3000;
 const app = require("express")();
-const http = require("http")
-const {Server} = require("socket.io");
+const http = require("http");
+const { Server } = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
-const server = http.createServer(app)
+const server = http.createServer(app);
 app.use(cors());
 
 const io = new Server(server, {
@@ -23,25 +23,23 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", (socket)=> {
-    console.log(`User Connected: ${socket.id}`)
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
 
-    socket.on("join_room", (data)=> {
-        socket.join(data)
-        console.log(`User with ID: ${socket.id} joined room: ${data}`)
-    })
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  });
 
-    socket.on("send_message", (data)=> {
-        socket.to(data.room).emit("receive_message", data)
-        console.log(data)
-    })
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+    console.log(data);
+  });
 
-    socket.on("disconnect", ()=> {
-        console.log("User Disconnected", socket.id)
-    })
-})
-
-
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  });
+});
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -71,7 +69,7 @@ const requestMiddleware = (req, res, next) => {
 //각종 미들웨어
 
 app.use(express.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
