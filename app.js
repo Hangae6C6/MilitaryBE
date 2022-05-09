@@ -59,7 +59,7 @@ io.on("connection", (socket) => {
     
     socket.on("leave-room", (room)=> {
       socket.leave(room)
-      console.log(`${socket.id}님께서 ${data}를 나가셨습니다.`)
+      console.log(`${socket.id}님께서 나가셨습니다.`)
     })
   });
 
