@@ -58,9 +58,9 @@ io.on("connection", (socket) => {
         console.log(data)
     })
 
-    socket.on("leave-room", (room)=> {
+    socket.on("leave-room", ()=> {
         socket.leave(room)
-        io.to(room).emit(`${socket.io}님이 퇴장하셨습니다.`)
+        io.to(room).emit("onDisconnect",`${socket.io}님이 퇴장하셨습니다.`)
     })
 
     socket.on("disconnect", ()=> {
