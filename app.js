@@ -15,6 +15,7 @@ const logger = require("./logger");
 const { sequelize } = require("./models");
 const server = http.createServer(app)
 const nodemailer = require("nodemailer")
+const path = require('path')
 app.use(cors());
 
 app.post('/send_mail', cors(), async(req,res)=> {
