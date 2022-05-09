@@ -45,33 +45,6 @@ const io = new Server(server, {
   },
 });
 
-const getSids = () => {
-    const ids = [];
-    const { sids, rooms } = io.of("/").adapter;
-    rooms.forEach((_, key) => {
-      if (sids.get(key)) {
-        ids.push(key);
-      }
-    });
-    return ids;
-  };
-  const getUserRooms = () => {
-    const userRooms = [];
-    const { sids, rooms } = io.of("/").adapter;
-    rooms.forEach((_, key) => {
-      if (sids.get(key) === undefined) {
-        userRooms.push(key);
-      }
-    });
-    return userRooms;
-  };
-  const updateRoomList = () => {
-    const ids = getSids();
-    const userRooms = getUserRooms();
-    ids.forEach(id => io.to(id).emit("updateRooms", userRooms));
-  };
-
-
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
@@ -85,14 +58,18 @@ io.on("connection", (socket) => {
         console.log(data)
     })
 
-    socket.on("leave-room", (roomName, done) => { 
-        socket.leave(roomName);
-        done(); const rooms = getUserRooms();
-        console.log("여기 지나감?")
-});
-    socket.on("disconnect", ()=> {
-        console.log("User Disconnected", socket.id)
-    })
+    socket.on('disconnect', () => {
+    
+        if (addedUser) {
+          --numUsers;
+          console.log("disconnected : "+socket.id+" num : "+numUsers);
+          // echo globally that this client has left
+          socket.broadcast.emit('user left', {
+            username: socket.username,
+            numUsers: numUsers
+          });
+        }
+      });
 })
 
 //라우터 불러오기
