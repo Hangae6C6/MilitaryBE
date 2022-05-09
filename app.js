@@ -88,9 +88,7 @@ io.on("connection", (socket) => {
     socket.on("leave-room", (roomName, done) => { 
         socket.leave(roomName);
         done(); const rooms = getUserRooms();
-        if (!rooms.includes(roomName)) {
-            io.emit("remove-room", roomName); 
-    }
+        console.log("여기 지나감?")
 });
     // socket.on("disconnect", ()=> {
     //     console.log("User Disconnected", socket.id)
