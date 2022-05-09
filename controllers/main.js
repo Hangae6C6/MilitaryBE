@@ -106,6 +106,7 @@ const openChallenge1 = async (req, res) => {
   }) //challengeNum을 1-2로 넘겨주기위해 디비에서 빼옴
   // console.log("12312321123",challenge);
   res.status(201).json({
+    challengeTitle,
     result: true,
     challengeNum:challenge[0].challengeNum,
     msg: "일단첼린지개설완료",
@@ -116,6 +117,7 @@ const openChallenge1 = async (req, res) => {
 const openChallenge2 = async (req,res) => {
   const { challengeCnt,challengeStartDt,challengeEndDt,challengeNum} = req.body;
   // console.log( req.body);
+
   await Challenge.update(
     {
     challengeCnt:challengeCnt,
@@ -166,6 +168,9 @@ const openChallenge4 = async (req,res) => {
     const openChallengeArray = [];
     openChallengeArray.push(challengeStep)
     console.log("tetetet",openChallengeArray);
+    
+
+
     res.status(201).json({
       result:true,
       challengeNum,
@@ -175,7 +180,11 @@ const openChallenge4 = async (req,res) => {
 
 // 챌린지 개설하기를 눌렀는데 lastSavePage가 존재하는지 확인 1-1에서 취소하면 아예 취소되게
 const findChallenge = async (req,res) => {
-  
+      
+    
+
+    
+    
 };
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
