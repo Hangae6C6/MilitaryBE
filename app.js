@@ -66,7 +66,8 @@ io.on("connection", (socket) => {
     })
 
     socket.on("unconnect",function(data) {
-        io.emit('event_name', msg)
+        const msg = `${socket.id}님께서 퇴장하셨습니다.`
+        socket.emit('event_name', msg)
     })
   });
 
