@@ -65,7 +65,9 @@ io.on("connection", (socket) => {
       console.log(`${socket.id}님께서 나가셨습니다.`)
     })
 
-    socket.emit("unconnect",`${socket.id}님께서 나가셨습니다.`)
+    socket.on("unconnect",function(data) {
+        io.emit('event_name', msg)
+    })
   });
 
 //라우터 불러오기
