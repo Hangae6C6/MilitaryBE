@@ -46,6 +46,27 @@ app.post('/send_mail', cors(), async(req,res)=> {
 //   },
 // });
 
+// io.on("connection", (socket) => {
+//     let addedUser = false;
+
+//   console.log(`User Connected: ${socket.id}`);
+
+//     socket.on("join_room", (data)=> {
+//         socket.join(data)
+//         console.log(`User with ID: ${socket.id} joined room: ${data}`)
+//     })
+
+//     socket.on("send_message", (data)=> {
+//         socket.to(data.room).emit("receive_message", data)
+//         console.log(data)
+//     })
+
+//     socket.on("leave", (room)=> {
+//         socket.leave(room)
+//         console.log("방을 떠났슴다.")
+//     })
+// })
+
 io.on('connection', (socket) => {
     socket.on('newUser', (data) => {
       io.emit('enter', data);
@@ -59,8 +80,7 @@ io.on('connection', (socket) => {
     socket.on('leaveUser', (nick) => {
       io.emit('out', nick);
     });
-  });
-
+});
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
