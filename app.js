@@ -58,11 +58,13 @@ io.on("connection", (socket) => {
         console.log(data)
     })
 
-    socket.on("leave-room", ()=> {
-        socket.leave(room)
-        io.to(room).emit("onDisconnect",`${socket.io}님이 퇴장하셨습니다.`)
-    })
-
+    socket.on("leave-room", (roomName, done) => { 
+        socket.leave(roomName);
+        done(); const rooms = getUserRooms();
+        if (!rooms.includes(roomName)) {
+            io.emit("remove-room", roomName); 
+    }
+});
     // socket.on("disconnect", ()=> {
     //     console.log("User Disconnected", socket.id)
     // })
