@@ -61,8 +61,7 @@ const signUp = async (req, res) => {
   // bcrypt module -> 암호화
   // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)ß
   const from = "webSite";
-  const hashed = await bcrypt.hash(userPw, 10);
-  // const user = new User({ userId, userNick, userPw : hashed, from})
+  const hashed =  bcrypt.hashSync(userPw, 10);
   await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
     result: "true",
