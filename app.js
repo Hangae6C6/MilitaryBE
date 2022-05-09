@@ -9,19 +9,39 @@ const helmet = require("helmet");
 const cors = require("cors");
 const port = 3000;
 const app = require("express")();
-const http = require("http").createServer(app);
-const socketIo = require("socket.io");
+const http = require("http")
+const {Server} = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
+const server = http.createServer(app)
+app.use(cors());
 
-
-
-const io = socketIo(http, {
+const io = new Server(server, {
   cors: {
-    origin: "*", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+    origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
     methods: ["GET", "POST"],
   },
 });
+
+io.on("connection", (socket)=> {
+    console.log(`User Connected: ${socket.id}`)
+
+    socket.on("join_room", (data)=> {
+        socket.join(data)
+        console.log(`User with ID: ${socket.id} joined room: ${data}`)
+    })
+
+    socket.on("send_message", (data)=> {
+        socket.to(data.room).emit("receive_message", data)
+        console.log(data)
+    })
+
+    socket.on("disconnect", ()=> {
+        console.log("User Disconnected", socket.id)
+    })
+})
+
+
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -32,8 +52,6 @@ const mainRouter = require("./routers/main");
 const calRouter = require("./routers/cal");
 const mypageRouter = require("./routers/mypage");
 const kakaoRouter = require("./routers/kakaoLogin");
-
-
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -51,7 +69,7 @@ const requestMiddleware = (req, res, next) => {
 };
 
 //각종 미들웨어
-app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded())
 app.use(cookieParser());
@@ -83,19 +101,6 @@ app.use("/api", [
   mypageRouter,
   kakaoRouter,
 ]);
-
-io.on("connection", (socket) => {
-  socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log("join_room->여기를 지나갔어요");
-  });
-
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message");
-    console.log("send_message -> 메세지 전달이잘돼요");
-  });
-});
-
 
 //서버 열기..
 http.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
