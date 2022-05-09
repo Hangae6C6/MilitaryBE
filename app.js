@@ -45,6 +45,33 @@ const io = new Server(server, {
   },
 });
 
+const getSids = () => {
+    const ids = [];
+    const { sids, rooms } = io.of("/").adapter;
+    rooms.forEach((_, key) => {
+      if (sids.get(key)) {
+        ids.push(key);
+      }
+    });
+    return ids;
+  };
+  const getUserRooms = () => {
+    const userRooms = [];
+    const { sids, rooms } = io.of("/").adapter;
+    rooms.forEach((_, key) => {
+      if (sids.get(key) === undefined) {
+        userRooms.push(key);
+      }
+    });
+    return userRooms;
+  };
+  const updateRoomList = () => {
+    const ids = getSids();
+    const userRooms = getUserRooms();
+    ids.forEach(id => io.to(id).emit("updateRooms", userRooms));
+  };
+
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
