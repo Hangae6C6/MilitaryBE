@@ -15,7 +15,6 @@ const logger = require("./logger");
 const { sequelize } = require("./models");
 const server = http.createServer(app)
 const nodemailer = require("nodemailer")
-const path = require('path')
 app.use(cors());
 
 app.post('/send_mail', cors(), async(req,res)=> {
@@ -41,44 +40,73 @@ app.post('/send_mail', cors(), async(req,res)=> {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", // 여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+    origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
     methods: ["GET", "POST"],
   },
 });
 
-// io.on("connection", (socket) => {
-//     let addedUser = false;
+const getSids = () => {
+    const ids = [];
+    const { sids, rooms } = io.of("/").adapter;
+    
+    rooms.forEach((_, key) => {
+      if (sids.get(key)) {
+        ids.push(key);
+      }
+    });
+    return ids;
+  };
+  const getUserRooms = () => {
+    const userRooms = [];
+    const { sids, rooms } = io.of("/").adapter;
+    rooms.forEach((_, key) => {
+      if (sids.get(key) === undefined) {
+        userRooms.push(key);
+      }
+    });
+    return userRooms;
+  };
+  const updateRoomList = () => {
+    const ids = getSids();
+    const userRooms = getUserRooms();
+    ids.forEach(id => io.to(id).emit("updateRooms", userRooms));
+  };
 
-//   console.log(`User Connected: ${socket.id}`);
 
-//     socket.on("join_room", (data)=> {
-//         socket.join(data)
-//         console.log(`User with ID: ${socket.id} joined room: ${data}`)
-//     })
-
-//     socket.on("send_message", (data)=> {
-//         socket.to(data.room).emit("receive_message", data)
-//         console.log(data)
-//     })
-
-//     socket.on("leave", (room)=> {
-//         socket.leave(room)
-//         console.log("방을 떠났슴다.")
-//     })
-// })
-
-io.on('connection', (socket) => {
-    socket.on('newUser', (data) => {
-      io.emit('enter', data);
+  io.on("connection", socket => {
+    socket.on("leave-room", (roomName, done) => {
+      socket.leave(roomName);
+      done();
+      const rooms = getUserRooms();
+      if (!rooms.includes(roomName)) {
+        io.emit("remove-room", roomName);
+      }
     });
   
-    socket.on('message', (data) => {
-      console.log('client가 보낸 데이터: ', data);
-      io.emit('upload', data);
+    socket.on("message", (msg, roomName, done) => {
+      done();
+      socket.broadcast.to(roomName).emit("message", msg);
+    });
+    socket.on("join-room", (roomName, done) => {
+      socket.join(roomName);
+      done();
+      socket
+        .to(roomName)
+        .emit("join-msg", `${socket["nickname"]}님께서 입장하셨습니다. !!!`);
+    });
+    socket.on("login", () => {
+      io.to(socket.id).emit("updateRooms", getUserRooms());
     });
   
-    socket.on('leaveUser', (nick) => {
-      io.emit('out', nick);
+    socket.on("create-room", (roomName, done) => {
+      console.log("create-room", roomName);
+      socket.join(roomName);
+      done();
+      updateRoomList();
+    });
+    socket.on("nickname", (nickname, done) => {
+      socket["nickname"] = nickname;
+      done();
     });
 });
 
