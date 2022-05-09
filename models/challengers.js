@@ -16,12 +16,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    challengeProgress : DataTypes.STRING,
-    challengeTitle : DataTypes.STRING,
-    challengeType : DataTypes.STRING,
-    challengeCnt : DataTypes.STRING,
-    challengeViewCnt : DataTypes.STRING,
-    userId : DataTypes.STRING
+    challengeProgress: DataTypes.STRING,
+      challengeTitle: DataTypes.STRING,
+      challengeType: DataTypes.STRING,
+      challengeCnt: DataTypes.INTEGER,
+      challengeViewCnt: DataTypes.INTEGER,
+      userId: DataTypes.STRING, 
+      lastSavePage:DataTypes.INTEGER,
+      challengeStep:DataTypes.STRING,
+      challengeEndDt:DataTypes.STRING,
+      challengeStartDt:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Challenge',
