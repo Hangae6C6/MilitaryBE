@@ -36,11 +36,11 @@ app.post('/send_mail', cors(), async(req,res)=> {
     })
 
 })
-
-
+app.use(express.static(path.join(__dirname, 'public')));
+let numUsers = 0;
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+    origin: "http://localhost:3000", // 여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
     methods: ["GET", "POST"],
   },
 });
@@ -61,7 +61,6 @@ io.on("connection", (socket) => {
     })
 
     socket.on('disconnect', () => {
-    
         if (addedUser) {
           --numUsers;
           console.log("disconnected : "+socket.id+" num : "+numUsers);
