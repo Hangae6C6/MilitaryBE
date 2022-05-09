@@ -50,9 +50,9 @@ io.on("connection", (socket) => {
   
     socket.on("join_room", (data) => {
       socket.join(data);
-      console.log(socket)
       console.log(`User with ID: ${socket.id} joined room: ${data}`);
-      socket.broadcast.to(data).emit("join-msg", `${socket["userName"]}님께서 입장하셨습니다.`)
+      socket.emit("가냐?")
+      socket.to(data).emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`)
     });
   
     socket.on("send_message", (data) => {
