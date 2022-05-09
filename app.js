@@ -90,9 +90,9 @@ io.on("connection", (socket) => {
         done(); const rooms = getUserRooms();
         console.log("여기 지나감?")
 });
-    // socket.on("disconnect", ()=> {
-    //     console.log("User Disconnected", socket.id)
-    // })
+    socket.on("disconnect", ()=> {
+        console.log("User Disconnected", socket.id)
+    })
 })
 
 //라우터 불러오기
