@@ -137,7 +137,7 @@ app.get("/", async (req, res) => {
    });
 
 //서버 열기..
-http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
+// http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 server.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
 
