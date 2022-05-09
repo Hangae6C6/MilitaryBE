@@ -62,8 +62,8 @@ io.on("connection", (socket) => {
         console.log(data)
     })
 
-    socket.on("leave", ()=> {
-        socket.leave(`${join_room}`)
+    socket.on("leave", (room)=> {
+        socket.leave(`${room}`)
         console.log("방을 떠났슴다.")
     })
 })
