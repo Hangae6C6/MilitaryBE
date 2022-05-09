@@ -37,6 +37,7 @@ app.post('/send_mail', cors(), async(req,res)=> {
     })
 
 })
+
 app.use(express.static(path.join(__dirname, 'public')));
 let numUsers = 0;
 const io = new Server(server, {
@@ -61,17 +62,10 @@ io.on("connection", (socket) => {
         console.log(data)
     })
 
-    socket.on('disconnect', () => {
-        if (addedUser) {
-          --numUsers;
-          console.log("disconnected : "+socket.id+" num : "+numUsers);
-          // echo globally that this client has left
-          socket.broadcast.emit('user left', {
-            username: socket.username,
-            numUsers: numUsers
-          });
-        }
-      });
+    socket.on("leave", ()=> {
+        socket.leave(`${join_room}`)
+        console.log("방을 떠났슴다.")
+    })
 })
 
 //라우터 불러오기
