@@ -65,9 +65,8 @@ io.on("connection", (socket) => {
       console.log(`${socket.id}님께서 나가셨습니다.`)
     })
 
-    socket.on("unconnect",function(data) {
-        const msg = `${socket.id}님께서 퇴장하셨습니다.`
-        socket.emit('event_name', msg)
+    socket.on("unconnect", ()=> {
+        socket.broadcast.emit('user joined', { username: socket.userName });
     })
   });
 
