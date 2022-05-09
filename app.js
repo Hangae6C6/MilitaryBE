@@ -63,9 +63,9 @@ io.on("connection", (socket) => {
         io.to(room).emit("onDisconnect",`${socket.io}님이 퇴장하셨습니다.`)
     })
 
-    socket.on("disconnect", ()=> {
-        console.log("User Disconnected", socket.id)
-    })
+    // socket.on("disconnect", ()=> {
+    //     console.log("User Disconnected", socket.id)
+    // })
 })
 
 //라우터 불러오기
