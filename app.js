@@ -9,12 +9,16 @@ const helmet = require("helmet");
 const cors = require("cors");
 const port = 3000;
 const app = require("express")();
-const http = require("http")
-const {Server} = require("socket.io");
+const http = require("http");
+const { Server } = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
+<<<<<<< HEAD
 const server = http.createServer(app)
 const nodemailer = require("nodemailer")
+=======
+const server = http.createServer(app);
+>>>>>>> 0b1f340bdd77db78a46aaef1c16239afaabd6f8b
 app.use(cors());
 
 app.post('/send_mail', cors(), async(req,res)=> {
@@ -45,8 +49,8 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", (socket)=> {
-    console.log(`User Connected: ${socket.id}`)
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
 
     socket.on("join_room", (data)=> {
         socket.join(data)
@@ -72,7 +76,15 @@ io.on("connection", (socket)=> {
     })
 })
 
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+    console.log(data);
+  });
 
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  });
+});
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -102,7 +114,7 @@ const requestMiddleware = (req, res, next) => {
 //각종 미들웨어
 
 app.use(express.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
