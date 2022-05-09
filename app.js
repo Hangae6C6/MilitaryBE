@@ -46,6 +46,8 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
+    let addedUser = false;
+
   console.log(`User Connected: ${socket.id}`);
 
     socket.on("join_room", (data)=> {
