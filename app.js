@@ -131,26 +131,6 @@ app.use("/api", [
   kakaoRouter,
 ]);
 
-
-
-
-
-io.on('connection', socket => {
-
-    socket.on("join_room", (data)=> {
-        socket.join(data)
-        console.log("join_room->여기를 지나갔어요")
-    })
-
-    socket.on('send_message', (data)=> {
-        socket.to(data.room).emit("receive_message")
-        console.log("send_message -> 메세지 전달이잘돼요") 
-    })
-})
-
-  
-
-
 app.get("/", async (req, res) => {
     console.log("main_page")    
     res.sendFile(__dirname + "/index.html");
