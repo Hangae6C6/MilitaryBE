@@ -55,9 +55,12 @@ io.on("connection", (socket) => {
   
     socket.on("send_message", (data) => {
       socket.to(data.room).emit("receive_message", data);
-      console.log(data)
     });
-  
+    
+    socket.on("leave-room", (room)=> {
+      socket.leave(room)
+      console.log(`${socket.id}님께서 ${data}를 나가셨습니다.`)
+    })
   });
 
 //라우터 불러오기
