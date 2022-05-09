@@ -63,7 +63,7 @@ io.on("connection", (socket) => {
     })
 
     socket.on("leave", (room)=> {
-        socket.leave(`${room}`)
+        socket.leave(room)
         console.log("방을 떠났슴다.")
     })
 })
