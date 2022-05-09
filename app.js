@@ -13,12 +13,8 @@ const http = require("http");
 const { Server } = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
-<<<<<<< HEAD
 const server = http.createServer(app)
 const nodemailer = require("nodemailer")
-=======
-const server = http.createServer(app);
->>>>>>> 0b1f340bdd77db78a46aaef1c16239afaabd6f8b
 app.use(cors());
 
 app.post('/send_mail', cors(), async(req,res)=> {
