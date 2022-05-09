@@ -74,9 +74,11 @@ const authRouter = require("./routers/auth");
 const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
 // const detailRouter = require('./routers/detail')
+// const calRouter = require('./routers/cal')
+const mypageRouter = require('./routers/mypage')
+const kakaoRouter = require('./routers/kakaoLogin')
 const calRouter = require("./routers/cal");
-const mypageRouter = require("./routers/mypage");
-const kakaoRouter = require("./routers/kakaoLogin");
+
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -120,7 +122,7 @@ app.use("/api", [
   authRouter,
   userdataRouter,
   mainRouter,
-  // userdataRouter,
+  userdataRouter,
   // detailRouter,
   calRouter,
   mypageRouter,

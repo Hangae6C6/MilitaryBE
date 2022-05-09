@@ -2,6 +2,26 @@ const { Challenge, User } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
+//공백 , 최소 , 최대 유효성체크 
+// function strCheck(str,min,max,type){
+//   const result = {result:true , msg:""};
+//   if(str===undefined || str===null || str===""){
+//     result=false;
+//     msg=type+" 값이 공백입니다.";
+//     return result;
+//   }else if(str.length>max){
+//     result=false;
+//     msg=type+" 값이 최대 입력 값보다 큽니다.";
+//     return result;
+//   }else if(str.length<min){
+//     result=false;
+//     msg=type+" 값이 최소 입력 값보다 작습니다.";
+//     return result;
+//   }
+//   return result;
+// }
+
+
 //메인페이지 챌린지 보여주기 라우터 (회원, 비회원 구분X)
 const mainPage = async (req, res) => {
   const challenge = await Challenge.findAll();
@@ -71,26 +91,91 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-// //챌린지 개설 -- 첼린지만 따로 controllers
-const openChallenge = async (req, res) => {
+// //챌린지 조건설정 1-1
+const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle, challengeType, challengeContent } = req.body;
-
+  const { challengeTitle } = req.body;
+  
   await Challenge.create({
     challengeTitle,
-    challengeContent,
-    challengeType,
     userId,
   });
-  // joinchallenge -- max challengeNum? 내가 2번째 첼린지를 만들었다. 1번은 다른사람이 만들고 나는 2번이라는 첼린저를 만듬과 동시에 참여를하니까
-  // 그래서 challengeNum 2번이라는 값이 필요할거같다.
 
-  // await joinChallenge.create({ challengeNum,userId }).sort(-1);  -- 가장높은 값을 찾아야된다.
-
+  const challenge = await Challenge.findAll({
+    order: [[ 'challengeNum','DESC' ]] //sort개념
+  }) //challengeNum을 1-2로 넘겨주기위해 디비에서 빼옴
+  // console.log("12312321123",challenge);
   res.status(201).json({
     result: true,
-    msg: "첼린지개설완료",
+    challengeNum:challenge[0].challengeNum,
+    msg: "일단첼린지개설완료",
   });
+};
+
+// 챌린지 조건설정 1-2 참여인원(challengeCnt) , 시작일(challengeStartDt), 종료일(challengeEndDt)
+const openChallenge2 = async (req,res) => {
+  const { challengeCnt,challengeStartDt,challengeEndDt,challengeNum} = req.body;
+  // console.log( req.body);
+  await Challenge.update(
+    {
+    challengeCnt:challengeCnt,
+    challengeStartDt:challengeStartDt,
+    challengeEndDt:challengeEndDt,
+    lastSavePage:2
+  },
+  {where: {challengeNum:challengeNum}}
+  );
+  res.status(201).json({
+      result:true,
+      challengeNum,
+      msg : "인원,시작,종료일단넘어가면성공"
+  });
+};
+
+//챌린지 조건설정 1-3 주제(type)
+const openChallenge3 = async (req,res) => {
+  const {challengeNum,challengeType} = req.body;
+
+  await Challenge.update(
+    {
+    challengeType:challengeType,
+    lastSavePage:3
+  },
+  {where: {challengeNum:challengeNum}}
+  );
+  res.status(201).json({
+    result:true,
+    challengeNum,
+    msg : "타입일단넘어가면성공"
+});
+};
+
+
+//챌린짖 조건설정 1-4(step)
+const openChallenge4 = async (req,res) => {
+    const {challengeNum,challengeStep} = req.body;
+    console.log("test110",challengeStep);
+    await Challenge.update(
+      {
+      challengeStep:challengeStep, // 배열로 challengeStep:[{step1,text},{step2,text}......] --> challengeStep[0].
+      lastSavePage:4
+    },
+    {where: {challengeNum:challengeNum}}
+    );
+    
+    const openChallengeArray = [];
+    openChallengeArray.push(challengeStep)
+    console.log("tetetet",openChallengeArray);
+    res.status(201).json({
+      result:true,
+      challengeNum,
+      msg : "스탭일단넘어가면성공"
+  });
+};
+
+// 챌린지 개설하기를 눌렀는데 lastSavePage가 존재하는지 확인 1-1에서 취소하면 아예 취소되게
+const findChallenge = async (req,res) => {
+  
 };
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
@@ -141,4 +226,7 @@ const joinCancelChallenge = async (req, res) => {
   }
 };
 
-module.exports = { mainPage, userChallenge, preTest, search, openChallenge };
+
+
+
+module.exports = { mainPage, userChallenge, preTest, search, openChallenge1,openChallenge2,openChallenge3,openChallenge4,findChallenge };
