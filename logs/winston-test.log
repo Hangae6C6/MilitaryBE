@@ -2211,10 +2211,6 @@ SyntaxError: Unexpected identifier
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
 2022-05-10T00:36:46.354Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 84f199916b7b80ff76d58c73aacf9ced757bc672
-<<<<<<< HEAD
-2022-05-10T00:42:38.870Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-10T00:50:49.776Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-=======
 2022-05-10T00:58:02.440Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T01:10:55.528Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T02:33:30.138Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
@@ -2390,25 +2386,10 @@ Error: WHERE parameter "challengeNum" has invalid "undefined" value
 2022-05-10T07:08:08.025Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T10:32:37.540Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T10:32:43.578Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-<<<<<<< HEAD
->>>>>>> a5efcb7b4771d4ed202e1b342cc369ca6887f934
-2022-05-10T10:37:14.584Z [winston-test] error: uncaughtException: Cannot find module './routers/userData'
-Require stack:
-- /home/ubuntu/MilitaryBE/app.js
-Error: Cannot find module './routers/userData'
-Require stack:
-- /home/ubuntu/MilitaryBE/app.js
-    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
-    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:75:24)
-    at Module._compile (node:internal/modules/cjs/loader:1105:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
-    at Module._compile (node:internal/modules/cjs/loader:1105:14)
-=======
 2022-05-10T10:46:48.064Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+<<<<<<< HEAD
 >>>>>>> 8a8758c783acb6d78153e1716fc42365c3b8330f
 2022-05-10T10:49:00.106Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+=======
+2022-05-10T10:55:05.171Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+>>>>>>> 12b8a24828e34a43ecfb40a4e71adc1ff21954b2
