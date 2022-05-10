@@ -2124,6 +2124,7 @@ ReferenceError: Cannot access 'tokenOptions' before initialization
 2022-05-07T10:58:47.263Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-07T10:59:22.838Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> d83880771f34eb83acdcad1dce3c9c84c2a83dd8
+<<<<<<< HEAD
 2022-05-09T10:24:35.938Z [winston-test] error: uncaughtException: Cannot find module 'nodemailer'
 Require stack:
 - /home/ubuntu/MilitaryBE/app.js
@@ -2173,3 +2174,40 @@ TypeError: http.listen is not a function
 2022-05-09T13:19:04.492Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-09T13:19:25.916Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-09T14:05:07.046Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+=======
+2022-05-09T14:08:33.025Z [winston-test] error: uncaughtException: Cannot find module 'nodemailer'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+Error: Cannot find module 'nodemailer'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:17:20)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+2022-05-09T14:08:49.232Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T00:12:21.197Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T00:36:39.854Z [winston-test] error: uncaughtException: Unexpected identifier
+/Users/jungdaekyu/Desktop/MilitaryBE/controllers/kakao.js:24
+        url : "https://kauth.kakao.com/oauth/token",
+        ^^^
+
+SyntaxError: Unexpected identifier
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1032:15)
+    at Module._compile (node:internal/modules/cjs/loader:1067:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/kakaoLogin.js:3:36)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+2022-05-10T00:36:46.354Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+>>>>>>> 84f199916b7b80ff76d58c73aacf9ced757bc672
