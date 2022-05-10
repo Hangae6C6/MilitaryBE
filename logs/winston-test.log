@@ -2211,3 +2211,5 @@ SyntaxError: Unexpected identifier
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
 2022-05-10T00:36:46.354Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 84f199916b7b80ff76d58c73aacf9ced757bc672
+2022-05-10T00:42:38.870Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T00:50:49.776Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
