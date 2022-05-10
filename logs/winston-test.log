@@ -2391,3 +2391,19 @@ Error: WHERE parameter "challengeNum" has invalid "undefined" value
 2022-05-10T10:32:37.540Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T10:32:43.578Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> a5efcb7b4771d4ed202e1b342cc369ca6887f934
+2022-05-10T10:37:14.584Z [winston-test] error: uncaughtException: Cannot find module './routers/userData'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module './routers/userData'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:75:24)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
