@@ -2393,3 +2393,4 @@ Error: WHERE parameter "challengeNum" has invalid "undefined" value
 =======
 2022-05-10T10:55:05.171Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 12b8a24828e34a43ecfb40a4e71adc1ff21954b2
+2022-05-10T11:09:47.814Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
