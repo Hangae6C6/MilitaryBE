@@ -6,12 +6,13 @@ require("dotenv").config();
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
-    redirectUri	: 'http://13.125.228.240/auth/kakao/callback'
+    redirectUri	: 'http://localhost:3000/api/auth/kakao/callback'
 }
 
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
 const  kakaoLogin = async (req,res) => {
     const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao.clientid}&redirect_uri=${kakao.redirectUri}`
+    console.log("sdsdsd",kakaoAuthURL);
     res.redirect(kakaoAuthURL);
 };
 
@@ -19,7 +20,7 @@ const  kakaoLogin = async (req,res) => {
 const kakaoRegister = async (req,res) => {
 
     const { code } = req.query;
-    // console.log("123213213213123",code);
+    console.log("123213213213123",code);
     const options = {
         url : "https://kauth.kakao.com/oauth/token",
         method : 'POST',
@@ -36,7 +37,7 @@ const kakaoRegister = async (req,res) => {
     }
     
    const kakaotoken = await rp(options);
-   //console.log("ttttttttt",kakaotoken);
+   console.log("ttttttttt",kakaotoken);
    const options1 = {
         url : "https://kapi.kakao.com/v2/user/me",
         method : 'GET',

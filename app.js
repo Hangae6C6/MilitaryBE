@@ -13,8 +13,8 @@ const http = require("http");
 const { Server } = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
-const server = http.createServer(app)
-const nodemailer = require("nodemailer")
+const server = http.createServer(app);
+const nodemailer = require("nodemailer");
 app.use(cors());
 
 
