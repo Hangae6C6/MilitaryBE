@@ -2211,3 +2211,178 @@ SyntaxError: Unexpected identifier
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
 2022-05-10T00:36:46.354Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 84f199916b7b80ff76d58c73aacf9ced757bc672
+2022-05-10T00:58:02.440Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T01:10:55.528Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T02:33:30.138Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T02:33:57.416Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T05:46:23.908Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:46:35.807Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:51:44.043Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:52:15.030Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:52:59.335Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:53:33.185Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T05:53:35.430Z [winston-test] error: uncaughtException: Cannot read properties of undefined (reading 'create')
+TypeError: Cannot read properties of undefined (reading 'create')
+    at userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:18)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:137:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T06:03:33.644Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:03:39.600Z [winston-test] error: uncaughtException: Unknown column 'id' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:04:36.590Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:04:40.066Z [winston-test] error: uncaughtException: Unknown column 'id' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:06:21.382Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:06:25.002Z [winston-test] error: uncaughtException: Unknown column 'id' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:07:36.552Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:07:40.603Z [winston-test] error: uncaughtException: Column 'userId' cannot be null
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:23:4)
+2022-05-10T06:08:30.778Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:08:34.558Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:11:12.654Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:11:16.383Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:12:39.838Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:12:43.251Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:12:57.415Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:13:00.667Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:14:47.361Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:14:50.823Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:16:04.682Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:16:09.968Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:17:22.399Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:17:25.281Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:22:00.827Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:22:04.525Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:23:39.343Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:23:42.591Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T06:56:09.864Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:56:19.752Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T06:57:50.783Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T07:00:11.386Z [winston-test] error: uncaughtException: WHERE parameter "challengeNum" has invalid "undefined" value
+Error: WHERE parameter "challengeNum" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.whereQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1626:24)
+    at MySQLQueryGenerator.updateQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:320:116)
+    at MySQLQueryInterface.bulkUpdate (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:350:37)
+    at Function.update (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1950:54)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async openChallenge2 (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:121:3)
+2022-05-10T07:00:28.359Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T07:02:05.503Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T07:03:24.332Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T07:08:08.025Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T10:32:37.540Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T10:32:43.578Z [winston-test] info: 3000 포트로 서버가 켜졌어요!

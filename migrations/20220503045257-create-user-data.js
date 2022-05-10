@@ -4,11 +4,11 @@ module.exports = {
     await queryInterface.createTable("UserData", {
       startDate: {
         allowNull: true,
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
       },
       endDate: {
         allowNull: true,
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
       },
       armyCategory: {
         allowNull: true,

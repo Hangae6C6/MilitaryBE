@@ -91,7 +91,7 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-// //챌린지 조건설정 1-1
+//챌린지 조건설정 1-1
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
   const { challengeTitle } = req.body;
@@ -115,8 +115,9 @@ const openChallenge1 = async (req, res) => {
 
 // 챌린지 조건설정 1-2 참여인원(challengeCnt) , 시작일(challengeStartDt), 종료일(challengeEndDt)
 const openChallenge2 = async (req,res) => {
-  const { challengeCnt,challengeStartDt,challengeEndDt,challengeNum} = req.body;
-  // console.log( req.body);
+  const {challengeNum} = req.query 
+  const { challengeCnt,challengeStartDt,challengeEndDt} = req.body;
+ 
 
   await Challenge.update(
     {
@@ -125,8 +126,10 @@ const openChallenge2 = async (req,res) => {
     challengeEndDt:challengeEndDt,
     lastSavePage:2
   },
+
   {where: {challengeNum:challengeNum}}
   );
+
   res.status(201).json({
       result:true,
       challengeNum,
@@ -136,7 +139,8 @@ const openChallenge2 = async (req,res) => {
 
 //챌린지 조건설정 1-3 주제(type)
 const openChallenge3 = async (req,res) => {
-  const {challengeNum,challengeType} = req.body;
+  const {challengeNum} = req.query 
+  const {challengeType} = req.body;
 
   await Challenge.update(
     {
@@ -153,7 +157,7 @@ const openChallenge3 = async (req,res) => {
 };
 
 
-//챌린짖 조건설정 1-4(step)
+//챌린지 조건설정 1-4(step)
 const openChallenge4 = async (req,res) => {
     const {challengeNum,challengeStep} = req.body;
     console.log("test110",challengeStep);
@@ -181,10 +185,6 @@ const openChallenge4 = async (req,res) => {
 // 챌린지 개설하기를 눌렀는데 lastSavePage가 존재하는지 확인 1-1에서 취소하면 아예 취소되게
 const findChallenge = async (req,res) => {
       //1-1이 완전취소, 1-2,1-3,1-4는 
-    
-
-    
-    
 };
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
