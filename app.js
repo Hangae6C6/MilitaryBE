@@ -72,7 +72,7 @@ io.on("connection", (socket) => {
 //라우터 불러오기
 const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
-const userdataRouter = require("./routers/userData");
+const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
 // const detailRouter = require('./routers/detail')
 // const calRouter = require('./routers/cal')
