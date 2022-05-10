@@ -17,6 +17,7 @@ const server = http.createServer(app)
 const nodemailer = require("nodemailer")
 app.use(cors());
 
+
 app.post('/send_mail', cors(), async(req,res)=> {
     let {text} = req.body
     const transport = nodemailer.createTransport({
@@ -27,15 +28,13 @@ app.post('/send_mail', cors(), async(req,res)=> {
             pass:process.env.MAIL_PASS
         }
     })
-
     await transport.sendMail({
         from:process.env.MAIL_FROM,
         to: "test@test.com",
         subject: "test email",
         text : `${text}`
     })
-
-})
+});
 
 
 const io = new Server(server, {
@@ -73,7 +72,7 @@ io.on("connection", (socket) => {
 //라우터 불러오기
 const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
-const userdataRouter = require("./routers/userdata");
+const userdataRouter = require("./routers/userData");
 const mainRouter = require("./routers/main");
 // const detailRouter = require('./routers/detail')
 // const calRouter = require('./routers/cal')

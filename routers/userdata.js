@@ -4,6 +4,6 @@ const { userOptioalData } = require("../controllers/userData");
 const authMiddleware = require("../middleware/authMiddleWare");
 require("dotenv").config();
 
-router.post("/modal/userData", authMiddleware, userOptioalData);
+router.post("/userData", authMiddleware, userOptioalData);
 
 module.exports = router;
