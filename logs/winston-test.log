@@ -2124,3 +2124,52 @@ ReferenceError: Cannot access 'tokenOptions' before initialization
 2022-05-07T10:58:47.263Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-07T10:59:22.838Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> d83880771f34eb83acdcad1dce3c9c84c2a83dd8
+2022-05-09T10:24:35.938Z [winston-test] error: uncaughtException: Cannot find module 'nodemailer'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+Error: Cannot find module 'nodemailer'
+Require stack:
+- /home/ubuntu/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Module.Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:61:29)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:17:20)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+2022-05-09T10:24:57.239Z [winston-test] error: uncaughtException: http.listen is not a function
+TypeError: http.listen is not a function
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:160:6)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-09T10:27:00.659Z [winston-test] error: uncaughtException: http.listen is not a function
+TypeError: http.listen is not a function
+    at Object.<anonymous> (/home/ubuntu/MilitaryBE/app.js:160:6)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-09T10:29:07.676Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T10:29:51.952Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T13:19:04.492Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T13:19:25.916Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-09T14:05:07.046Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
