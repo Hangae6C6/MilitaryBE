@@ -2393,3 +2393,63 @@ Error: WHERE parameter "challengeNum" has invalid "undefined" value
 =======
 2022-05-10T10:55:05.171Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 12b8a24828e34a43ecfb40a4e71adc1ff21954b2
+2022-05-10T11:11:19.369Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:12:32.859Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T11:12:54.938Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:12:58.283Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T11:13:50.787Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:13:54.221Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T11:32:01.114Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:33:41.428Z [winston-test] error: uncaughtException: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+StatusCodeError: 400 - {"error":"invalid_request","error_description":"An authorization code must be supplied.","error_code":"KOE320"}
+    at new StatusCodeError (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:520:28)
+    at Request.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:520:28)
+    at IncomingMessage.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:639:28)
+    at IncomingMessage.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2022-05-10T11:47:35.427Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:48:04.335Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T11:54:54.887Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:03:47.914Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:05:50.706Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:06:16.932Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:15:11.990Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:16:53.968Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:17:13.127Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:17:20.533Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:17:49.894Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:18:29.382Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:19:38.030Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:21:55.573Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T12:22:05.421Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
