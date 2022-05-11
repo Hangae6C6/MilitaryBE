@@ -72,11 +72,10 @@ io.on("connection", (socket) => {
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
-const authRouter = require("./routers/auth");
 const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
 // const detailRouter = require('./routers/detail')
-// const calRouter = require('./routers/cal')
+const authNaverRouter = require('./routers/auth_naver')
 const mypageRouter = require('./routers/mypage')
 const kakaoRouter = require('./routers/kakaoLogin')
 const calRouter = require("./routers/cal");
@@ -121,7 +120,7 @@ app.use(function (req, res, next) {
 //라우터 연결
 app.use("/api", [
   userRouter,
-  authRouter,
+  authNaverRouter,
   userdataRouter,
   mainRouter,
   userdataRouter,
