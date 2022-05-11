@@ -75,7 +75,6 @@ io.on("connection", (socket) => {
 const userRouter = require("./routers/user");
 const userdataRouter = require("./routers/userdata");
 const mainRouter = require("./routers/main");
-// const detailRouter = require('./routers/detail')
 const authNaverRouter = require('./routers/auth_naver')
 const mypageRouter = require('./routers/mypage')
 const kakaoRouter = require('./routers/kakaoLogin')
@@ -126,7 +125,6 @@ app.use("/api", [
   authNaverRouter,
   userdataRouter,
   mainRouter,
-  userdataRouter,
   // detailRouter,
   calRouter,
   mypageRouter,

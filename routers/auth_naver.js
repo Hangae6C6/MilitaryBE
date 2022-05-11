@@ -11,7 +11,7 @@ router.get('/naver',passport.authenticate('naver'))
 
 //콜백 url
 router.get('/oauth', passport.authenticate('naver',{
-    sessiom:false,
+    session:false,
     failureRedirect: "/",
 }),
 (req,res)=>{
@@ -19,7 +19,8 @@ router.get('/oauth', passport.authenticate('naver',{
         const token = createJwtToken(req.user._id);
         console.log("여긴 ok 잘됩니당")
         //쿠키로 토큰을 발급한 후 리다이렉트
-        res.status(200).redirect("http://localhost:3000/api/auth/naver/callback")
+        //사용자 인증이 끝나면 돌아갈 URL주소
+        res.status(200).redirect("??")
     }catch (error) {
         console.log(error)
         console.log("auth_naver.js 콜백url -> 여기서 에러발생함")
@@ -27,4 +28,4 @@ router.get('/oauth', passport.authenticate('naver',{
     }
 }
 )
-export default router
+module.exports = router
