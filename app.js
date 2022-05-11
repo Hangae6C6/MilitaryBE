@@ -20,7 +20,7 @@ const session = require('express-session')
 app.use(cors())
 
 app.get('/api',(req,res)=> {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000")
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000/api/auth/naver/callback")
   res.send(data)
 })
 
