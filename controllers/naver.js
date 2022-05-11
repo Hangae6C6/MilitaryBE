@@ -22,7 +22,7 @@ const naverRegister = async (req,res) => {
     const { code,state } = req.query;
     console.log("123213213213123",code,state);
     const options = {
-        url : "https://nid.naver.com/oauth2.0/authorize",
+        url : "https://nid.naver.com/oauth2.0/token",
         method : 'POST',
         form: {
             grant_type: "authorization_code",
