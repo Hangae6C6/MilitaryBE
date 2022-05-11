@@ -41,7 +41,7 @@ app.post('/send_mail', cors(), async(req,res)=> {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000,http://localhost:3000/api/auth/naver/callback", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+    origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
     methods: ["GET", "POST"],
   },
 });
