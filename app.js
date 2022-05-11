@@ -17,12 +17,7 @@ const server = http.createServer(app);
 const nodemailer = require("nodemailer");
 const passport = require('passport')
 const session = require('express-session')
-app.use(cors(corsOptions));
-
-const corsOptions = {
-  origin: "*",
-  credentials: true
-}
+app.use(cors());
 
 app.post('/send_mail', cors(), async(req,res)=> {
     let {text} = req.body
