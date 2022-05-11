@@ -13,9 +13,10 @@ const http = require("http");
 const { Server } = require("socket.io");
 const logger = require("./logger");
 const { sequelize } = require("./models");
-const server = http.createServer(app)
-const nodemailer = require("nodemailer")
+const server = http.createServer(app);
+const nodemailer = require("nodemailer");
 app.use(cors());
+
 
 app.post('/send_mail', cors(), async(req,res)=> {
     let {text} = req.body
@@ -27,15 +28,13 @@ app.post('/send_mail', cors(), async(req,res)=> {
             pass:process.env.MAIL_PASS
         }
     })
-
     await transport.sendMail({
         from:process.env.MAIL_FROM,
         to: "test@test.com",
         subject: "test email",
         text : `${text}`
     })
-
-})
+});
 
 
 const io = new Server(server, {
@@ -130,10 +129,6 @@ app.use("/api", [
   kakaoRouter,
 ]);
 
-app.get("/", async (req, res) => {
-    console.log("main_page")    
-    res.sendFile(__dirname + "/index.html");
-   });
 
 //서버 열기..
 // http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))

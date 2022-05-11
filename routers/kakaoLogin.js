@@ -2,12 +2,9 @@ const express = require('express');
 const router = express.Router();
 const {kakaoLogin,kakaoRegister} = require("../controllers/kakao")
 
+router.get("/auth/kakao",kakaoLogin);
 
-
-
-router.get("/kakao/login",kakaoLogin);
-
-router.get("/kakao",kakaoRegister);
+router.get("/auth/kakao/callback",kakaoRegister);
 
 
 module.exports = router;

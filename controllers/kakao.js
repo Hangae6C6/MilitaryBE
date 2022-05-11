@@ -3,28 +3,24 @@ const rp = require('request-promise');
 const {User} = require("../models");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-// const { or, and, like, eq } = sequelize.Op;
-
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
-    redirectUri	: 'http://localhost:3000/api/kakao'
+    redirectUri	: 'http://localhost:3000/api/auth/kakao/callback'
 }
 
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
-
-//router.get kakaoLogin
 const  kakaoLogin = async (req,res) => {
     const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao.clientid}&redirect_uri=${kakao.redirectUri}`
+    console.log("sdsdsd",kakaoAuthURL);
     res.redirect(kakaoAuthURL);
 };
 
-//router.get kakao
 // kakao register --> REDIRECT URI
 const kakaoRegister = async (req,res) => {
 
     const { code } = req.query;
-    // console.log("123213213213123",code);
+    console.log("123213213213123",code);
     const options = {
         url : "https://kauth.kakao.com/oauth/token",
         method : 'POST',
@@ -58,12 +54,6 @@ const kakaoRegister = async (req,res) => {
     const userNick = userInfo.kakao_account.profile.nickname;
     const existUser = await User.findOne({userId});
 
-    //  console.log("--------->",existUser);
-
-
-    //  const existUsers = await User.findAll({
-    //       where: { [Op.eq]: [{ userId }, { userNick }] },
-    //      });
      try{
         if(!existUser.dataValues){
             const from = 'kakao'
