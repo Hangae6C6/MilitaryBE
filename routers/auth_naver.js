@@ -1,11 +1,11 @@
 const express = require('express')
 const app = require("express")();
-app.use(cors())
+const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const passport = require('../passport/NaverStrategy')
-
 const router = express.Router()
+app.use(cors())
 
 //네이버 로그인 하기
 router.get('/naver',passport.authenticate('naver', {authType: 'reprompt'}))
