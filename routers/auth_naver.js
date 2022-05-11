@@ -1,20 +1,20 @@
 const express = require('express')
-const app = require("express")();
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const passport = require('../passport/NaverStrategy')
+const router = express.Router()
 
 // //네이버 로그인 하기
-// router.get('/naver',passport.authenticate('naver', {authType: 'reprompt'}))
+// router.get('/naver1',passport.authenticate('naver', {authType: 'reprompt'}))
 
 // //콜백 url
-// router.get('/naver/callback', passport.authenticate('naver',{
+// router.get('/naver/callback1', passport.authenticate('naver',{
 //     failureRedirect: "/",}),
 //     (req,res)=> {
 //         res.redirect('/')
 //     }
-// }),
+// ),
 // (req,res)=>{
 //     try {
 //         const token = createJwtToken(req.user._id);
@@ -28,6 +28,6 @@ const passport = require('../passport/NaverStrategy')
 //         res.status(400).json({result:false,msg:"콜백 실패..."})
 //     }
 
-// )
+// }
 
-module.exports = router
+module.exports = router;
