@@ -30,7 +30,6 @@ passport.use(
                         socialtype: "naver",
                         socialId: profile.id,
                         nickname: profile._json.email,
-                        email:profile.json.email,
                     })
                     return cb(null, newUser)
                 }
@@ -43,4 +42,4 @@ passport.use(
     )
 )
 
-module.exports = passport;
+export default passport;

@@ -15,6 +15,8 @@ const logger = require("./logger");
 const { sequelize } = require("./models");
 const server = http.createServer(app);
 const nodemailer = require("nodemailer");
+const passport = require('passport')
+const session = require('express-session')
 app.use(cors());
 
 
@@ -97,6 +99,8 @@ const requestMiddleware = (req, res, next) => {
 
 //각종 미들웨어
 
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
