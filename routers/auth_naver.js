@@ -12,7 +12,6 @@ router.get('/naver',passport.authenticate('naver', {authType: 'reprompt'}))
 router.get('/naver/callback', passport.authenticate('naver',{
     failureRedirect: "/",}),
     (req,res)=> {
-        res.header("Access-Control-Allow-Origin","*")
         res.redirect('/')
     }
 // }),
