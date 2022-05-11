@@ -99,7 +99,7 @@ const requestMiddleware = (req, res, next) => {
 //각종 미들웨어
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(session);
+app.use(session());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
