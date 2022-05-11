@@ -97,6 +97,7 @@ const requestMiddleware = (req, res, next) => {
 };
 
 //각종 미들웨어
+app.use(session({ secret: 'solider challenge project' }));
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(session());
