@@ -2,20 +2,18 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const passport = require('../passport/NaverStrategy')
-dotenv.config()
 
 const router = express.Router()
 
-const jwtSecretKey = process.env.JWT_SECRET;
-const jwtExpiresInDays = "2d";
-
 //네이버 로그인 하기
-router.get('/naver',passport.authenticate('naver'))
+router.get('/naver',passport.authenticate('naver', {authType: 'reprompt'}))
 
 //콜백 url
-router.get('/oauth', passport.authenticate('naver',{
-    session:false,
-    failureRedirect: "/",
+router.get('/naver/callback', passport.authenticate('naver',{
+    failureRedirect: "/",}),
+    (req,res)=> {
+        res.redirect('/')
+    }
 // }),
 // (req,res)=>{
 //     try {
@@ -29,9 +27,7 @@ router.get('/oauth', passport.authenticate('naver',{
 //         console.log("auth_naver.js 콜백url -> 여기서 에러발생함")
 //         res.status(400).json({result:false,msg:"콜백 실패..."})
 //     }
-})
+
 )
-function createJwtToken(id) {
-    return jwt.sign({ id }, jwtSecretKey, { expiresIn: jwtExpiresInDays });
-}
+
 module.exports = router

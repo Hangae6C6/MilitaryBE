@@ -1,5 +1,5 @@
 const passport = require('passport')
-const NaverStrategy = require('passport-naver')
+const {Strategy : NaverStrategy} = require('passport-naver-v2')
 const User = require('../models/user')
 
 
@@ -23,27 +23,25 @@ passport.use(
             callbackURL:'http://localhost:3000/api/auth/naver/callback', // 애플리케이션을 등록할 떄 입력했던 callbackURL 을 입력해준다.
         },
         async (accessToken, refreshToken, profile, cb) => {
-            try {
-              const user = await User.findOne({ socialId: profile.id });
-      
-              //동일한 이메일을 가졌을 때는 이미 가입중인 사용자라면 바로 로그인하도록 아니라면 신규 사용자 생성
-              if (user) {
-                user.socialId = profile.id;
-                user.save();
-                return cb(null, user);
-              } else {
-                const newUser = await User.create({
-                  socialtype: "naver",
-                  socialId: profile.id,
-                  nickname: profile._json.nickname,
-                });
-                return cb(null, newUser);
-              }
-            } catch (error) {
-              return cb(error);
-            }
-          }
-        )
+            User.findOne({
+                'naver.id': profile.id
+            }, function(err, user) {
+                if (!user) {
+                    user = new User({
+                        socialtype: "naver",
+                        socialId: profile.id,
+                        nickname: profile._json.nickname,
+                    });
+                    user.save(function(err) {
+                        if (err) console.log(err);
+                        return done(err, user);
+                    });
+                } else {
+                    return done(err, user);
+                }
+            });
+        }
+    )
 )
 
 module.exports = passport
