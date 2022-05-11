@@ -17,7 +17,10 @@ const server = http.createServer(app);
 const nodemailer = require("nodemailer");
 const passport = require('passport')
 const session = require('express-session')
-app.use(cors());
+app.use(cors({
+  origin: '*', //출처 허용 옵션
+  credential: 'true' //사용자 인증이 필요한 리소스(쿠키...등)접근
+}))
 
 app.post('/send_mail', cors(), async(req,res)=> {
     let {text} = req.body
