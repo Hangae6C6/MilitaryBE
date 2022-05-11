@@ -1,4 +1,6 @@
 const express = require('express')
+const app = require("express")();
+app.use(cors())
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const passport = require('../passport/NaverStrategy')
