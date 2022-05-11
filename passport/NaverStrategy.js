@@ -45,4 +45,4 @@ passport.use(
     )
 )
 
-module.exports = router
+export default passport

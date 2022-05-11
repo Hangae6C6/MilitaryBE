@@ -27,4 +27,4 @@ router.get('/oauth', passport.authenticate('naver',{
     }
 }
 )
-module.exports = router
+export default router
