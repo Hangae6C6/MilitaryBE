@@ -1,6 +1,9 @@
 const passport = require('passport')
 const NaverStrategy = require('passport-naver')
 const User = require('../models/user')
+require('dotenv').config()
+const dotenv = require('dotenv')
+
 
 passport.serializeUser(function (user,done) {
     done(null,user.id)
@@ -42,4 +45,4 @@ passport.use(
     )
 )
 
-export default passport;
+module.exports = router
