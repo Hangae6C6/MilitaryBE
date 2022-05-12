@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
      userId: {
      type: DataTypes.STRING,
      primaryKey: true,
-          },
+    },
       startDate: DataTypes.STRING,
       endDate: DataTypes.STRING,
       armyCategory: DataTypes.STRING,

@@ -6,5 +6,4 @@ router.get("/auth/kakao",kakaoLogin);
 
 router.get("/auth/kakao/callback",kakaoRegister);
 
-
 module.exports = router;

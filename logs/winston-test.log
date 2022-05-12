@@ -2393,9 +2393,6 @@ Error: WHERE parameter "challengeNum" has invalid "undefined" value
 =======
 2022-05-10T10:55:05.171Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 >>>>>>> 12b8a24828e34a43ecfb40a4e71adc1ff21954b2
-<<<<<<< HEAD
-2022-05-10T11:09:47.814Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-=======
 2022-05-10T11:11:19.369Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T11:12:32.859Z [winston-test] error: uncaughtException: Validation error
 Error
@@ -2456,622 +2453,183 @@ StatusCodeError: 400 - {"error":"invalid_request","error_description":"An author
 2022-05-10T12:19:38.030Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T12:21:55.573Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-10T12:22:05.421Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
->>>>>>> c1121458a9b7281844e976f1e7c6f60b360cd062
-2022-05-11T05:10:31.366Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-05-10T12:47:02.337Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T13:20:41.782Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:32:35.498Z [winston-test] error: uncaughtException: openChallenge2 is not defined
+ReferenceError: openChallenge2 is not defined
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/main.js:252:77)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
     at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:79:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:13:57.930Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:48
-export default passport
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/main.js:12:5)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+2022-05-10T14:33:07.174Z [winston-test] error: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:202:15)
+    at Function.proto.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:516:19)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/main.js:26:8)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
     at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:14:13.500Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:17:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:14:24.809Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:48
-export default passport
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:16:11.802Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:16:31.144Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:17:27.657Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:18:13.415Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:18:16.290Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:30
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:18:38.358Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:48
-export default passport
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:20:22.101Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:17:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:21:58.227Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:17:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:22:54.304Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:17:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:23:08.250Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:17:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:35:54.394Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:46
-export default passport
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T05:36:13.366Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:15:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:37:12.069Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:14:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:37:22.327Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:14:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T05:45:03.027Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:14:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:38:00.897Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:39:23.553Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:39:55.271Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:41:22.462Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:41:37.137Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:42:58.912Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:43:19.839Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:44:20.291Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:44:32.896Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:51:22.727Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:52:19.298Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:52:25.313Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:54:16.073Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:55:16.577Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:55:56.184Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:56:11.959Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:56:44.343Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:57:11.756Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:57:29.659Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:57:37.392Z [winston-test] error: uncaughtException: Router.use() requires a middleware function but got a Object
-TypeError: Router.use() requires a middleware function but got a Object
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:469:13)
-    at Function.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:227:21)
-    at Array.forEach (<anonymous>)
-    at Function.use (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\application.js:224:7)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:123:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
-    at node:internal/main/run_main_module:17:47
-2022-05-11T06:58:31.842Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:31
-export default router;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:78:25)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:58:44.275Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-11T06:58:54.107Z [winston-test] error: uncaughtException: Unexpected token 'export'
-C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:48
-export default passport;
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-    at Object.compileFunction (node:vm:352:18)
-    at wrapSafe (node:internal/modules/cjs/loader:1031:15)
-    at Module._compile (node:internal/modules/cjs/loader:1065:27)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-2022-05-11T06:59:09.546Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:59:19.266Z [winston-test] error: uncaughtException: OAuth2Strategy requires a authorizationURL option
-TypeError: OAuth2Strategy requires a authorizationURL option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:85:42)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
-2022-05-11T06:59:34.684Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
-2022-05-11T08:10:34.493Z [winston-test] error: uncaughtException: OAuth2Strategy requires a clientID option
-TypeError: OAuth2Strategy requires a clientID option
-    at Strategy.OAuth2Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-oauth2\lib\strategy.js:87:34)
-    at new Strategy (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\passport-naver\lib\strategy.js:23:17)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\passport\NaverStrategy.js:19:5)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-    at Module.load (node:internal/modules/cjs/loader:981:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
-    at Module.require (node:internal/modules/cjs/loader:1005:19)
-    at require (node:internal/modules/cjs/helpers:102:18)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\auth_naver.js:4:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:76:20)
+2022-05-10T14:34:01.015Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:34:19.894Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:34:48.983Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:34:53.356Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-10T14:36:50.776Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:39:07.089Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T14:39:15.431Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:40:00.614Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:43:28.370Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:43:32.342Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userId')
+TypeError: Cannot read properties of null (reading 'userId')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:87:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T14:45:00.967Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:45:03.870Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userId')
+TypeError: Cannot read properties of null (reading 'userId')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:87:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T14:45:15.991Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:45:19.466Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userId')
+TypeError: Cannot read properties of null (reading 'userId')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:87:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T14:45:39.897Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:45:42.652Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'userTestData')
+TypeError: Cannot read properties of null (reading 'userTestData')
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:87:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T14:47:07.530Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:48:05.174Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:49:16.674Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:50:53.649Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:52:18.578Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:53:06.995Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:55:16.206Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T14:55:24.165Z [winston-test] error: uncaughtException: Unexpected token ' in JSON at position 2
+SyntaxError: Unexpected token ' in JSON at position 2
+    at JSON.parse (<anonymous>)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:89:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T15:00:16.992Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T15:00:19.932Z [winston-test] error: uncaughtException: Unexpected token ' in JSON at position 2
+SyntaxError: Unexpected token ' in JSON at position 2
+    at JSON.parse (<anonymous>)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:89:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-10T15:00:49.106Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T15:00:57.579Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T15:02:22.983Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-10T15:09:23.612Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T04:57:45.417Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T05:00:12.270Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T05:03:05.285Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T05:03:38.182Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-11T05:14:51.216Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T05:14:54.464Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:776:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:267:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-11T05:15:43.417Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T05:16:02.005Z [winston-test] error: uncaughtException: Column 'userId' cannot be null
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:23:4)
+2022-05-11T12:59:51.731Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:00:25.071Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:00:28.500Z [winston-test] error: uncaughtException: Column 'userId' cannot be null
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:23:4)
+2022-05-11T13:01:39.781Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:03:29.802Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:03:34.628Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:23:4)
+2022-05-11T13:05:38.594Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:05:42.593Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:24:4)
+2022-05-11T13:06:17.328Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:06:20.540Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:24:4)
+2022-05-11T13:07:01.120Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:07:06.144Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:24:4)
+2022-05-11T13:08:47.351Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:08:52.294Z [winston-test] error: uncaughtException: existUser.updateOne is not a function
+TypeError: existUser.updateOne is not a function
+    at userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:19:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-11T13:13:48.530Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:14:24.722Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:20:37.805Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-11T13:24:18.579Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T04:30:18.095Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
