@@ -2633,3 +2633,59 @@ TypeError: existUser.updateOne is not a function
 2022-05-11T13:20:37.805Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-11T13:24:18.579Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-12T04:30:18.095Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T07:27:55.180Z [winston-test] error: uncaughtException: Cannot find module 'express-session'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+Error: Cannot find module 'express-session'
+Require stack:
+- /Users/jungdaekyu/Desktop/MilitaryBE/app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:19:17)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+2022-05-12T07:28:09.381Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T07:28:58.751Z [winston-test] error: uncaughtException: Unknown column 'nickname' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:78:16)
+2022-05-12T07:29:32.989Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T07:29:36.281Z [winston-test] error: uncaughtException: Unknown column 'nickname' in 'field list'
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1220:12)
+    at async login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:78:16)
+2022-05-12T07:30:18.560Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T07:30:23.355Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-12T07:30:36.756Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-12T07:30:39.246Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
