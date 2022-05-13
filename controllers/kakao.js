@@ -7,7 +7,7 @@ require("dotenv").config();
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
-    redirectUri : 'http://localhost:3000/api/auth/kakao/callback'
+    redirectUri : 'http://13.125.228.240/api/auth/kakao/callback'
 }
 
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
@@ -57,9 +57,9 @@ const kakaoRegister = async (req,res) => {
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    console.log("222222222",existUser.dataValues);
+    console.log("222222222",existUser);
      try{
-        if(!existUser.dataValues){
+        if(!existUser){
             const from = 'kakao'
             // const user = new User({ userId, userNick, from })
             await User.create({ userId, userNick, from });
