@@ -27,7 +27,7 @@ const myPage = async (req, res) => {
 const userProfileread = async (req, res) => {
     try {
         const {userId} = req.query
-        const userdata = await UserData.findAll({
+        const [userdata] = await UserData.findAll({
             where:{
                 userId:userId,
             },
