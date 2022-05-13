@@ -48,14 +48,18 @@ module.exports = {
         allowNull: false,
         type:Sequelize.STRING,
       },
-      challengeDate: {
+      challengeStartDate: {
         allowNull: false,
         type:Sequelize.STRING,
       },
       challengeEndDate: {
         allowNull: false,
         type:Sequelize.STRING,
-      }
+      },
+      challengeLimitNum: {
+        allowNull: false,
+        type:Sequelize.STRING,
+      },
     });
   },
   async down(queryInterface, Sequelize) {

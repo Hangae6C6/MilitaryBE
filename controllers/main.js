@@ -96,10 +96,11 @@ const search = async (req, res) => {
 //챌린지개설   
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle,challengeType,challengeContent,challengeDate,challengeEndDate,steps } = req.body;
+  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body;
   
+   // challengeNum은 자동생성, 
 
-  // steps data - > steps = [{a:1,b:2},{a:3,b:4}];
+  // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
 
   //챌린지에 대한 vali 
   const stepsStr = "";
@@ -115,21 +116,21 @@ const openChallenge1 = async (req, res) => {
 
   await Challenge.create({   
     challengeEndDate,
-    challengeDate,
-    challengeContent,
+    challengeStartDate,
     challengeType,
     challengeTitle,
     userId,
-    stepsStr
+    stepsStr,
+    challengeLimitNum
   });
 
-  // const challenge = await Challenge.findAll({
-  //   order: [[ 'challengeNum','DESC' ]] //sort개념
-  // }) 
+  const challenge = await Challenge.findAll({
+    order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
+  }) 
 
   res.status(201).json({  
     result: true,
-    // challengeNum:challenge[0].challengeNum,
+    challengeNum:challenge[0].challengeNum,
     msg: "첼린지개설완료",
   });
 };

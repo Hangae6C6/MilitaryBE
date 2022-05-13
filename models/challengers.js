@@ -16,16 +16,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    challengeProgress: DataTypes.STRING,
+    challengeProgress: DataTypes.STRING, //(추가)
       challengeTitle: DataTypes.STRING,
       challengeType: DataTypes.STRING,
       challengeCnt: DataTypes.INTEGER,
-      challengeViewCnt: DataTypes.INTEGER,
+      challengeViewCnt: DataTypes.INTEGER, //(추가)
       userId: DataTypes.STRING, 
-      lastSavePage:DataTypes.INTEGER,
-      steps : DataTypes.STRING,
+      lastSavePage:DataTypes.INTEGER, // 원래 사용하려했지만 버림
+      steps : DataTypes.STRING, //[{stepNum:int,stepContent,isChecked}] 이런식으로 들어옴
       challengeEndDate:DataTypes.STRING,
-      challengeDate:DataTypes.STRING
+      challengeDate:DataTypes.STRING,
+      challengeLimitNum:DataTypes.STRING, // detail페이지에서 쓸것 
+
   }, {
     sequelize,
     modelName: 'Challenge',
