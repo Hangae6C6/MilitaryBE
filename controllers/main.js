@@ -106,8 +106,8 @@ const openChallenge1 = async (req, res) => {
   // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
    
   //챌린지에 대한 vali 
-  const stepsStr = "";
-  for(const i=0;i<steps.length;i++){
+  var stepsStr = "";
+  for(var i=0;i<steps.length;i++){
     stepsStr+=steps[i];
     if(steps.length-1 !=i){
       stepsStr+='|';
