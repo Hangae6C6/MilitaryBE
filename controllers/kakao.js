@@ -7,7 +7,7 @@ require("dotenv").config();
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
-    redirectUri : 'http://13.125.228.240/api/auth/kakao/callback'
+    redirectUri : 'http://localhost:3000/api/auth/kakao/callback'
 }
 
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
@@ -57,7 +57,7 @@ const kakaoRegister = async (req,res) => {
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    console.log("222222222",existUser);
+    // console.log("222222222",existUser);
      try{
         if(!existUser){
             const from = 'kakao'
@@ -67,11 +67,13 @@ const kakaoRegister = async (req,res) => {
     
         const loginUser = await User.findOne({where: { userId: userId }});
         const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
+
+        setC
     
         res.status(200).json({
             token,
             userId,
-            userNick
+            userNick,
         });
      } catch(error) {
         console.log("카카오로그인오류"); 
