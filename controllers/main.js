@@ -96,10 +96,10 @@ const search = async (req, res) => {
 //챌린지개설   
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body;
+  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body.challenges;
   
 
-  console.log("111111111",req.body);
+  console.log("111111111",req.body.challenges);
   console.log("222222",req);
    // challengeNum은 자동생성, 
 
