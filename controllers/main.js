@@ -106,9 +106,9 @@ const openChallenge1 = async (req, res) => {
   // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
    
   //챌린지에 대한 vali 
-  let stepsStr = "";
-  for(let i=0;i<steps.length;i++){
-    stepsStr+=JSON.stringify(steps[i]);
+  var stepsStr = "";
+  for(var i=0;i<steps.length;i++){
+    stepsStr+=JSON.stringify(steps[i]);  // stepStr+=
     if(steps.length-1 !=i){
       stepsStr+='|';
     }
