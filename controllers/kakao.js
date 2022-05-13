@@ -53,7 +53,7 @@ const kakaoRegister = async (req,res) => {
    
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
-    const existUser = await User.findOne({userId});
+    const existUser = await User.findOne({where: { userId: userId }});
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
@@ -65,7 +65,7 @@ const kakaoRegister = async (req,res) => {
             await User.create({ userId, userNick, from });
         }
     
-        const loginUser = await User.findOne({userId});
+        const loginUser = await User.findOne({where: { userId: userId }});
         const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
     
         res.status(200).json({
