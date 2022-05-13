@@ -32,7 +32,7 @@ const userProfileread = async (req, res) => {
                 userId:userId,
             }
         })
-        return res.status(200).json({result:true,msg:"프로필 조회 성공",userdata});
+        return res.status(200).json({result:true,msg:"프로필 조회 성공"},{userdata});
     }catch(error) {
         console.log(error)
         console.log('mypage 프로필 조회하기 -> 여기서 오류발생함')
