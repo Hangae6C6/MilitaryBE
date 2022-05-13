@@ -2691,3 +2691,109 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 2022-05-12T07:48:07.661Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-12T07:50:11.264Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:19:11.784Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:23:04.538Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:23:50.501Z [winston-test] error: uncaughtException: userdata is not defined
+ReferenceError: userdata is not defined
+    at userProfileread (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/mypage.js:29:27)
+    at Layer.handle [as handle_request] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:144:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/middleware/authMiddleWare.js:18:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-13T05:25:15.191Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:26:19.958Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:27:18.718Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:27:36.079Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:28:42.965Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:33:57.781Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T05:34:19.941Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:08:19.276Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:08:43.341Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:09:02.096Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:09:54.467Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:11:51.362Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:13:29.755Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:21:38.508Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:23:26.121Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:23:48.338Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:26:12.416Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:26:51.268Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:36:59.063Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:40:44.727Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:41:12.877Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:43:43.707Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:43:46.636Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-13T07:44:21.737Z [winston-test] error: uncaughtException: missing ) after argument list
+/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:29
+   await newexistUser.create(startDate,endDate,armyCategory,rank,userId});
+                                                                 ^^^^^^
+
+SyntaxError: missing ) after argument list
+    at Object.compileFunction (node:vm:352:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1032:15)
+    at Module._compile (node:internal/modules/cjs/loader:1067:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/userdata.js:3:29)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+2022-05-13T07:44:32.183Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:45:17.525Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-13T07:46:46.429Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:47:59.662Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:55:14.731Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:56:22.964Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T07:57:52.056Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:04:26.688Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:06:29.428Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:06:32.371Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-13T08:07:22.473Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:07:25.788Z [winston-test] error: uncaughtException: Validation error
+Error
+    at Query.run (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/sequelize.js:313:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async UserData.save (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1336:12)
+    at async userOptioalData (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/userData.js:11:3)
+2022-05-13T08:11:38.510Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:12:35.892Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:13:27.966Z [winston-test] error: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
+    at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-13T08:13:58.644Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:17:05.779Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-13T08:18:08.857Z [winston-test] info: 3000 포트로 서버가 켜졌어요!

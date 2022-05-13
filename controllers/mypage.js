@@ -27,11 +27,13 @@ const myPage = async (req, res) => {
 const userProfileread = async (req, res) => {
     try {
         const {userId} = req.query
-        const [userdata] = await UserData.findAll({
+        console.log(userId)
+        const userdata = await UserData.findAll({
             where:{
-                userId:userId,
+                userId:userId
             },
         })
+        console.log("123123213213",userdata);
         return res.status(200).json({result:true,msg:"프로필 조회 성공",userdata});
     }catch(error) {
         console.log(error)

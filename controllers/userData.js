@@ -1,28 +1,29 @@
 const express = require("express");
-const { UserData, User } = require("../models");
+const { UserData } = require("../models");
 
 const userOptioalData = async (req, res) => {
   const { startDate, endDate, armyCategory, rank } = req.body;
   const { userId } = res.locals.user; //저장 
 
-  // console.log(startDate, endDate, armyCategory, rank, req.body);
-
   //DB에 사용자 추가 데이터 저장
-  // await UserData.create({ startDate, endDate, armyCategory, rank, userId }); 
+  // await UserData.create({ userId }); 
 
   // 중복 회원이 추가데이터 있는 경우 update로 수정하는 로직으로 진행! (수정필요)
+  
+  // console.log("11111111",userId);
   const existUser = await UserData.findOne({
-    userId
+    where : { userId:userId }
   });
- 
+
+  //  console.log("22222222",existUser);
   if ( existUser ) {
       await UserData.update(
           {
             startDate,endDate,armyCategory,rank
           }
-          ,{where : { userId:userId} }
+          ,{ where : { userId:userId} }
       )
-  } else {
+  } else if(!existUser) {
    const newexistUser = new UserData({startDate,endDate,armyCategory,rank,userId})
    await newexistUser.save();
   };

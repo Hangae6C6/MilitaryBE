@@ -109,6 +109,7 @@ const openChallenge1 = async (req, res) => {
       stepsStr+='|';
     }
   }
+
   //stepsStr - > {a:1,b:2}|{a:3,b:4}
   //이상태로 디비에 저장이 됨
 
