@@ -91,6 +91,8 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
+
+
 //챌린지개설   
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
@@ -100,8 +102,8 @@ const openChallenge1 = async (req, res) => {
   // steps data - > steps = [{a:1,b:2},{a:3,b:4}];
 
   //챌린지에 대한 vali 
-  var stepsStr = "";
-  for(var i=0;i<steps.length;i++){
+  const stepsStr = "";
+  for(const i=0;i<steps.length;i++){
     stepsStr+=steps[i];
     if(steps.length-1 !=i){
       stepsStr+='|';

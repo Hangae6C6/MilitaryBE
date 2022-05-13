@@ -7,3 +7,4 @@ require("dotenv").config();
 router.post("/userData", authMiddleware, userOptioalData);
 
 module.exports = router;
+
