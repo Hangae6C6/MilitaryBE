@@ -3,33 +3,45 @@ const { UserData, User } = require("../models");
 
 const userOptioalData = async (req, res) => {
   const { startDate, endDate, armyCategory, rank } = req.body;
-  const { userId } = res.locals.user;
+  const { userId } = res.locals.user; //저장 
 
   // console.log(startDate, endDate, armyCategory, rank, req.body);
 
   //DB에 사용자 추가 데이터 저장
-  await UserData.create({ startDate, endDate, armyCategory, rank, userId }); 
+  // await UserData.create({ startDate, endDate, armyCategory, rank, userId }); 
 
   // 중복 회원이 추가데이터 있는 경우 update로 수정하는 로직으로 진행! (수정필요)
   const existUser = await UserData.findOne({
     userId
   });
-  if ( existUser.length ) {
-      existUser.updateOne(
-          {startDate,endDate,armyCategory,rank}
+ 
+  if ( existUser ) {
+      await UserData.update(
+          {
+            startDate,endDate,armyCategory,rank
+          }
+          ,{where : { userId:userId} }
       )
   } else {
-   const newexistUser = new UserData({startDate,endDate,armyCategory,rank})
+   const newexistUser = new UserData({startDate,endDate,armyCategory,rank,userId})
    await newexistUser.save();
   };
 
   res.status(201).json({
     result: true,
     msg: "회원정보추가완료",
-  });
+  }); 
 };
 
 module.exports = { userOptioalData };
+
+// SELECT `userId`, `userNick`, `userPw`, `userTestData`, `from`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`userId` = 'test10000';
+  // 선택 : userId ,nick , pw, testdata , from ,cr, up -> FROM(어디로부터) -> Users로부터 조건이 User에 userId 
+// INSERT INTO `UserData` (`userId`,`startDate`,`endDate`,`armyCategory`,`rank`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);
+   // 삽입 : UserData (`userId`,`startDate`,`endDate`,`armyCategory`,`rank`,`createdAt`,`updatedAt` )  7개 
+// 에러가 난 이유 existUser.length  -> existUser로 바꾼이유 -> exisUser.length 로 쓸떄는 findAll 로 써서 existUser이 값을 찾아올수있었는데 
+
+// 화면에서 회원이 추가정보를 입력을해 ->  이미 가입되어있는사람인데 정보를 수정하고싶어서 다시 수정하는사람들을 위한게 17~20번까지 그게 아니라면 신규유저 21~24까지 
 
 // const { UserData } = require("../models");
 //  //회원 추가정보 입력 라우터
