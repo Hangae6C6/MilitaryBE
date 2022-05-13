@@ -98,10 +98,13 @@ const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
   const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body;
   
+
+  console.log("111111111",req.body);
+  console.log("222222",req);
    // challengeNum은 자동생성, 
 
   // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
-
+   
   //챌린지에 대한 vali 
   const stepsStr = "";
   for(const i=0;i<steps.length;i++){
