@@ -48,7 +48,7 @@ module.exports = {
         allowNull: false,
         type:Sequelize.STRING,
       },
-      challengeStartDate: {
+      challengeDate: {
         allowNull: false,
         type:Sequelize.STRING,
       },
