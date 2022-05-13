@@ -24,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       userId: DataTypes.STRING, 
       lastSavePage:DataTypes.INTEGER,
       steps : DataTypes.STRING,
-      challengeEndDt:DataTypes.STRING,
-      challengeStartDt:DataTypes.STRING
+      challengeEndDate:DataTypes.STRING,
+      challengeStartDate:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Challenge',
