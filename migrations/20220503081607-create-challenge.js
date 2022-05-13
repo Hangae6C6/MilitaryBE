@@ -44,15 +44,15 @@ module.exports = {
         allowNull: false,
         type:Sequelize.INTEGER,
       },
-      challengeStep: {
+      steps: {
         allowNull: false,
         type:Sequelize.STRING,
       },
-      challengeStartDt: {
+      challengeStartDate: {
         allowNull: false,
         type:Sequelize.STRING,
       },
-      challengeEndDt: {
+      challengeEndDate: {
         allowNull: false,
         type:Sequelize.STRING,
       }
