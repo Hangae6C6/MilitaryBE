@@ -13,14 +13,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   UserData.init(
     {
-     userId: {
-     type: DataTypes.STRING,
-     primaryKey: true,
-    },
+      userId: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+      },
       startDate: DataTypes.STRING,
       endDate: DataTypes.STRING,
       armyCategory: DataTypes.STRING,
       rank: DataTypes.STRING,
+      testResult: DataTypes.STRING,
     },
     {
       sequelize,
