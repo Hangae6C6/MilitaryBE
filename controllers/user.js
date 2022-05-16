@@ -121,8 +121,6 @@ const logout = async(req,res)=> {
   }else {
     res.status(400).json({result:false,msg:"로그아웃 실패"})
   }
-  
-  
 }
 
 module.exports = { signUp, login, loginCheck, logout };
