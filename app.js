@@ -52,7 +52,10 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
-  
+  //핸드쉐이킹이
+  //핸드쉐이킹이 어디서 일어나는가
+  //네트워크와 관련된 질문 관련된 내용을 공부할것!
+  //스트리밍
     socket.on("join_room", (data) => {
       socket.join(data);
       socket.emit("가냐?")
@@ -65,7 +68,7 @@ io.on("connection", (socket) => {
       socket.to(data.room).emit("receive_message", data);
     });
     
-    socket.on("leave-room", (room)=> {
+    socket.on("leave_room", (room)=> {
       socket.leave(room)
       console.log(`${socket.id}님께서 나가셨습니다.`)
     })

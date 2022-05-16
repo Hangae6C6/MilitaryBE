@@ -2689,3 +2689,15 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
     at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
     at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-16T07:04:47.204Z [winston-test] error: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\route.js:211:15)
+    at Function.proto.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\user.js:17:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:82:20)

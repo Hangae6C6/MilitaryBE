@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
       lastSavePage:DataTypes.INTEGER,
       challengeStep:DataTypes.STRING,
       challengeEndDt:DataTypes.STRING,
-      challengeStartDt:DataTypes.STRING
+      challengeStartDt:DataTypes.STRING,
+      isChecked:DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Challenge',

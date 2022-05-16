@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       endDate: DataTypes.STRING,
       armyCategory: DataTypes.STRING,
       rank: DataTypes.STRING,
+      testresult: DataTypes.STRING,
     },
     {
       sequelize,
