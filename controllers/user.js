@@ -112,4 +112,17 @@ const loginCheck = async (req, res) => {
   });
 };
 
-module.exports = { signUp, login, loginCheck };
+//로그아웃 기능
+//썬더클라이언트 테스트 완료
+const logout = async(req,res)=> {
+  const {userId} = req.query
+  if (userId) {
+    return res.cookie("x_auth","").status(200).json({result:true,msg:'로그아웃 성공'})
+  }else {
+    res.status(400).json({result:false,msg:"로그아웃 실패"})
+  }
+  
+  
+}
+
+module.exports = { signUp, login, loginCheck, logout };
