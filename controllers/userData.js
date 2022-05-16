@@ -71,7 +71,7 @@ const saveTestResult = async (req, res) => {
   });
 };
 
-module.exports = { userOptioalData, saveTestResult, updateTestResult };
+module.exports = { userOptioalData, saveTestResult };
 
 // SELECT `userId`, `userNick`, `userPw`, `userTestData`, `from`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`userId` = 'test10000';
 // 선택 : userId ,nick , pw, testdata , from ,cr, up -> FROM(어디로부터) -> Users로부터 조건이 User에 userId
