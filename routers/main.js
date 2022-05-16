@@ -22,7 +22,7 @@ router.post("/main/preTest", preTest); // 비회원도 가능
 router.get("/search", search);
 
 //챌린지 개설
-router.post("/challenge1", authMiddleware, openChallenge1);
+router.post("/challenge", authMiddleware, openChallenge1);
 
 
 module.exports = router;

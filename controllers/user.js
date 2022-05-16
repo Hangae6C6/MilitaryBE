@@ -61,7 +61,7 @@ const signUp = async (req, res) => {
   // bcrypt module -> 암호화
   // 10 --> saltOrRound --> salt를 10번 실행 (높을수록 강력)ß
   const from = "webSite";
-  const hashed =  bcrypt.hashSync(userPw, 10);
+  const hashed = bcrypt.hashSync(userPw, 10);
   await User.create({ userId, userNick, userPw: hashed, from });
   res.status(200).json({
     result: "true",
@@ -75,16 +75,15 @@ const login = async (req, res) => {
   // console.log(req); 잘받아고
   // const hashed =  bcrypt.hashSync(userPw, 10);
   // console.log("12321312213123",hashed);
-  const user = await User.findOne({where: {  userId:userId }}); 
-  console.log("1111111111",user);
-  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" }; 
-  //  console.log("user: ", user); // 토큰옵션
-   
-  console.log(user);
+  const user = await User.findOne({ where: { userId: userId } });
+  console.log(userId);
+
+  const tokenOptions = { expiresIn: "1d", issuer: "soldierChallengers" };
+
   // body passowrd = unHashPassword -->true
   const unHashPw = bcrypt.compareSync(userPw, user.userPw);
-  
-  console.log("----------->",unHashPw);
+  console.log(user.userId, userId, userPw, user.userPw, unHashPw);
+
   if (user.userId !== userId || unHashPw === false) {
     res.status(401).json({
       msg: "아이디 혹은 비밀번호가 안맞습니다.",
@@ -104,7 +103,7 @@ const login = async (req, res) => {
   });
 };
 
-// 로그인체크 
+// 로그인체크
 // 체크
 const loginCheck = async (req, res) => {
   const { user } = res.locals;

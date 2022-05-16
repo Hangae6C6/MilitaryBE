@@ -53,25 +53,27 @@ const kakaoRegister = async (req,res) => {
    
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
-    const existUser = await User.findOne({userId});
+    const existUser = await User.findOne({where: { userId: userId }});
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    console.log("222222222",existUser.dataValues);
+    // console.log("222222222",existUser);
      try{
-        if(!existUser.dataValues){
+        if(!existUser){
             const from = 'kakao'
             // const user = new User({ userId, userNick, from })
             await User.create({ userId, userNick, from });
         }
     
-        const loginUser = await User.findOne({userId});
+        const loginUser = await User.findOne({where: { userId: userId }});
         const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
+
+        setC
     
         res.status(200).json({
             token,
             userId,
-            userNick
+            userNick,
         });
      } catch(error) {
         console.log("카카오로그인오류"); 

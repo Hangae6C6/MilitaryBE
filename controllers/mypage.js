@@ -27,10 +27,11 @@ const myPage = async (req, res) => {
 //예외처리를 해야함
 const userProfileread = async (req, res) => {
     try {
-        const {userId} = req.query
-        const [userdata] = await UserData.findAll({
+        const {userId} = req.query //보내는곳은 같고, auth(통일)
+        // console.log(userId) 
+        const userdata = await UserData.findOne({
             where:{
-                userId:userId,
+                userId:userId
             },
         })
         res.status(200).json({result:true,msg:"프로필 조회 성공",userdata});

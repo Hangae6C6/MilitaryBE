@@ -41,9 +41,10 @@ const userChallenge = async (req, res) => {
   for (let i = 0; i < challenge.length; i++) {
     sum += parseInt(challenge[i].dataValues.challengeProgress);
   }
+
   let totalChallengeProgress = Math.round(sum / challenge.length);
-  // console.log("progressSum: ", sum);
-  console.log("progressAvg: ", totalChallengeProgress);
+  // // console.log("progressSum: ", sum);
+  // console.log("progressAvg: ", totalChallengeProgress);
   return res.status(201).json({ userId, totalChallengeProgress });
 };
 
@@ -91,42 +92,49 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
+
+
 //챌린지개설   
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle,challengeType,challengeContent,challengeDate,challengeEndDate,steps } = req.body;
+  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body.challenges;
   
 
-  // steps data - > steps = [{a:1,b:2},{a:3,b:4}];
+  console.log("111111111",req.body.challenges);
+  console.log("222222",req);
+   // challengeNum은 자동생성, 
 
+  // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
+   
   //챌린지에 대한 vali 
   var stepsStr = "";
   for(var i=0;i<steps.length;i++){
-    stepsStr+=steps[i];
+    stepsStr+=JSON.stringify(steps[i]);  // stepStr+=
     if(steps.length-1 !=i){
       stepsStr+='|';
     }
   }
+
   //stepsStr - > {a:1,b:2}|{a:3,b:4}
   //이상태로 디비에 저장이 됨
 
   await Challenge.create({   
     challengeEndDate,
-    challengeDate,
-    challengeContent,
+    challengeStartDate,
     challengeType,
     challengeTitle,
     userId,
-    stepsStr
+    steps:stepsStr,
+    challengeLimitNum
   });
 
-  // const challenge = await Challenge.findAll({
-  //   order: [[ 'challengeNum','DESC' ]] //sort개념
-  // }) 
+  const challenge = await Challenge.findAll({
+    order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
+  }) 
 
   res.status(201).json({  
     result: true,
-    // challengeNum:challenge[0].challengeNum,
+    challengeNum:challenge[0].challengeNum,
     msg: "첼린지개설완료",
   });
 };
