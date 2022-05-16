@@ -65,39 +65,56 @@ io.on("connection", (socket) => {
       
       socket.to(data).emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`)
     });
-  
+    
+    //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
+    //2022-05-17 아침에 시도해볼것
+    //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
+    socket.onAny((eventName, ...args)=> {
+      console.log(eventName)
+    })
+
     socket.on("send_message", (data) => {
       socket.to(data.room).emit("receive_message", data);
     });
     
     socket.on("leave_room", (room)=> {
+      console.log('???')
       socket.leave(room)
       console.log(`${socket.id}님께서 나가셨습니다.`)
     })
 
-  socket.on("join_room", (data) => {
-    socket.join(data);
-    socket.emit("가냐?");
-    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    socket.on('disconnect', ()=> {
+      console.log('나갔니?')
+    })
+  })
+//소켓이라는 객체가
+//on-> 이벤트를 보낸다는 의미 // evnets -> eventemiter안에 (on,remove) 속해있음
 
-    socket
-      .to(data)
-      .emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`);
-  });
 
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data);
-  });
 
-  socket.on("leave-room", (room) => {
-    socket.leave(room);
-    console.log(`${socket.id}님께서 나가셨습니다.`);
-  });
+//   socket.on("join_room", (data) => {
+//     socket.join(data);
+//     socket.emit("가냐?");
+//     console.log(`User with ID: ${socket.id} joined room: ${data}`);
 
-  socket.on("unconnect", () => {
-    socket.broadcast.emit("user joined", { username: socket.userName });
-  });
-});
+//     socket
+//       .to(data)
+//       .emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`);
+//   });
+
+//   socket.on("send_message", (data) => {
+//     socket.to(data.room).emit("receive_message", data);
+//   });
+
+//   socket.on("leave-room", (room) => {
+//     socket.leave(room);
+//     console.log(`${socket.id}님께서 나가셨습니다.`);
+//   });
+
+//   socket.on("unconnect", () => {
+//     socket.broadcast.emit("user joined", { username: socket.userName });
+//   });
+// });
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
