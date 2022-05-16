@@ -13,16 +13,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   UserData.init(
     {
-      startDate: DataTypes.DATE,
-      endDate: DataTypes.DATE,
+     userId: {
+     type: DataTypes.STRING,
+     primaryKey: true,
+    },
+      startDate: DataTypes.STRING,
+      endDate: DataTypes.STRING,
       armyCategory: DataTypes.STRING,
       rank: DataTypes.STRING,
-      userId: {
-        type: DataTypes.STRING,
-        primaryKey: true,
-      },  
     },
-    
     {
       sequelize,
       modelName: "UserData",

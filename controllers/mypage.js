@@ -26,15 +26,15 @@ const myPage = async (req, res) => {
 //썬더클라이언트 테스트 완료
 const userProfileread = async (req, res) => {
     try {
-        const {userId} = req.query
+        const {userId} = req.query //보내는곳은 같고, auth(통일)
+        // console.log(userId) 
         const userdata = await UserData.findOne({
             where:{
-                userId:userId,
-            }
+                userId:userId
+            },
         })
-        return res.status(201).json(userdata);
-
-        res.status(200).json({result:true,msg:"프로필 조회 성공"})
+        // console.log("1111111111",userdata); 정상적으로 조회가 되도 유저가 없으면 
+        return res.status(200).json({result:true,msg:"프로필 조회 성공",userdata});
     }catch(error) {
         console.log(error)
         console.log('mypage 프로필 조회하기 -> 여기서 오류발생함')

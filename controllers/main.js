@@ -2,6 +2,26 @@ const { Challenge, User } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
+//공백 , 최소 , 최대 유효성체크 
+// function strCheck(str,min,max,type){
+//   const result = {result:true , msg:""};
+//   if(str===undefined || str===null || str===""){
+//     result=false;
+//     msg=type+" 값이 공백입니다.";
+//     return result;
+//   }else if(str.length>max){
+//     result=false;
+//     msg=type+" 값이 최대 입력 값보다 큽니다.";
+//     return result;
+//   }else if(str.length<min){
+//     result=false;
+//     msg=type+" 값이 최소 입력 값보다 작습니다.";
+//     return result;
+//   }
+//   return result;
+// }
+
+
 //메인페이지 챌린지 보여주기 라우터 (회원, 비회원 구분X)
 const mainPage = async (req, res) => {
   const challenge = await Challenge.findAll();
@@ -72,27 +92,122 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
-// //챌린지 개설 -- 첼린지만 따로 controllers
-const openChallenge = async (req, res) => {
+
+
+//챌린지개설   
+const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle, challengeType, challengeContent } = req.body;
+  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body.challenges;
+  
 
-  await Challenge.create({
-    challengeTitle,
-    challengeContent,
+  console.log("111111111",req.body.challenges);
+  console.log("222222",req);
+   // challengeNum은 자동생성, 
+
+  // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
+   
+  //챌린지에 대한 vali 
+  var stepsStr = "";
+  for(var i=0;i<steps.length;i++){
+    stepsStr+=JSON.stringify(steps[i]);  // stepStr+=
+    if(steps.length-1 !=i){
+      stepsStr+='|';
+    }
+  }
+
+  //stepsStr - > {a:1,b:2}|{a:3,b:4}
+  //이상태로 디비에 저장이 됨
+
+  await Challenge.create({   
+    challengeEndDate,
+    challengeStartDate,
     challengeType,
+    challengeTitle,
     userId,
+    steps:stepsStr,
+    challengeLimitNum
   });
-  // joinchallenge -- max challengeNum? 내가 2번째 첼린지를 만들었다. 1번은 다른사람이 만들고 나는 2번이라는 첼린저를 만듬과 동시에 참여를하니까
-  // 그래서 challengeNum 2번이라는 값이 필요할거같다.
 
-  // await joinChallenge.create({ challengeNum,userId }).sort(-1);  -- 가장높은 값을 찾아야된다.
+  const challenge = await Challenge.findAll({
+    order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
+  }) 
 
-  res.status(201).json({
+  res.status(201).json({  
     result: true,
+    challengeNum:challenge[0].challengeNum,
     msg: "첼린지개설완료",
   });
 };
+
+// // 챌린지 조건설정 1-2 참여인원(challengeCnt) , 시작일(challengeStartDt), 종료일(challengeEndDt)
+// const openChallenge2 = async (req,res) => {
+//   const {challengeNum} = req.query 
+//   const { challengeCnt,challengeStartDt,challengeEndDt} = req.body;
+//   // console.log( req.body);
+
+//   await Challenge.update(
+//     {
+//     challengeCnt:challengeCnt,
+//     challengeStartDt:challengeStartDt,
+//     challengeEndDt:challengeEndDt,
+//     lastSavePage:2
+//   },
+
+//   {where: {challengeNum:challengeNum}}
+//   );
+
+//   res.status(201).json({
+//       result:true,
+//       challengeNum,
+//       msg : "인원,시작,종료일단넘어가면성공"
+//   });
+// };
+
+//챌린지 조건설정 1-3 주제(type)
+// const openChallenge3 = async (req,res) => {
+//   const {challengeNum} = req.query 
+//   const {challengeType} = req.body;
+
+//   await Challenge.update(
+//     {
+//     challengeType:challengeType,
+//     lastSavePage:3
+//   },
+//   {where: {challengeNum:challengeNum}}
+//   );
+//   res.status(201).json({
+//     result:true,
+//     challengeNum,
+//     msg : "타입일단넘어가면성공"
+// });
+// };
+
+
+// //챌린지 조건설정 1-4(step)
+// const openChallenge4 = async (req,res) => {
+//     const {challengeNum,challengeStep} = req.body;
+//     console.log("test110",challengeStep);
+//     await Challenge.update(
+//       {
+//       challengeStep:challengeStep, // 배열로 challengeStep:[{step1,text},{step2,text}......] --> challengeStep[0].
+//       lastSavePage:4
+//     },
+//     {where: {challengeNum:challengeNum}}
+//     );
+    
+//     const openChallengeArray = [];
+//     openChallengeArray.push(challengeStep)
+//     console.log("tetetet",openChallengeArray);
+    
+     
+//    // 내일 저녁..친구도움()
+//     res.status(201).json({
+//       result:true,
+//       challengeNum,
+//       msg : "스탭일단넘어가면성공"
+//   });
+// };
+
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
 const joinChallenge = async (req, res) => {
@@ -142,4 +257,7 @@ const joinCancelChallenge = async (req, res) => {
   }
 };
 
-module.exports = { mainPage, userChallenge, preTest, search, openChallenge };
+
+
+
+module.exports = { mainPage, userChallenge, preTest, search, openChallenge1 };

@@ -17,6 +17,7 @@ module.exports = (req, res, next) => {
       res.locals.user = user;
       next();
     });
+    
   } catch (error) {
     console.log("사용자 인증 미들웨어 에러");
     console.log(error);

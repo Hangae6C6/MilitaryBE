@@ -1,25 +1,22 @@
+
 const express = require('express');
 const rp = require('request-promise');
 const {User} = require("../models");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-// const { or, and, like, eq } = sequelize.Op;
-
 
 const kakao = {
     clientid: `${process.env.CLIENTED}`, //REST API
-    redirectUri	: 'http://localhost:3000/api/kakao'
+    redirectUri : 'http://localhost:3000/api/auth/kakao/callback'
 }
 
 // kakao login page URL --> HTML BUTTON CLICK --> ROUTER.KAKAOLOGIN
-
-//router.get kakaoLogin
 const  kakaoLogin = async (req,res) => {
     const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao.clientid}&redirect_uri=${kakao.redirectUri}`
+    // console.log("sdsdsd",kakaoAuthURL);
     res.redirect(kakaoAuthURL);
 };
 
-//router.get kakao
 // kakao register --> REDIRECT URI
 const kakaoRegister = async (req,res) => {
 
@@ -41,7 +38,7 @@ const kakaoRegister = async (req,res) => {
     }
     
    const kakaotoken = await rp(options);
-   console.log("ttttttttt",kakaotoken);
+   //console.log("ttttttttt",kakaotoken);
    const options1 = {
         url : "https://kapi.kakao.com/v2/user/me",
         method : 'GET',
@@ -52,32 +49,31 @@ const kakaoRegister = async (req,res) => {
         json: true
     }
     const userInfo = await rp(options1);
-    // console.log("1111111111",userInfo);
+    console.log("1111111111",userInfo);
    
     const userId = userInfo.id;
     const userNick = userInfo.kakao_account.profile.nickname;
-    const existUser = await User.findOne({userId});
+    const existUser = await User.findOne({where: { userId: userId }});
+    // console.log('userId-->',userId);
+    // console.log('userNick-->',userNick);
 
-    //  console.log("--------->",existUser);
-
-
-    //  const existUsers = await User.findAll({
-    //       where: { [Op.eq]: [{ userId }, { userNick }] },
-    //      });
+    // console.log("222222222",existUser);
      try{
-        if(!existUser.dataValues){
+        if(!existUser){
             const from = 'kakao'
-            const user = new User({ userId, userNick, from })
+            // const user = new User({ userId, userNick, from })
             await User.create({ userId, userNick, from });
         }
     
-        const loginUser = await User.findOne({userId});
+        const loginUser = await User.findOne({where: { userId: userId }});
         const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
+
+        setC
     
         res.status(200).json({
             token,
             userId,
-            userNick
+            userNick,
         });
      } catch(error) {
         console.log("카카오로그인오류"); 
