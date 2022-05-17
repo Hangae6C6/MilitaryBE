@@ -6,9 +6,9 @@ const { or, and, like, eq } = sequelize.Op;
 
 // challengeNum:challenge[0].challengeNum,
 const detailPage = async(req,res) => {
-    const {challengeNum} = req.query
+    const {challengeNum} = req.query;
     try {
-        // console.log("1111111",req.body);
+     // console.log("1111111",req.body);
     // const { userId } = res.locals.user; 
     // const {challengeNum} = req.body;
     // console.log(challengeNum);
@@ -16,7 +16,7 @@ const detailPage = async(req,res) => {
         const detailChallenge = await Challenge.findOne({
             where :  {challengeNum : challengeNum},
         });
-        res.status(201).json({  
+        res.status(200).json({  
             result: true,
             msg: "디테일페이지",
             Challenge:detailChallenge,
