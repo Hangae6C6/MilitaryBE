@@ -8,7 +8,7 @@ const { or, and, like, eq } = sequelize.Op;
 const detailPage = async(req,res) => {
     const {challengeNum} = req.query;
     try {
-     // console.log("1111111",req.body);
+    // console.log("1111111",req.body);
     // const { userId } = res.locals.user; 
     // const {challengeNum} = req.body;
     // console.log(challengeNum);
@@ -29,14 +29,14 @@ const detailPage = async(req,res) => {
         res.status(400).json({result:false,msg:"detail2 가져오기 실패..."})
     }
 };
-     //console.log(JSON.parse(detailChallenge.steps));
+    //  console.log(JSON.parse(detailChallenge.steps));
     // var ckCnt=0;
     // for(var i=0;i<detailChallenge.steps.length;i++){
     //     if(detailChallenge.steps[i].isChecked){
     //         ckCnt++;
     //     };
     // }
-//    console.log("2222222",ckCnt); 
+   //  console.log("2222222",ckCnt); 
 
     // console.log(detailChallenge.challengeCnt);
     
@@ -50,7 +50,7 @@ const detailPage = async(req,res) => {
 
 
     
-    
+    // 만든거 db에 쌓일수 있게끔?
 
 
     //rank는 기본값을 false로 만들어주고 [t,t,t,t,t,f,f,f] 
@@ -65,6 +65,11 @@ const detailPage = async(req,res) => {
 
 //눌렀을떄 디비에 저장이 되는건지 . 
 
+
+//post 
+// const ?? = async(req,res) => {
+
+// };
 
 
 
