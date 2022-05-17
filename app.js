@@ -69,8 +69,13 @@ io.on("connection", (socket) => {
     //2022-05-17 아침에 시도해볼것
     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
     socket.onAny((eventName, ...args)=> {
-      console.log('너는 뭐냐??')
       console.log(eventName)
+    })
+
+    socket.on('msg', function (data) {
+    console.log(socket.id, data);
+
+    socket.emit('msg', `Server : "${data}" 받았습니다.`);
     })
     
     socket.emit("send_message", `${socket.id} 입장하셨습니다.`)
