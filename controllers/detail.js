@@ -6,8 +6,8 @@ const { or, and, like, eq } = sequelize.Op;
 
 // challengeNum:challenge[0].challengeNum,
 const detailPage = async(req,res) => {
-    
-    const { userId } = res.locals.user;
+    console.log("1111111",req.body);
+    // const { userId } = res.locals.user; 
     const {challengeNum} = req.body;
     // console.log(challengeNum);
 
@@ -16,13 +16,13 @@ const detailPage = async(req,res) => {
     });
 
      //console.log(JSON.parse(detailChallenge.steps));
-    var ckCnt=0;
-    for(var i=0;i<detailChallenge.steps.length;i++){
-        if(detailChallenge.steps[i].isChecked){
-            ckCnt++;
-        };
-    }
-   console.log(ckCnt); 
+    // var ckCnt=0;
+    // for(var i=0;i<detailChallenge.steps.length;i++){
+    //     if(detailChallenge.steps[i].isChecked){
+    //         ckCnt++;
+    //     };
+    // }
+//    console.log("2222222",ckCnt); 
 
     // console.log(detailChallenge.challengeCnt);
     
@@ -42,7 +42,6 @@ const detailPage = async(req,res) => {
     //rank는 기본값을 false로 만들어주고 [t,t,t,t,t,f,f,f] 
     // 순위를 0으로 바꾼수 
     // isChecked t/f  
-
     // function 
 
     

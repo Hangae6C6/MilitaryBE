@@ -46,7 +46,7 @@ module.exports = {
       },
       steps: {
         allowNull: false,
-        type:Sequelize.STRING,
+        type:Sequelize.JSON,
       },
       challengeStartDate: {
         allowNull: false,
