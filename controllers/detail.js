@@ -82,15 +82,20 @@ const detailJoinList = async(req,res)=> {
     try {
         const {challengeNum} = req.query //72
             //중첩하여 원하는 데이터 항목 추출 완료
-            const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
+            if (challengeNum) {
+                const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
                 include: [{
                     model:Challenge,where:{challengeNum:challengeNum}
                 }]
             })
-            //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
-            // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
-            // const joinchallenge = await Challenge.findAll({attributes:['userId','challengeNum','steps'],where:{}})
-            res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist})
+                //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
+                // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
+                // const joinchallenge = await Challenge.findAll({attributes:['userId','challengeNum','steps'],where:{}})
+                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist})
+            }else {
+                res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
+            }
+            
     }catch (error) {
         console.log(error, '참여한 인원 조회 실패...')
         res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})
