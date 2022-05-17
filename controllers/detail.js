@@ -6,15 +6,29 @@ const { or, and, like, eq } = sequelize.Op;
 
 // challengeNum:challenge[0].challengeNum,
 const detailPage = async(req,res) => {
-    console.log("1111111",req.body);
+    const {userId,challengeNum} = req.query
+    try {
+        // console.log("1111111",req.body);
     // const { userId } = res.locals.user; 
-    const {challengeNum} = req.body;
+    // const {challengeNum} = req.body;
     // console.log(challengeNum);
-
-    const detailChallenge = await Challenge.findOne({
-        where :  {challengeNum : challengeNum},
-    });
-
+    if (userId) {
+        const detailChallenge = await Challenge.findOne({
+            where :  {challengeNum : challengeNum},
+        });
+        res.status(201).json({  
+            result: true,
+            Challenge:detailChallenge,
+            msg: "디테일페이지",
+          });
+    }else {
+        res.status(400).json({result:false,msg:"detail 가져오기 실패..."})
+    }   
+    }catch (error) {
+        console.log(error, "detail.js 가져오기 에서 오류남")
+        res.status(400).json({result:false,msg:"detail 가져오기 실패..."})
+    }
+};
      //console.log(JSON.parse(detailChallenge.steps));
     // var ckCnt=0;
     // for(var i=0;i<detailChallenge.steps.length;i++){
@@ -47,12 +61,7 @@ const detailPage = async(req,res) => {
     
     
       
-    res.status(201).json({  
-        result: true,
-        Challenge:detailChallenge,
-        msg: "디테일페이지",
-      });
-};
+
 
 //눌렀을떄 디비에 저장이 되는건지 . 
 
