@@ -1,5 +1,5 @@
 const sequelize = require("sequelize");
-const { Challenge, UserData, UserChallenge } = require("../models");
+const { Challenge, UserData, UserChallenge,ChallengeJoin } = require("../models");
 const { or, and, like, eq } = sequelize.Op;
 
 
@@ -76,15 +76,16 @@ const detailPage = async(req,res) => {
 //챌린지 리스트(참여하고있는 사용자들 가져오기)
 const userdetailPage = async(req,res)=> {
     try {
-        const {userId} = req.query
+        const {userId,challengeNum} = req.query
         if (userId) {
             const challengeuser = await Challenge.findOne({attributes:['userId','challengeProgress'],where:{userId:userId}})
             const userdata = await UserData.findOne({attributes:['userId','armyCategory','rank'],where:{userId:userId}})
-            res.status(200).json({result:true,msg:"일단 성공임",challengeuser,userdata})
+            if (challengeuser.userId === userdata.userId) {
+                res.status(200).json({result:true,msg:"일단 성공임",challengeuser,userdata})    
+            }
         }else {
-            res.status(400).json({result:false,msg:"안됨...."})    
+            res.status(400).json({result:false,msg:"안됨...."})
         }
-        
     }catch (error) {
         console.log(error, 'userdetail-> 여기서 에러발생함')
         res.status(400).json({result:false,msg:"내가 참여하고있는 챌린지 조회 실패"})
