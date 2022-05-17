@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    step:DataTypes.JSON,
+    steps:DataTypes.JSON,
   }, {
     sequelize,
     modelName: 'ChallengeJoin',
