@@ -59,9 +59,16 @@ const detailPage = async(req,res) => {
     // isChecked t/f  
     // function 
 
+//하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
 //개설한 유저의 정보가 아니라 참여하고있는 유저의 정보가 필요하다.
 const detailJoin = async(req,res) => {
+    if (!res.locals.user) {
+        res.status(401).json({
+          result:false,msg:"로그인 후 사용하세요",
+        })
+        return
+    }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
     try {
         console.log(userId,challengeNum)

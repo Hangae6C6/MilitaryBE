@@ -21,9 +21,10 @@ module.exports = {
       },
       challengeJoinNumber:{
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.INTEGER,
         unique: true,
         autoIncrement: true,
+        primaryKey: true,
       }
     });
   },
