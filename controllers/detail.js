@@ -80,24 +80,7 @@ const detailPage = async(req,res) => {
 
 // 참가할때마다 참가자 늘려주기 
 
-const detailPage1 = async(req,res)=> {
-    
-    try {
-        const {challengeNum} = req.query
-        const detailChallenge = await Challenge.findOne({
-            attributes:['challengeNum'],where :  {challengeNum},
-        });
-        console.log(detailChallenge)
-        res.status(200).json({result:true,msg:"디테일 가져오기 성공!!",detailChallenge})
-    }catch (error) {
-        console.log(error,'detail.js 디테일가져오기 오류임다!')
-        res.status(400).json({result:false,msg:"디테일 가져오기 실패"})
-    }
-}
-
-
-
-module.exports = {detailPage,detailPage1};
+module.exports = {detailPage};
 
 
 // detail 보내줄때
