@@ -1,5 +1,5 @@
 const sequelize = require("sequelize");
-const { Challenge } = require("../models");
+const { Challenge, UserData, UserChallenge } = require("../models");
 const { or, and, like, eq } = sequelize.Op;
 
 
@@ -73,14 +73,40 @@ const detailPage = async(req,res) => {
 
 // };
 
+//챌린지 리스트(참여하고있는 사용자들 가져오기)
+const userdetailPage = async(req,res)=> {
+    try {
+        const {userId} = req.query
+        if (userId) {
+            const challengeuser = await Challenge.findOne({attributes:['userId','challengeProgress'],where:{userId:userId}})
+            const userdata = await UserData.findOne({attributes:['userId','armyCategory','rank'],where:{userId:userId}})
+            res.status(200).json({result:true,msg:"일단 성공임",challengeuser,userdata})
+        }else {
+            res.status(400).json({result:false,msg:"안됨...."})    
+        }
+        
+    }catch (error) {
+        console.log(error, 'userdetail-> 여기서 에러발생함')
+        res.status(400).json({result:false,msg:"내가 참여하고있는 챌린지 조회 실패"})
+    }
+}
 
-
-
+const test = async(req,res)=> {
+    const {userId,challengeTitle,challengeType} = req.body
+    try {
+        
+        const test = await UserChallenge.create({userId,challengeTitle,challengeType})
+        res.status(201).json({result:true,msg:"테스트 성공!",test})
+    }catch (error) {
+        console.log(error, 'test -> 여기서 에러났습니다.')
+        res.status(400).json({result:false,msg:"테스트 에러입니다."})
+    }
+}
 //인원수 limit ->  체크해주기 
 
 // 참가할때마다 참가자 늘려주기 
 
-module.exports = {detailPage};
+module.exports = {detailPage,userdetailPage,test};
 
 
 // detail 보내줄때
