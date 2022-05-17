@@ -60,12 +60,11 @@ io.on("connection", (socket) => {
   //스트리밍
     socket.on("join_room", (data) => {
       socket.join(data);
-      socket.emit("가냐?")
       console.log(`User with ID: ${socket.id} joined room: ${data}`);
       
       socket.to(data).emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`)
     });
-    
+    socket.emit("가냐?")
     //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
     //2022-05-17 아침에 시도해볼것
     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
@@ -85,6 +84,10 @@ io.on("connection", (socket) => {
 
     socket.on('disconnect', ()=> {
       console.log('나갔니?')
+    })
+
+    socket.on('test',()=> {
+      socket.emit()
     })
   })
 //소켓이라는 객체가
