@@ -22,11 +22,11 @@ const detailPage = async(req,res) => {
             Challenge:detailChallenge,
           });
     }else {
-        res.status(400).json({result:false,msg:"detail 가져오기 실패..."})
+        res.status(400).json({result:false,msg:"detail1 가져오기 실패..."})
     }   
     }catch (error) {
         console.log(error, "detail.js 가져오기 에서 오류남")
-        res.status(400).json({result:false,msg:"detail 가져오기 실패..."})
+        res.status(400).json({result:false,msg:"detail2 가져오기 실패..."})
     }
 };
      //console.log(JSON.parse(detailChallenge.steps));
