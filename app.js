@@ -64,7 +64,7 @@ io.on("connection", (socket) => {
       
       socket.to(data).emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`)
     });
-    socket.emit("leave_room", "되는건가??")
+    socket.emit("send_message", "되는건가??")
     //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
     //2022-05-17 아침에 시도해볼것
     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
