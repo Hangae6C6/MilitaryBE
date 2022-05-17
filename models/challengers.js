@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      //Challenge 와 ChallengeJoin 연결 완료
+      Challenge.hasMany(models.ChallengeJoin, { foreignKey: 'challengeNum', sourceKey: 'userId', onDelete:'CASCADE' });
     }
   }
   Challenge.init({
