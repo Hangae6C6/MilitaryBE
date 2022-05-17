@@ -77,24 +77,20 @@ const detailJoin = async(req,res) => {
 }
 
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
+//sequelize join 성공 중첩완료
 const detailJoinList = async(req,res)=> {
     try {
         const {challengeNum} = req.query //72
-        if (challengeNum) {
-            // const toDo
-            const attributes = ['userId','challengeNum','steps']
-            toDo = await ChallengeJoin.findAll({
-                attributes,
-                include:[{
-                    model:Challenge,
-                }],
+            //중첩하여 원하는 데이터 항목 추출 완료
+            const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
+                include: [{
+                    model:Challenge,where:{challengeNum:challengeNum}
+                }]
             })
+            //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
             // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
             // const joinchallenge = await Challenge.findAll({attributes:['userId','challengeNum','steps'],where:{}})
-                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",attributes})
-        }else {
-            res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})    
-        }
+            res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist})
     }catch (error) {
         console.log(error, '참여한 인원 조회 실패...')
         res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})
