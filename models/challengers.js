@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       challengeCnt: DataTypes.INTEGER,
       challengeViewCnt: DataTypes.INTEGER, //(추가)
       userId: DataTypes.STRING, 
-      isChecked:DataTypes.BOOLEAN,
+      // isChecked:DataTypes.BOOLEAN,
       lastSavePage:DataTypes.INTEGER, // 원래 사용하려했지만 버림
       steps : DataTypes.STRING, //[{stepNum:int,stepContent,isChecked}] 이런식으로 들어옴
       challengeEndDate:DataTypes.STRING,
