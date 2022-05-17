@@ -2689,15 +2689,6 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
     at ServerResponse.json (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/response.js:278:15)
     at login (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/user.js:100:7)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-<<<<<<< HEAD
-2022-05-16T07:04:47.204Z [winston-test] error: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
-Error: Route.get() requires a callback function but got a [object Undefined]
-    at Route.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\route.js:211:15)
-    at Function.proto.<computed> [as get] (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\node_modules\express\lib\router\index.js:521:19)
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\routers\user.js:17:8)
-    at Module._compile (node:internal/modules/cjs/loader:1101:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
-=======
 2022-05-12T07:48:07.661Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-12T07:50:11.264Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-13T05:19:11.784Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
@@ -2750,14 +2741,10 @@ SyntaxError: missing ) after argument list
     at wrapSafe (node:internal/modules/cjs/loader:1032:15)
     at Module._compile (node:internal/modules/cjs/loader:1067:27)
     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
->>>>>>> 40b136e74d4cca9de97864070774c613da5c2542
     at Module.load (node:internal/modules/cjs/loader:981:32)
     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
     at Module.require (node:internal/modules/cjs/loader:1005:19)
     at require (node:internal/modules/cjs/helpers:102:18)
-<<<<<<< HEAD
-    at Object.<anonymous> (C:\Users\황인호\Desktop\Military_BE\MilitaryBE\app.js:82:20)
-=======
     at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/userdata.js:3:29)
     at Module._compile (node:internal/modules/cjs/loader:1103:14)
 2022-05-13T07:44:32.183Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
@@ -2817,4 +2804,148 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
 2022-05-13T08:29:34.790Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-13T14:12:33.729Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
 2022-05-13T14:15:36.639Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
->>>>>>> 40b136e74d4cca9de97864070774c613da5c2542
+2022-05-13T15:34:19.057Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T00:56:22.123Z [winston-test] error: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:211:15)
+    at Function.proto.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/detail.js:9:8)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:86:22)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-16T00:58:44.848Z [winston-test] error: uncaughtException: detailPage is not defined
+ReferenceError: detailPage is not defined
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/detail.js:9:49)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:86:22)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-16T00:59:00.235Z [winston-test] error: uncaughtException: detailPage is not defined
+ReferenceError: detailPage is not defined
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/detail.js:9:49)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:86:22)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-16T01:00:09.900Z [winston-test] error: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/route.js:211:15)
+    at Function.proto.<computed> [as post] (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/routers/detail.js:9:8)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/jungdaekyu/Desktop/MilitaryBE/app.js:86:22)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47
+2022-05-16T01:00:31.433Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T01:07:42.264Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T05:20:24.335Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T05:20:33.046Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T05:42:38.448Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T05:42:48.764Z [winston-test] error: uncaughtException: challenge is not defined
+ReferenceError: challenge is not defined
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:20:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-16T05:44:10.971Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:12:04.225Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:12:32.489Z [winston-test] error: uncaughtException: WHERE parameter "challengeNum" has invalid "undefined" value
+Error: WHERE parameter "challengeNum" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1655:13)
+    at /Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1646:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1644:35)
+    at MySQLQueryGenerator.getWhereConditions (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1987:19)
+    at MySQLQueryGenerator.selectQuery (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-generator.js:932:28)
+    at MySQLQueryInterface.select (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:59)
+    at Function.findAll (/Users/jungdaekyu/Desktop/MilitaryBE/node_modules/sequelize/lib/model.js:1126:47)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:14:29)
+2022-05-16T13:13:05.057Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:36:22.857Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:38:42.601Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:39:00.811Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T13:53:15.455Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:01:56.971Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:02:39.349Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:03:20.501Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:03:23.130Z [winston-test] error: uncaughtException: Unexpected token | in JSON at position 49
+SyntaxError: Unexpected token | in JSON at position 49
+    at JSON.parse (<anonymous>)
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:18:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-16T14:03:59.026Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:04:02.098Z [winston-test] error: uncaughtException: JSONParser is not defined
+ReferenceError: JSONParser is not defined
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:18:14)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-16T14:04:52.706Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-16T14:05:04.100Z [winston-test] error: uncaughtException: JSONParser is not defined
+ReferenceError: JSONParser is not defined
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:18:14)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-17T05:22:33.681Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:24:10.326Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:24:13.706Z [winston-test] error: uncaughtException: Unexpected token | in JSON at position 49
+SyntaxError: Unexpected token | in JSON at position 49
+    at JSON.parse (<anonymous>)
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:17:36)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-17T05:24:20.102Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:24:23.897Z [winston-test] error: uncaughtException: Unexpected token | in JSON at position 49
+SyntaxError: Unexpected token | in JSON at position 49
+    at JSON.parse (<anonymous>)
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:17:36)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-17T05:24:44.405Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:25:18.299Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:25:24.881Z [winston-test] error: uncaughtException: Unexpected token | in JSON at position 49
+SyntaxError: Unexpected token | in JSON at position 49
+    at JSON.parse (<anonymous>)
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:17:36)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-17T05:25:57.371Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:26:01.505Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'length')
+TypeError: Cannot read properties of null (reading 'length')
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:19:41)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-05-17T05:26:31.696Z [winston-test] info: 3000 포트로 서버가 켜졌어요!
+2022-05-17T05:26:35.618Z [winston-test] error: uncaughtException: Cannot read properties of null (reading 'length')
+TypeError: Cannot read properties of null (reading 'length')
+    at detailPage (/Users/jungdaekyu/Desktop/MilitaryBE/controllers/detail.js:20:41)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
