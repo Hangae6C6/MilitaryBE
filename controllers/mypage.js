@@ -112,12 +112,29 @@ const myPageChallengeread = async (req,res) =>{
     }
 }
 
+//마이페이지 - 사전테스트 결과
+const myPageChallengetest = async(req,res)=> {
+    try {
+        const {userId} = req.query
+        if (userId) {
+            const test = await UserData.findAll({attributes:['userId','testResult'],where:{userId:userId}})
+            res.status(200).json({result:true,msg:"성공!",test})
+        }else {
+            res.status(400).json({result:false,msg:"로그인 후 이용해주세요"})    
+        }
+    }catch (error) {
+        console.log(error, "mypage.js 테스트조회하기 기능에서 오류남")
+        res.status(400).json({result:false,msg:"실패!!"})
+    }
+
+}
 
 
 module.exports = { myPage,
     userProfileread,
     userProfilepatch,
     myPageChallengeread,
+    myPageChallengetest,
     // preTestread,
     // preTestpatch
  };
