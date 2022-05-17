@@ -113,6 +113,7 @@ const myPageChallengeread = async (req,res) =>{
 }
 
 //마이페이지 - 사전테스트 결과
+//클라이언트 툴 테스트 완료
 const myPageChallengetest = async(req,res)=> {
     try {
         const {userId} = req.query
