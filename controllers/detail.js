@@ -6,20 +6,20 @@ const { or, and, like, eq } = sequelize.Op;
 
 // challengeNum:challenge[0].challengeNum,
 const detailPage = async(req,res) => {
-    const {userId,challengeNum} = req.query
+    const {challengeNum} = req.query
     try {
         // console.log("1111111",req.body);
     // const { userId } = res.locals.user; 
     // const {challengeNum} = req.body;
     // console.log(challengeNum);
-    if (userId) {
+    if (challengeNum) {
         const detailChallenge = await Challenge.findOne({
             where :  {challengeNum : challengeNum},
         });
         res.status(201).json({  
             result: true,
-            Challenge:detailChallenge,
             msg: "디테일페이지",
+            Challenge:detailChallenge,
           });
     }else {
         res.status(400).json({result:false,msg:"detail 가져오기 실패..."})
