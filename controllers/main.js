@@ -100,20 +100,22 @@ const openChallenge1 = async (req, res) => {
   const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body.challenges;
   
 
-  console.log("111111111",req.body.challenges);
-  console.log("222222",req);
+  console.log("111111111",req.body.challenges.steps);
+
    // challengeNum은 자동생성, 
 
   // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
    
   //챌린지에 대한 vali 
-  var stepsStr = "";
-  for(var i=0;i<steps.length;i++){
-    stepsStr+=JSON.stringify(steps[i]);  // stepStr+=
-    if(steps.length-1 !=i){
-      stepsStr+='|';
-    }
-  }
+  // var stepsStr = "";
+  // for(var i=0;i<steps.length;i++){
+  //   console.log('steps[i]--->',steps[i]);
+
+  //   stepsStr+=JSON.stringify(steps[i]);  // stepStr+=
+  //   if(steps.length-1 !=i){
+  //     stepsStr+='|';
+  //   }
+  // }
 
   //stepsStr - > {a:1,b:2}|{a:3,b:4}
   //이상태로 디비에 저장이 됨

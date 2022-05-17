@@ -135,6 +135,7 @@ const authNaverRouter = require("./routers/auth_naver");
 const mypageRouter = require("./routers/mypage");
 const kakaoRouter = require("./routers/kakaoLogin");
 const calRouter = require("./routers/cal");
+const detailRouter = require("./routers/detail");
 
 // 접속 로그 남기기
 const requestMiddleware = (req, res, next) => {
@@ -181,7 +182,7 @@ app.use("/api", [
   authNaverRouter,
   userdataRouter,
   mainRouter,
-  // detailRouter,
+  detailRouter,
   calRouter,
   mypageRouter,
   kakaoRouter,
