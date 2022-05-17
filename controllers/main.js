@@ -126,7 +126,7 @@ const openChallenge1 = async (req, res) => {
     challengeType,
     challengeTitle,
     userId,
-    steps:stepsStr,
+    steps,
     challengeLimitNum
   });
 
