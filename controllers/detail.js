@@ -9,10 +9,6 @@ const { or, and, like, eq } = sequelize.Op;
 const detailPage = async(req,res) => {
     const {challengeNum} = req.query;
     try {
-    // console.log("1111111",req.body);
-    // const { userId } = res.locals.user; 
-    // const {challengeNum} = req.body;
-    // console.log(challengeNum);
     if (challengeNum) {
         const detailChallenge = await Challenge.findOne({
             where :  {challengeNum : challengeNum},
@@ -30,6 +26,7 @@ const detailPage = async(req,res) => {
         res.status(400).json({result:false,msg:"detail2 가져오기 실패..."})
     }
 };
+
     //  console.log(JSON.parse(detailChallenge.steps));
     // var ckCnt=0;
     // for(var i=0;i<detailChallenge.steps.length;i++){
