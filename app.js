@@ -58,13 +58,15 @@ io.on("connection", (socket) => {
   //핸드쉐이킹이 어디서 일어나는가
   //네트워크와 관련된 질문 관련된 내용을 공부할것!
   //스트리밍
+    socket.emit("join_room", `${socket.id} 입장하셨습니다.`)
+
     socket.on("join_room", (data) => {
       socket.join(data);
       console.log(`User with ID: ${socket.id} joined room: ${data}`);
       
       socket.to(data).emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`)
     });
-    socket.emit("send_message", "되는건가??")
+    
     //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
     //2022-05-17 아침에 시도해볼것
     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
