@@ -16,7 +16,7 @@ const detailPage = async(req,res) => {
         res.status(200).json({  
             result: true,
             msg: "디테일페이지",
-            Challenge:detailChallenge,
+            challenge:detailChallenge,
           });
     }else {
         res.status(400).json({result:false,msg:"detail1 가져오기 실패..."})

@@ -23,8 +23,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         unique: true,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
+      },
+      steps : {
+        allowNull: false,
+        type:Sequelize.JSON,
       }
     });
   },
