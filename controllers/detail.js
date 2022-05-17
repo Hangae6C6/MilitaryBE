@@ -1,3 +1,4 @@
+const { transformAuthInfo } = require("passport");
 const sequelize = require("sequelize");
 const { Challenge, UserData, UserChallenge,ChallengeJoin } = require("../models");
 const { or, and, like, eq } = sequelize.Op;
@@ -58,19 +59,19 @@ const detailPage = async(req,res) => {
     // isChecked t/f  
     // function 
 
-    
-    
-      
-
-
-//눌렀을떄 디비에 저장이 되는건지 . 
-
-
-//post 
-// const ?? = async(req,res) => {
-
-// };
-
+//한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
+//개설한 유저의 정보가 아니라 참여하고있는 유저의 정보가 필요하다.
+const detailJoin = async(req,res) => {
+    const {userId,challengeNum} = req.query //로그인하고있는 유저
+    try {
+        console.log(userId,challengeNum)
+        await ChallengeJoin.create({userId,challengeNum})
+        res.status(201).json({result:true,msg:"챌린지리스트 성공"})
+    }catch(error) {
+        console.log(error,'챌린지리스트 오류')
+        res.status(400).json({result:false,msg:"챌린지리스트 실패"})
+    }
+}
 
 
 
@@ -78,41 +79,12 @@ const detailPage = async(req,res) => {
 
 // };
 
-//챌린지 리스트(참여하고있는 사용자들 가져오기)
-const userdetailPage = async(req,res)=> {
-    try {
-        const {userId,challengeNum} = req.query
-        if (userId) {
-            const challengeuser = await Challenge.findOne({attributes:['userId','challengeProgress'],where:{userId:userId}})
-            const userdata = await UserData.findOne({attributes:['userId','armyCategory','rank'],where:{userId:userId}})
-            if (challengeuser.userId === userdata.userId) {
-                res.status(200).json({result:true,msg:"일단 성공임",challengeuser,userdata})    
-            }
-        }else {
-            res.status(400).json({result:false,msg:"안됨...."})
-        }
-    }catch (error) {
-        console.log(error, 'userdetail-> 여기서 에러발생함')
-        res.status(400).json({result:false,msg:"내가 참여하고있는 챌린지 조회 실패"})
-    }
-}
 
-const test = async(req,res)=> {
-    const {userId,challengeTitle,challengeType} = req.body
-    try {
-        
-        const test = await UserChallenge.create({userId,challengeTitle,challengeType})
-        res.status(201).json({result:true,msg:"테스트 성공!",test})
-    }catch (error) {
-        console.log(error, 'test -> 여기서 에러났습니다.')
-        res.status(400).json({result:false,msg:"테스트 에러입니다."})
-    }
-}
 //인원수 limit ->  체크해주기 
 
 // 참가할때마다 참가자 늘려주기 
 
-module.exports = {detailPage,userdetailPage,test};
+module.exports = {detailPage,detailJoin};
 
 
 // detail 보내줄때

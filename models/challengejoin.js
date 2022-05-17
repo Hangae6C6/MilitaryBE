@@ -16,7 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   ChallengeJoin.init({
     userId: DataTypes.STRING,
     challengeNum: DataTypes.STRING,
-    progress: DataTypes.STRING
+    progress: DataTypes.STRING,
+    challengeJoinNumber:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+    },
+    step:DataTypes.JSON,
   }, {
     sequelize,
     modelName: 'ChallengeJoin',

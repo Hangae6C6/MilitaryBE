@@ -18,6 +18,12 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      challengeJoinNumber:{
+        allowNull: false,
+        type: Sequelize.DATE,
+        unique: true,
+        autoIncrement: true,
       }
     });
   },
