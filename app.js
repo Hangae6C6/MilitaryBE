@@ -27,23 +27,13 @@ app.get("/api", (req, res) => {
   res.send(data);
 });
 
-app.post("/send_mail", cors(), async (req, res) => {
-  let { text } = req.body;
-  const transport = nodemailer.createTransport({
-    host: process.env.MAIL_HOST,
-    port: process.env.MAIL_PORT,
-    auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
-    },
+sequelize.sync({ force: false })
+  .then(() => {
+    console.log('데이터베이스 연결 성공');
+  })
+  .catch((err) => {
+    console.error(err);
   });
-  await transport.sendMail({
-    from: process.env.MAIL_FROM,
-    to: "test@test.com",
-    subject: "test email",
-    text: `${text}`,
-  });
-});
 
 const io = new Server(server, {
   cors: {
