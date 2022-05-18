@@ -4,6 +4,7 @@ const {
     detailPage,
     detailJoin,
     detailJoinList,
+    detailJoinout,
 } = require("../controllers/detail");
 const authMiddleware = require("../middleware/authMiddleWare");
 
@@ -16,7 +17,11 @@ router.get("/challengeDetail", authMiddleware, detailPage);
 router.post('/challengeJoin',authMiddleware, detailJoin)
 
 //챌린지 참여한 유저 및 챌린지 진행 현황 확인 기능
+//썬더클라이언트 테스트 완료
 router.get('/challengeJoin',authMiddleware, detailJoinList)
 
+//참여중인 챌린지 나가기
+//썬더클라이언트 테스트 완료
+router.delete('/challengeout',authMiddleware, detailJoinout)
 
 module.exports = router;

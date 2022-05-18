@@ -1,5 +1,6 @@
 const { transformAuthInfo } = require("passport");
 const sequelize = require("sequelize");
+const {Op} = require('sequelize')
 const { Challenge, UserData, UserChallenge,ChallengeJoin } = require("../models");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -68,8 +69,14 @@ const detailJoin = async(req,res) => {
     }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
     try {
-        await ChallengeJoin.create({userId,challengeNum})
-        res.status(201).json({result:true,msg:"챌린지리스트 성공"})
+        // const existUsers = await ChallengeJoin.findOne({where :{[Op.or]:[{userId},{challengeNum}]}})
+        // console.log(existUsers)
+        // if (!existUsers) {
+            const challengejoin = await ChallengeJoin.create({userId,challengeNum})
+            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
+            
+        // }
+        // res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
     }catch(error) {
         console.log(error,'챌린지리스트 오류')
         res.status(400).json({result:false,msg:"챌린지리스트 실패"})
@@ -85,7 +92,7 @@ const detailJoinList = async(req,res)=> {
             if (challengeNum) {
                 const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
                 include: [{
-                    model:Challenge,where:{challengeNum:challengeNum}
+                    model:Challenge,attributes:['steps'],where:{challengeNum:challengeNum}
                 }]
             })
                 //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
@@ -102,6 +109,19 @@ const detailJoinList = async(req,res)=> {
     }
 }
 
+//참여하고있는 챌린지 나가기
+//데이터 삭제 완료
+const detailJoinout = async(req,res)=> {
+    const {userId,challengeNum} = req.query
+    try {
+        const challengeout = await ChallengeJoin.destroy({where:{userId:userId,challengeNum:challengeNum}})
+        res.status(200).json({result:true,msg:"챌린지 나가기 성공"})
+    }catch (error) {
+        console.log(error,'챌린지 나가기에서 오류남')
+        res.status(400).json({result:false,msg:"챌린지 나가기 실패"})
+    }
+}
+
 // const detailRank = async(req,res) => {
 
 // };
@@ -111,7 +131,7 @@ const detailJoinList = async(req,res)=> {
 
 // 참가할때마다 참가자 늘려주기 
 
-module.exports = {detailPage,detailJoin,detailJoinList};
+module.exports = {detailPage,detailJoin,detailJoinList,detailJoinout};
 
 
 // detail 보내줄때
