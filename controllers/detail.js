@@ -72,8 +72,10 @@ const detailJoin = async(req,res) => {
         // const existUsers = await ChallengeJoin.findOne({where :{[Op.or]:[{userId},{challengeNum}]}})
         // console.log(existUsers)
         // if (!existUsers) {
-            const challengejoin = await ChallengeJoin.create({userId,challengeNum})
-            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
+            const steps = await Challenge.findOne({attributes:['steps'],where:{userId:userId}})
+            console.log(steps.steps)
+            const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps})
+            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin,steps})
             
         // }
         // res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
@@ -92,9 +94,11 @@ const detailJoinList = async(req,res)=> {
             if (challengeNum) {
                 const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
                 include: [{
-                    model:Challenge,attributes:['steps'],where:{challengeNum:challengeNum}
-                }]
+                    model:Challenge,required: false,attributes:['steps']
+                    // ,where:{challengeNum:challengeNum}
+                }],
             })
+                // const joinupdate = await ChallengeJoin.update({where:{challengeNum:challengeNum}})
                 //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
                 // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
                 // const joinchallenge = await Challenge.findAll({attributes:['userId','challengeNum','steps'],where:{}})

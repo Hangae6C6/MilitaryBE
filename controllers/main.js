@@ -129,7 +129,6 @@ const openChallenge1 = async (req, res) => {
     steps,
     challengeLimitNum
   });
-
   const challenge = await Challenge.findAll({
     order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
   }) 
@@ -137,7 +136,7 @@ const openChallenge1 = async (req, res) => {
   res.status(201).json({  
     result: true,
     challengeNum:challenge[0].challengeNum,
-    msg: "첼린지개설완료",
+    msg: "챌린지개설완료",
   });
 };
 
