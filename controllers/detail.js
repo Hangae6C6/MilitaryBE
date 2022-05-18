@@ -59,10 +59,6 @@ const detailPage = async(req,res) => {
     };
     
 
-
-    
-    
-
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
 //개설한 유저의 정보가 아니라 참여하고있는 유저의 정보가 필요하다.
@@ -79,10 +75,9 @@ const detailJoin = async(req,res) => {
         // console.log(existUsers)
         // if (!existUsers) {
             const steps = await Challenge.findOne({attributes:['steps'],where:{userId:userId}})
-            console.log(steps.steps)
-            const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps})
-            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin,steps})
-            
+            console.log("1231231",steps.dataValues.steps);
+            const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
+            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
         // }
         // res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
     }catch(error) {
@@ -103,7 +98,7 @@ const detailJoinList = async(req,res)=> {
                     model:Challenge,required: false,attributes:['steps']
                     // ,where:{challengeNum:challengeNum}
                 }],
-            })
+            });
                 // const joinupdate = await ChallengeJoin.update({where:{challengeNum:challengeNum}})
                 //첫 시도 단순하게 두개의 테이블에서 데이터 가져오려고했음
                 // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
@@ -112,12 +107,11 @@ const detailJoinList = async(req,res)=> {
             }else {
                 res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
             }
-            
     }catch (error) {
         console.log(error, '참여한 인원 조회 실패...')
         res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})
     }
-}
+};
 
 //참여하고있는 챌린지 나가기
 //데이터 삭제 완료
