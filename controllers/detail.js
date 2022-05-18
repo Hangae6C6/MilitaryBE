@@ -45,17 +45,23 @@ const detailPage = async(req,res) => {
     // 참여최대인원수가 6명 challengeLimitNum - challengeCnt = 남은자리  
     //   detailChallenge.a = 1;
     //   console.log(detailChallenge);
+    const detailSteps = async(req,res) => {
+       const {stepNum} = req.body;
+       const {challengeNum,userId} = req.query;
+       try{
+          const challengeSteps = await ChallengeJoin.update()
+
+
+       }catch(error) {
+        console.log(error,'챌린지스탭스 오류')
+        res.status(400).json({result:false,msg:"챌린지스탭스 실패"})
+       };
+    };
     
 
 
     
-    // 만든거 db에 쌓일수 있게끔?
-
-
-    //rank는 기본값을 false로 만들어주고 [t,t,t,t,t,f,f,f] 
-    // 순위를 0으로 바꾼수 
-    // isChecked t/f  
-    // function 
+    
 
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
@@ -135,7 +141,7 @@ const detailJoinout = async(req,res)=> {
 
 // 참가할때마다 참가자 늘려주기 
 
-module.exports = {detailPage,detailJoin,detailJoinList,detailJoinout};
+module.exports = {detailPage,detailJoin,detailJoinList,detailJoinout,detailSteps};
 
 
 // detail 보내줄때
