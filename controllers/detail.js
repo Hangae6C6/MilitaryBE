@@ -86,7 +86,7 @@ const detailJoin = async(req,res) => {
         console.log(error,'챌린지리스트 오류')
         res.status(400).json({result:false,msg:"챌린지리스트 실패"})
     }
-}
+};
 
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //sequelize join 성공 중첩완료
