@@ -75,7 +75,7 @@ const detailJoin = async(req,res) => {
     }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
     try {
-        // const existUsers = await ChallengeJoin.findOne({where :{[Op.or]:[{userId},{challengeNum}]}})
+        const existUsers = await ChallengeJoin.findOne({where :{userId}})
         // console.log(existUsers)
         // if (!existUsers) {
             const steps = await Challenge.findOne({attributes:['steps'],where:{userId:userId}})
