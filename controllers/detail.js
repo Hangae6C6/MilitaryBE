@@ -45,13 +45,36 @@ const detailPage = async(req,res) => {
     // 참여최대인원수가 6명 challengeLimitNum - challengeCnt = 남은자리  
     //   detailChallenge.a = 1;
     //   console.log(detailChallenge);
+
     const detailSteps = async(req,res) => {
-       const {stepNum} = req.body;
-       const {challengeNum,userId} = req.query;
+       const isChecked = req.body;
+       const {challengeNum,userId,stepNum} = req.query;
+       
        try{
-          const challengeSteps = await ChallengeJoin.update()
-
-
+          const detailStep1 = await ChallengeJoin.update({isChecked:isChecked},{
+            where: {
+                userId:userId,
+            }
+          });
+          const step = await ChallengeJoin.findAll();
+        //   console.log("12312312312",step[0].steps[0].stepNum);
+        let answer = [];
+        if (stepNum) {
+            for (let i = 0 ; i < step.length; i++) {
+                answer.push(step[i].steps[stepNum].stepNum)
+              }
+        }
+        //   for (let i = 0 ; i < step.length; i++) {
+        //     answer.push(step[i].steps[stepNum].stepNum)
+        //   }
+          console.log(answer);
+          const answer1 = answer.join()
+          console.log(answer1);
+         res.status(200).json({
+             result:true,
+             msg:"스탭체크완료",
+             detailStep1
+         });
        }catch(error) {
         console.log(error,'챌린지스탭스 오류')
         res.status(400).json({result:false,msg:"챌린지스탭스 실패"})
@@ -162,9 +185,6 @@ const detailJoinout = async(req,res)=> {
     }
 }
 
-// const detailRank = async(req,res) => {
-
-// };
 
 
 //인원수 limit ->  체크해주기 
@@ -174,8 +194,5 @@ const detailJoinout = async(req,res)=> {
 module.exports = {detailPage,detailJoin,detailJoinList_id,detailJoinList_challengeNum,detailJoinout,detailSteps};
 
 
-// detail 보내줄때
-// var test2 = stepsStr.split("|");
-//test2 = [{a:1,:b:2},{a:3,b:4}];
 
 

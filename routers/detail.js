@@ -29,6 +29,7 @@ router.get('/challengeJoinBychallengeNum',authMiddleware, detailJoinList_challen
 //썬더클라이언트 테스트 완료(황인호)
 router.delete('/challengeout',authMiddleware, detailJoinout);
 
+//첼린지상세페이지 step 
 router.post('/challengeStep',authMiddleware, detailSteps);
 
 module.exports = router;
