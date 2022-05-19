@@ -89,11 +89,11 @@ const detailJoin = async(req,res) => {
     }
 };
 
-//하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
+//하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능 query=userId
 //sequelize join 성공 중첩완료
-const detailJoinList = async(req,res)=> {
+const detailJoinList_id = async(req,res)=> {
     try {
-        const {userId} = req.query //72
+        const {userId} = req.query
             //중첩하여 원하는 데이터 항목 추출 완료
             if (userId) {
                 // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
@@ -103,7 +103,7 @@ const detailJoinList = async(req,res)=> {
                 // }],
             // });
                 // const nicklist = await User.findAll({attributes:['userId','userNick']})
-                const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId},
+                const joinlist_id = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId},
                 include: {
                     model:User
                     // ,attributes:['userNick','userId']
@@ -111,9 +111,32 @@ const detailJoinList = async(req,res)=> {
             })
             // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
             // const nicklist1 = await joinlist.Answer()
-                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist})
+                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id})
             }else {
                 res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
+            }
+    }catch (error) {
+        console.log(error, '참여한 인원 조회 실패...')
+        res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})
+    }
+};
+
+//하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능 query=challengeNum
+//sequelize join 성공 중첩완료
+const detailJoinList_challengeNum = async(req,res)=> {
+    
+    try {
+        const {challengeNum} = req.query
+            // 중첩하여 원하는 데이터 항목 추출 완료
+            if (challengeNum) {
+                const joinlist_challengeNum = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum},
+                include: {
+                    model:User
+                }
+            })
+                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_challengeNum})
+            }else {
+                res.status(400).json({result:false,msg:"참여한 인원 조회 실패!"})        
             }
     }catch (error) {
         console.log(error, '참여한 인원 조회 실패...')
@@ -143,7 +166,7 @@ const detailJoinout = async(req,res)=> {
 
 // 참가할때마다 참가자 늘려주기 
 
-module.exports = {detailPage,detailJoin,detailJoinList,detailJoinout,detailSteps};
+module.exports = {detailPage,detailJoin,detailJoinList_id,detailJoinList_challengeNum,detailJoinout,detailSteps};
 
 
 // detail 보내줄때

@@ -3,7 +3,8 @@ const router = express.Router();
 const {
     detailPage,
     detailJoin,
-    detailJoinList,
+    detailJoinList_id,
+    detailJoinList_challengeNum,
     detailJoinout,
     detailSteps
 } = require("../controllers/detail");
@@ -16,9 +17,13 @@ router.get("/challengeDetail", authMiddleware, detailPage);
 //썬더클라이언트 테스트 완료(황인호)
 router.post('/challengeJoin',authMiddleware, detailJoin);
 
-//챌린지 참여한 유저 및 챌린지 진행 현황 확인 기능
+//챌린지 참여한 유저 및 챌린지 진행 현황 확인 기능=query(userId)
 //썬더클라이언트 테스트 완료(황인호)
-router.get('/challengeJoin',authMiddleware, detailJoinList);
+router.get('/challengeJoin',authMiddleware, detailJoinList_id);
+
+//챌린지 참여한 유저 및 챌린지 진행 현황 확인 기능=query(challengeNum)
+//썬더클라이언트 테스트 완료(황인호)
+router.get('/challengeJoinBychallengeNum',authMiddleware, detailJoinList_challengeNum);
 
 //참여중인 챌린지 나가기
 //썬더클라이언트 테스트 완료(황인호)
