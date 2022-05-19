@@ -73,14 +73,15 @@ const detailJoin = async(req,res) => {
     try {
         const existUsers = await ChallengeJoin.findOne({attributes:['userId'],where :{userId:userId}})
         //기존에 참여한 회원이 중복으로 재참여시 못드가게하려함
-        if (!existUsers) {
+        // if (!existUsers) {
             const steps = await Challenge.findOne({attributes:['steps'],where:{userId:userId}})
-            console.log("1231231",steps.dataValues.steps);
+            // console.log("1231231",steps.dataValues.steps);
             const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
+            // steps:steps.dataValues.steps
             res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
-        }else {
-            res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
-        }
+        // }else {
+        //     res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
+        // }
         
     }catch(error) {
         console.log(error,'챌린지리스트 오류')
