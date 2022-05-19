@@ -43,22 +43,24 @@ const userProfileread = async (req, res) => {
 };
 
 //프로필 수정하기 PUT
-//썬더클라이언트 수정 필요
-const userProfilepatch = async (req, res) => {
+//썬더클라이언트 테스트 완료
+const userProfileput = async (req, res) => {
     const {userId} = req.query
-    const armyCategory = req.body.armyCategory
-    const rank = req.body.rank
-    const userdate = await UserData.findAll()
+    const {armyCategory} = req.body
+    const {rank} = req.body
     try {
         
-        await UserData.update({armyCategory:armyCategory,rank:rank},{
+        const armymodify = await UserData.update({armyCategory:armyCategory},{
             where: {
                 userId:userId,
-                armyCategory:armyCategory,
-                rank:rank,
             }
         })
-        return res.status(201).json({result:true,msg:"프로필 수정 완료",userdate});
+        const rankmodify = await UserData.update({rank:rank},{
+            where: {
+                userId:userId,
+            }
+        })
+        return res.status(201).json({result:true,msg:"프로필 수정 완료",armymodify,rankmodify});
 
     }catch(error) {
         console.log(error)
@@ -69,38 +71,12 @@ const userProfilepatch = async (req, res) => {
 
 //마이페이지 - 나의챌린지 수정 query(userNum) PUT
 //썬더클라이언트 테스트 완료
-// const myPageChallengeread = async (req,res) =>{
-//     const {challengeNum} = req.query
-//     const challengeTitle = req.body.challengeTitle
-//     const {userId} = res.locals.user
-//     const userchallenge = await Challenge.findAll()
-//     try {
-//         await Challenge.update({challengeTitle:challengeTitle},{
-//             where: {
-//                 userId:userId,
-//                 challengeNum:challengeNum,
-//             }
-//         })
-//         return res.status(200).json({userchallenge});
-//     }catch(error) {
-//         console.log(error)
-//         console.log('mypage.js 나의 챌린지 조회 -> 여기서 에러발생함')
-//         res.status(400).json({result:false,msg:"나의 챌린지 조회 실패..."})
-//     }
-// }
-
-
-//마이페이지 - 나의챌린지 수정 query(userNum) PUT
-//썬더클라이언트 테스트 완료
 const myPageChallengeread = async (req,res) =>{
     const {challengeNum} = req.query
-    const challengeTitle = req.body.challengeTitle
-    const {userId} = res.locals.user
-    const userchallenge = await Challenge.findAll()
+    const {challengeTitle} = req.body
     try {
-        await Challenge.update({challengeTitle:challengeTitle},{
+        const userchallenge = await Challenge.update({challengeTitle:challengeTitle},{
             where: {
-                userId:userId,
                 challengeNum:challengeNum,
             }
         })
@@ -113,7 +89,7 @@ const myPageChallengeread = async (req,res) =>{
 }
 
 //마이페이지 - 사전테스트 결과
-//클라이언트 툴 테스트 완료
+//썬더클라이언트 테스트 완료
 const myPageChallengetest = async(req,res)=> {
     try {
         const {userId} = req.query
@@ -133,7 +109,7 @@ const myPageChallengetest = async(req,res)=> {
 
 module.exports = { myPage,
     userProfileread,
-    userProfilepatch,
+    userProfileput,
     myPageChallengeread,
     myPageChallengetest,
     // preTestread,

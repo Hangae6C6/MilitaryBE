@@ -11,6 +11,7 @@ router.post("/userData", authMiddleware, userOptioalData);
 router.post("/userTest", authMiddleware, saveTestResult);
 
 //사용자 정보 수정 기능
+//썬더클라이언트 확인 완료(황인호)
 router.put('/userModify', authMiddleware, userDataModify)
 
 module.exports = router;

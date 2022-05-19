@@ -93,9 +93,9 @@ const detailJoin = async(req,res) => {
 //sequelize join 성공 중첩완료
 const detailJoinList = async(req,res)=> {
     try {
-        const {challengeNum} = req.query //72
+        const {userId} = req.query //72
             //중첩하여 원하는 데이터 항목 추출 완료
-            if (challengeNum) {
+            if (userId) {
                 // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
                 // include: [{
                 //     model:Challenge,attributes:['steps']
@@ -103,7 +103,7 @@ const detailJoinList = async(req,res)=> {
                 // }],
             // });
                 // const nicklist = await User.findAll({attributes:['userId','userNick']})
-                const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum},
+                const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId},
                 include: {
                     model:User
                     // ,attributes:['userNick','userId']

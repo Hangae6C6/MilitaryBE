@@ -14,6 +14,7 @@ router.post("/login", login);
 router.get("/loginCheck", authMiddleware, loginCheck);
 
 //로그아웃
+//썬더클라이언트 확인 완료(황인호)
 router.get("/logout", authMiddleware, logout);
 
 module.exports = router;
