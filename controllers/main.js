@@ -129,6 +129,7 @@ const openChallenge1 = async (req, res) => {
     steps,
     challengeLimitNum
   });
+  
   const challenge = await Challenge.findAll({
     order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
   }) 
