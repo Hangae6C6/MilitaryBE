@@ -42,80 +42,80 @@ app.get("/api", (req, res) => {
 //   },
 // });
 
-// io.on("connection", (socket) => {
-//     console.log(`User Connected: ${socket.id}`);
+io.on("connection", (socket) => {
+    console.log(`User Connected: ${socket.id}`);
 //   //핸드쉐이킹이
 //   //핸드쉐이킹이 어디서 일어나는가
 //   //네트워크와 관련된 질문 관련된 내용을 공부할것!
 //   //스트리밍
-//     socket.emit("msg", `${socket.id} 입장하셨습니다.`)
+    socket.emit("msg", `${socket.id} 입장하셨습니다.`)
 
-//     socket.on("join_room", (data) => {
-//       socket.join(data);
-//       console.log(`User with ID: ${socket.id} joined room: ${data}`);
-//     });
+    socket.on("join_room", (data) => {
+      socket.join(data);
+      console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    });
     
-//     //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
-//     //2022-05-17 아침에 시도해볼것
-//     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
-//     socket.onAny((eventName, ...args)=> {
-//       console.log(eventName)
-//     })
+    //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
+    //2022-05-17 아침에 시도해볼것
+    //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
+    socket.onAny((eventName, ...args)=> {
+      console.log(eventName)
+    })
 
-//     socket.on('msg', function (data) {
-//     console.log(socket.id, data);
+    socket.on('msg', function (data) {
+    console.log(socket.id, data);
 
-//     socket.emit('msg', `Server : "${data}" 받았습니다.`);
-//     })
+    socket.emit('msg', `Server : "${data}" 받았습니다.`);
+    })
     
-//     socket.emit("send_message", `${socket.id} 입장하셨습니다.`)
+    socket.emit("send_message", `${socket.id} 입장하셨습니다.`)
 
-//     socket.on("send_message", (data) => {
-//       socket.to(data.room).emit("receive_message", data);
-//     });
+    socket.on("send_message", (data) => {
+      socket.to(data.room).emit("receive_message", data);
+    });
     
-//     socket.on("leave_room", (room)=> {
-//       console.log('???')
-//       socket.leave(room)
-//       console.log(`${socket.id}님께서 나가셨습니다.`)
-//     })
+    socket.on("leave_room", (room)=> {
+      console.log('???')
+      socket.leave(room)
+      console.log(`${socket.id}님께서 나가셨습니다.`)
+    })
 
-//     socket.on('disconnect', ()=> {
-//       console.log('나갔니?')
-//     })
+    socket.on('disconnect', ()=> {
+      console.log('나갔니?')
+    })
 
-//     socket.on('test',()=> {
-//       socket.emit()
-//     })
-//   })
+    socket.on('test',()=> {
+      socket.emit()
+    })
+  })
 //소켓이라는 객체가
 //on-> 이벤트를 보낸다는 의미 // evnets -> eventemiter안에 (on,remove) 속해있음
 
 
 
-//   socket.on("join_room", (data) => {
-//     socket.join(data);
-//     socket.emit("가냐?");
-//     console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    socket.emit("가냐?");
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
 
-//     socket
-//       .to(data)
-//       .emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`);
-//   });
+    socket
+      .to(data)
+      .emit("join-msg", `${socket.id["userName"]}님께서 입장하셨습니다.`);
+  });
 
-//   socket.on("send_message", (data) => {
-//     socket.to(data.room).emit("receive_message", data);
-//   });
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
 
-//   socket.on("leave-room", (room) => {
-//     socket.leave(room);
-//     console.log(`${socket.id}님께서 나가셨습니다.`);
-//   });
+  socket.on("leave-room", (room) => {
+    socket.leave(room);
+    console.log(`${socket.id}님께서 나가셨습니다.`);
+  });
 
-//   socket.on("unconnect", () => {
-//     socket.broadcast.emit("user joined", { username: socket.userName });
-//   });
-// });
+  socket.on("unconnect", () => {
+    socket.broadcast.emit("user joined", { username: socket.userName });
+  });
+});
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
