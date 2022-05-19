@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan"); // 요청과 응답에 대한 정보를 추가로 자세히 콘솔에 기록
 const winston = require("winston");
+//서버 요청관련 보안 hpp , helmet
+const hpp = require('hpp')
 const helmet = require("helmet");
 const cors = require("cors");
 const port = 3000;
@@ -27,13 +29,13 @@ app.use(cors());
 //   res.send(data);
 // });
 
-// sequelize.sync({ force: false })
-//   .then(() => {
-//     console.log('데이터베이스 연결 성공');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+sequelize.sync({ force: false })
+  .then(() => {
+    console.log('데이터베이스 연결 성공');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 const io = new Server(server, {
   cors: {
@@ -124,8 +126,9 @@ app.use(requestMiddleware);
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
-app.use(morgan("dev")); // morgan http 로그 미들웨어 추가
-app.use(helmet());
+app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(hpp())
 // app.disable("x-powered-by");
 // app.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
