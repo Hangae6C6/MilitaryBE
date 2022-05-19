@@ -155,7 +155,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
 app.use(morgan("dev")); // morgan http 로그 미들웨어 추가
-// app.use(helmet());
+app.use(helmet());
 // app.disable("x-powered-by");
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
