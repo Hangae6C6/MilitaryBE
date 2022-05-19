@@ -6,10 +6,10 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan"); // 요청과 응답에 대한 정보를 추가로 자세히 콘솔에 기록
 const winston = require("winston");
 //서버 요청관련 보안 hpp , helmet
-const hpp = require('hpp')
+const hpp = require("hpp");
 const helmet = require("helmet");
 //XSS(Cross Site Scripting)공격방어
-const html = "<script>location.href = 'https://gilbut.co.kr'</script>"
+const html = "<script>location.href = 'https://gilbut.co.kr'</script>";
 
 const cors = require("cors");
 const port = 3000;
@@ -22,8 +22,8 @@ const server = http.createServer(app);
 const nodemailer = require("nodemailer");
 const passport = require("passport");
 const session = require("express-session");
-const sanitizeHtml = require('sanitize-html')
-console.log(sanitizeHtml(html))
+const sanitizeHtml = require("sanitize-html");
+console.log(sanitizeHtml(html));
 app.use(cors());
 
 // app.get("/api", (req, res) => {
@@ -34,9 +34,10 @@ app.use(cors());
 //   res.send(data);
 // });
 
-// sequelize.sync({ force: false })
+// sequelize
+//   .sync({ force: false })
 //   .then(() => {
-//     console.log('데이터베이스 연결 성공');
+//     console.log("데이터베이스 연결 성공");
 //   })
 //   .catch((err) => {
 //     console.error(err);
@@ -133,7 +134,7 @@ app.use(bodyParser.json());
 // tiny 는 최소한의 로그 , combined는 좀 더 자세한 정보를 남길수있다.
 app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(hpp())
+app.use(hpp());
 // app.disable("x-powered-by");
 // app.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");

@@ -2,7 +2,7 @@ const { Challenge, User } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
-//공백 , 최소 , 최대 유효성체크 
+//공백 , 최소 , 최대 유효성체크
 // function strCheck(str,min,max,type){
 //   const result = {result:true , msg:""};
 //   if(str===undefined || str===null || str===""){
@@ -20,7 +20,6 @@ const { or, and, like, eq } = sequelize.Op;
 //   }
 //   return result;
 // }
-
 
 //메인페이지 챌린지 보여주기 라우터 (회원, 비회원 구분X)
 const mainPage = async (req, res) => {
@@ -92,21 +91,42 @@ const search = async (req, res) => {
   return res.status(201).json(searchChallenge);
 };
 
+//카테고리 클릭시 조회수 증가 라우터
+const categoryClick = async (req, res) => {
+  const { challengeNum } = req.query;
+  let challengeViewCnt = req.body;
+  const clickedChallenge = await Challenge.findOne({
+    where: { challengeNum },
+  });
 
+  await Challenge.increment(
+    { challengeViewCnt: 1 },
+    { where: { challengeNum } }
+  );
 
-//챌린지개설   
+  // console.log(clickedChallenge.dataValues.challengeViewCnt);
+  res.status(201).send({});
+};
+
+//챌린지개설
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
-  const { challengeTitle,challengeType,challengeStartDate,challengeEndDate,steps,challengeLimitNum } = req.body.challenges;
-  
+  const {
+    challengeTitle,
+    challengeType,
+    challengeStartDate,
+    challengeEndDate,
+    steps,
+    challengeLimitNum,
+  } = req.body.challenges;
 
-  console.log("111111111",req.body.challenges.steps);
+  console.log("111111111", req.body.challenges.steps);
 
-   // challengeNum은 자동생성, 
+  // challengeNum은 자동생성,
 
   // steps data - > steps = [{a:1,b:2,c:3},{a:3,b:4}];
-   
-  //챌린지에 대한 vali 
+
+  //챌린지에 대한 vali
   // var stepsStr = "";
   // for(var i=0;i<steps.length;i++){
   //   console.log('steps[i]--->',steps[i]);
@@ -120,30 +140,30 @@ const openChallenge1 = async (req, res) => {
   //stepsStr - > {a:1,b:2}|{a:3,b:4}
   //이상태로 디비에 저장이 됨
 
-  await Challenge.create({   
+  await Challenge.create({
     challengeEndDate,
     challengeStartDate,
     challengeType,
     challengeTitle,
     userId,
     steps,
-    challengeLimitNum
+    challengeLimitNum,
   });
-  
-  const challenge = await Challenge.findAll({
-    order: [[ 'challengeNum','DESC' ]] // detail 페이지 가기위해서 
-  }) 
 
-  res.status(201).json({  
+  const challenge = await Challenge.findAll({
+    order: [["challengeNum", "DESC"]], // detail 페이지 가기위해서
+  });
+
+  res.status(201).json({
     result: true,
-    challengeNum:challenge[0].challengeNum,
+    challengeNum: challenge[0].challengeNum,
     msg: "챌린지개설완료",
   });
 };
 
 // // 챌린지 조건설정 1-2 참여인원(challengeCnt) , 시작일(challengeStartDt), 종료일(challengeEndDt)
 // const openChallenge2 = async (req,res) => {
-//   const {challengeNum} = req.query 
+//   const {challengeNum} = req.query
 //   const { challengeCnt,challengeStartDt,challengeEndDt} = req.body;
 //   // console.log( req.body);
 
@@ -167,7 +187,7 @@ const openChallenge1 = async (req, res) => {
 
 //챌린지 조건설정 1-3 주제(type)
 // const openChallenge3 = async (req,res) => {
-//   const {challengeNum} = req.query 
+//   const {challengeNum} = req.query
 //   const {challengeType} = req.body;
 
 //   await Challenge.update(
@@ -184,7 +204,6 @@ const openChallenge1 = async (req, res) => {
 // });
 // };
 
-
 // //챌린지 조건설정 1-4(step)
 // const openChallenge4 = async (req,res) => {
 //     const {challengeNum,challengeStep} = req.body;
@@ -196,12 +215,11 @@ const openChallenge1 = async (req, res) => {
 //     },
 //     {where: {challengeNum:challengeNum}}
 //     );
-    
+
 //     const openChallengeArray = [];
 //     openChallengeArray.push(challengeStep)
 //     console.log("tetetet",openChallengeArray);
-    
-     
+
 //    // 내일 저녁..친구도움()
 //     res.status(201).json({
 //       result:true,
@@ -209,7 +227,6 @@ const openChallenge1 = async (req, res) => {
 //       msg : "스탭일단넘어가면성공"
 //   });
 // };
-
 
 //챌린지 참여하기 기능(미들웨어 거쳐야함))
 const joinChallenge = async (req, res) => {
@@ -259,7 +276,11 @@ const joinCancelChallenge = async (req, res) => {
   }
 };
 
-
-
-
-module.exports = { mainPage, userChallenge, preTest, search, openChallenge1 };
+module.exports = {
+  mainPage,
+  userChallenge,
+  categoryClick,
+  preTest,
+  search,
+  openChallenge1,
+};
