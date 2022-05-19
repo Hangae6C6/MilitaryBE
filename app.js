@@ -36,10 +36,10 @@ app.use(cors());
 //   });
 
 const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
-    methods: ["GET", "POST"],
-  },
+  // cors: {
+  //   origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
+  //   methods: ["GET", "POST"],
+  // },
 });
 
 io.on("connection", (socket) => {
