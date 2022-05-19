@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       //Challenge 와 ChallengeJoin 연결 완료
       ChallengeJoin.belongsTo(models.Challenge, { foreignKey: 'challengeNum', sourceKey: 'userId', onDelete: 'CASCADE' });
-      ChallengeJoin.hasMany(models.User, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE' });
+      ChallengeJoin.hasMany(models.User, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE'});
     }
   }
   ChallengeJoin.init({

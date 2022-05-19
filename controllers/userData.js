@@ -1,6 +1,7 @@
 const express = require("express");
-const { UserData } = require("../models");
+const { UserData,User } = require("../models");
 
+//사용자 정보 추가 기능
 const userOptioalData = async (req, res) => {
   const { startDate, endDate, armyCategory, rank } = req.body;
   const { userId } = res.locals.user; //저장
@@ -43,6 +44,7 @@ const userOptioalData = async (req, res) => {
   });
 };
 
+//테스트결과 추가 기능
 const saveTestResult = async (req, res) => {
   const { testResult } = req.body;
   const { userId } = res.locals.user;
@@ -71,7 +73,29 @@ const saveTestResult = async (req, res) => {
   });
 };
 
-module.exports = { userOptioalData, saveTestResult };
+//사용자 정보 수정 API
+const userDataModify = async(req,res)=> {
+  if (!res.locals.user) {
+    res.status(401).json({
+      result:false,msg:"로그인 후 사용하세요",
+    })
+    return
+}
+  try {
+    //계급이랑 닉네임
+    const {userId} = req.query
+    const {rank} = req.body
+    const {userNick} = req.body
+    const rankModify = await UserData.update({rank:rank},{where:{userId:userId}})
+    const nickModify = await User.update({userNick:userNick},{where:{userId:userId}})
+    res.status(200).json({result:true,msg:"사용자 정보 수정 완료입니다!",rankModify,nickModify})
+  }catch(error) {
+    console.log(error, "사용자 정보 수정 오류")
+    res.status(400).json({result:false,msg:"사용자 정보 수정 오류입니다!"})
+  }
+}
+
+module.exports = { userOptioalData, saveTestResult, userDataModify };
 
 // SELECT `userId`, `userNick`, `userPw`, `userTestData`, `from`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`userId` = 'test10000';
 // 선택 : userId ,nick , pw, testdata , from ,cr, up -> FROM(어디로부터) -> Users로부터 조건이 User에 userId

@@ -104,9 +104,12 @@ const detailJoinList = async(req,res)=> {
                 // const nicklist = await User.findAll({attributes:['userId','userNick']})
                 const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum},
                 include: {
-                    model:User,attributes:['userNick','userId']
+                    model:User
+                    // ,attributes:['userNick','userId']
                 }
             })
+            // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
+            // const nicklist1 = await joinlist.Answer()
                 res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist})
             }else {
                 res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
