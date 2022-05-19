@@ -96,13 +96,10 @@ const detailJoinList_id = async(req,res)=> {
         const {userId} = req.query
             //중첩하여 원하는 데이터 항목 추출 완료
             if (userId) {
-                const joinlist_id = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId},
-                include: {
-                    model:User,attributes:['userNick'],where:{userId:userId}
-                }
-            })
+                const joinlist_id = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId}})
                 const onlychallengeNum = await ChallengeJoin.findAll({attributes:['challengeNum'],where:{userId:userId}})
                 const onlychallengetable = await Challenge.findAll()
+                const onlyusernick = await User.findAll()
                 // console.log(onlychallengetable)
                 // console.log(onlychallengetable[0].challengeNum)
                 //challengeNum을 비교해서 include시킨다....?!
@@ -114,8 +111,17 @@ const detailJoinList_id = async(req,res)=> {
                         }
                     }
                 }
-                console.log(answer)
-                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id,answer})
+                // console.log(onlyusernick[0].userNick)
+                let usernicklist = [];
+                for (let i = 0; i < onlyusernick.length; i++) {
+                    if (onlyusernick[i].userId == userId) {
+                        usernicklist.push(onlyusernick[i].userNick)
+                    }
+                }
+                // console.log(usernicklist.join(),'1')
+                // console.log(usernicklist,'2')
+                let usernicklist1 = usernicklist.join()
+                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id,answer,usernicklist1})
             }else {
                 res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
             }
