@@ -87,7 +87,7 @@ io.on("connection", (socket) => {
     socket.on('test',()=> {
       socket.emit()
     })
-  })
+  });
 //소켓이라는 객체가
 //on-> 이벤트를 보낸다는 의미 // evnets -> eventemiter안에 (on,remove) 속해있음
 
@@ -115,7 +115,7 @@ io.on("connection", (socket) => {
   socket.on("unconnect", () => {
     socket.broadcast.emit("user joined", { username: socket.userName });
   });
-});
+
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
