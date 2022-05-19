@@ -22,7 +22,7 @@ app.use(cors());
 app.get("/api", (req, res) => {
   res.header(
     "Access-Control-Allow-Origin",
-    "http://localhost:3000/"
+    "*"
   );
   res.send(data);
 });
