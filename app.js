@@ -8,6 +8,9 @@ const winston = require("winston");
 //서버 요청관련 보안 hpp , helmet
 const hpp = require('hpp')
 const helmet = require("helmet");
+//XSS(Cross Site Scripting)공격방어
+const html = "<script>location.href = 'https://gilbut.co.kr'</script>"
+
 const cors = require("cors");
 const port = 3000;
 const app = require("express")();
@@ -19,6 +22,8 @@ const server = http.createServer(app);
 const nodemailer = require("nodemailer");
 const passport = require("passport");
 const session = require("express-session");
+const sanitizeHtml = require('sanitize-html')
+console.log(sanitizeHtml(html))
 app.use(cors());
 
 // app.get("/api", (req, res) => {
@@ -29,13 +34,13 @@ app.use(cors());
 //   res.send(data);
 // });
 
-sequelize.sync({ force: false })
-  .then(() => {
-    console.log('데이터베이스 연결 성공');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// sequelize.sync({ force: false })
+//   .then(() => {
+//     console.log('데이터베이스 연결 성공');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 const io = new Server(server, {
   cors: {

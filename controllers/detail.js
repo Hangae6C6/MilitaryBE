@@ -96,22 +96,26 @@ const detailJoinList_id = async(req,res)=> {
         const {userId} = req.query
             //중첩하여 원하는 데이터 항목 추출 완료
             if (userId) {
-                // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum'],where:{challengeNum:challengeNum},
-                // include: [{
-                //     model:Challenge,attributes:['steps']
-                //     // ,where:{challengeNum:challengeNum}
-                // }],
-            // });
-                // const nicklist = await User.findAll({attributes:['userId','userNick']})
                 const joinlist_id = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId},
                 include: {
-                    model:User
-                    // ,attributes:['userNick','userId']
+                    model:User,attributes:['userNick'],where:{userId:userId}
                 }
             })
-            // const joinlist = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{challengeNum:challengeNum}})
-            // const nicklist1 = await joinlist.Answer()
-                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id})
+                const onlychallengeNum = await ChallengeJoin.findAll({attributes:['challengeNum'],where:{userId:userId}})
+                const onlychallengetable = await Challenge.findAll()
+                // console.log(onlychallengetable)
+                // console.log(onlychallengetable[0].challengeNum)
+                //challengeNum을 비교해서 include시킨다....?!
+                let answer = [];
+                for (let i = 0; i < onlychallengeNum.length; i++) {
+                    for (let j = 0; j < onlychallengetable.length; j++) {
+                        if (onlychallengeNum[i].challengeNum == onlychallengetable[j].challengeNum) {
+                            answer.push(onlychallengetable[j])
+                        }
+                    }
+                }
+                console.log(answer)
+                res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id,answer})
             }else {
                 res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
             }
