@@ -100,8 +100,6 @@ const detailJoinList_id = async(req,res)=> {
                 const onlychallengeNum = await ChallengeJoin.findAll({attributes:['challengeNum'],where:{userId:userId}})
                 const onlychallengetable = await Challenge.findAll()
                 const onlyusernick = await User.findAll()
-                // console.log(onlychallengetable)
-                // console.log(onlychallengetable[0].challengeNum)
                 //challengeNum을 비교해서 include시킨다....?!
                 let answer = [];
                 for (let i = 0; i < onlychallengeNum.length; i++) {
@@ -111,15 +109,12 @@ const detailJoinList_id = async(req,res)=> {
                         }
                     }
                 }
-                // console.log(onlyusernick[0].userNick)
                 let usernicklist = [];
                 for (let i = 0; i < onlyusernick.length; i++) {
                     if (onlyusernick[i].userId == userId) {
                         usernicklist.push(onlyusernick[i].userNick)
                     }
                 }
-                // console.log(usernicklist.join(),'1')
-                // console.log(usernicklist,'2')
                 let usernicklist1 = usernicklist.join()
                 res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id,answer,usernicklist1})
             }else {
