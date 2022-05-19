@@ -2,6 +2,7 @@ const express = require("express");
 const { UserData,User } = require("../models");
 
 //사용자 정보 추가 기능
+//썬더클라이언트 테스트 완료
 const userOptioalData = async (req, res) => {
   const { startDate, endDate, armyCategory, rank } = req.body;
   const { userId } = res.locals.user; //저장
@@ -45,6 +46,7 @@ const userOptioalData = async (req, res) => {
 };
 
 //테스트결과 추가 기능
+//썬더클라이언트 테스트 완료
 const saveTestResult = async (req, res) => {
   const { testResult } = req.body;
   const { userId } = res.locals.user;
@@ -74,6 +76,7 @@ const saveTestResult = async (req, res) => {
 };
 
 //사용자 정보 수정 API
+//썬더클라이언트 테스트 완료
 const userDataModify = async(req,res)=> {
   if (!res.locals.user) {
     res.status(401).json({
