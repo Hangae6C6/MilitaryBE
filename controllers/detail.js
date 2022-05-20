@@ -49,39 +49,65 @@ const detailPage = async(req,res) => {
     const detailSteps = async(req,res) => {
        const isChecked = req.body;
        const {challengeNum,userId,stepNum} = req.query;
-       
-       try{
-          const detailStep1 = await ChallengeJoin.update({isChecked:isChecked},{
-            where: {
-                userId:userId,
-            }
-          });
-          const step = await ChallengeJoin.findAll();
-        //   console.log("12312312312",step[0].steps[0].stepNum);
-        let answer = [];
-        if (stepNum) {
-            for (let i = 0 ; i < step.length; i++) {
-                answer.push(step[i].steps[stepNum].stepNum)
-              }
-        }
-        //   for (let i = 0 ; i < step.length; i++) {
-        //     answer.push(step[i].steps[stepNum].stepNum)
-        //   }
-          console.log(answer);
-          const answer1 = answer.join()
-          console.log(answer1);
-         res.status(200).json({
-             result:true,
-             msg:"스탭체크완료",
-             detailStep1
-         });
-       }catch(error) {
-        console.log(error,'챌린지스탭스 오류')
-        res.status(400).json({result:false,msg:"챌린지스탭스 실패"})
-       };
-    };
-    
+       let progress = 0;
 
+       const challengeJoin = await ChallengeJoin.findOne({
+           attributes:['userId','challengeNum','steps'],
+          where: { userId: userId, challengeNum:challengeNum },
+       });  
+ 
+        // console.log("111111",challengeJoin.steps); 
+        // console.log("111233232",challengeJoin);
+        let answer = [];
+        for (let i = 0 ; i < challengeJoin.steps.length; i++) {
+            // console.log("123",challengeJoin.steps);
+            console.log("1231221321313",challengeJoin.steps[i].stepNum==stepNum);
+            if(challengeJoin.steps[i].stepNum==stepNum){ //변경해줘야 되는 스텝
+                if(challengeJoin.steps[i].isChecked){ //변경해줘야되는 스텝의 isChecked가 트루인지 확인
+                    challengeJoin.steps[i].isChecked=false;
+                    await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
+                    
+                }else{
+                    challengeJoin.steps[i].isChecked=true;
+                    await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
+                }
+            }
+             answer.push(challengeJoin.steps[i].isChecked);
+        };
+        progress = Math.round(((answer.filter(element => true === element).length)/answer.length)*100)
+        console.log(progress);
+
+        // const detailStep = await ChallengeJoin.update({steps:challengeJoin.steps})
+        res.status(200).json({
+            result:true,
+            msg:"스탭체크완료",
+            challengeJoin,answer
+        });
+    };
+
+
+
+         // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
+         //  ChallengeJoin이라는 곳에 steps안에 있는 isCheked를 업데이트를 해줘야되는데 
+          
+          // ChallengeJoin 테이블에 내가 조건을 넣어서 내가 원하는 데이텉를 가져와야함 
+          // 가져온것에서 steps에  true값을 바꿔줘야함 -> 화면에서 받은 특정한 스탭번호 
+          // ChallengeJoin찍히면 성공 (로그인한 사람이 맞아야함)
+
+
+
+
+
+
+
+
+           
+       
+        
+  
+       
+    
+    
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
 //개설한 유저의 정보가 아니라 참여하고있는 유저의 정보가 필요하다.
