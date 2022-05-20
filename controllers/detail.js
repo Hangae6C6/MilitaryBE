@@ -122,19 +122,24 @@ const detailJoin = async(req,res) => {
     }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
     try {
-        const existUsers = await ChallengeJoin.findOne({attributes:['userId'],where :{challengeNum:challengeNum}})
-        //기존에 참여한 회원이 중복으로 재참여시 못드가게하려함
-        // if (!existUsers) {
-            const steps = await Challenge.findOne({attributes:['steps'],where:{challengeNum:challengeNum}})
-            console.log("1",steps.dataValues.steps);
-            const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
-            // steps:steps.dataValues.steps
-            res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
+        //!! 추후 findOne -> findAll로 수정해야함 !!
+        const existUsers = await ChallengeJoin.findOne({where :{
+            userId:userId,
+            [Op.and]:[{userId},{challengeNum}]
+        }})
+        // console.log(existUsers)
+        if (existUsers) {
+            res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
+        }else if (!existUsers) {
+        const steps = await Challenge.findOne({attributes:['steps'],where:{challengeNum:challengeNum}})
+        const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
+        res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
+        }
+        }
         // }else {
         //     res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
         // }
-        
-    }catch(error) {
+    catch(error) {
         console.log(error,'챌린지리스트 오류')
         res.status(400).json({result:false,msg:"챌린지리스트 실패"})
     }
