@@ -84,8 +84,6 @@ const detailPage = async(req,res) => {
             challengeJoin
         });
     };
-
-
          // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
          //  ChallengeJoin이라는 곳에 steps안에 있는 isCheked를 업데이트를 해줘야되는데 
           
