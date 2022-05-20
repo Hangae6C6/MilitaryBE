@@ -53,39 +53,37 @@ const detailPage = async(req,res) => {
            attributes:['userId','challengeNum','steps'],
           where: { userId: userId, challengeNum:challengeNum },
        });
-         
-        console.log("111111",challengeJoin.steps); 
+        // console.log("111111",challengeJoin.steps); 
         // console.log("111233232",challengeJoin);
-        let answer = [];
+        var trueCnt=0;
         for (let i = 0 ; i < challengeJoin.steps.length; i++) {
             // console.log("123",challengeJoin.steps);
             // console.log("1231221321313",challengeJoin.steps[i].stepNum==stepNum);
             if(challengeJoin.steps[i].stepNum==stepNum){ //변경해줘야 되는 스텝
                 if(challengeJoin.steps[i].isChecked){ //변경해줘야되는 스텝의 isChecked가 트루인지 확인
                     challengeJoin.steps[i].isChecked=false;
-                    console.log("111",challengeJoin.steps[i].isChecked);
-                    await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
+                    // console.log("111",challengeJoin.steps[i].isChecked);
                 }else{
+                    trueCnt++;
                     challengeJoin.steps[i].isChecked=true;
-                    console.log("222",challengeJoin.steps[i].isChecked);
-                    await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
+                    // console.log("222",challengeJoin.steps[i].isChecked);
+                }
+            }else{
+                if(challengeJoin.steps[i].isChecked){
+                    trueCnt++;
                 }
             }
-             answer.push(challengeJoin.steps[i].isChecked);
         };
-        progress = Math.round(((answer.filter(element => true === element).length)/answer.length)*100)
+        console.log("123123123",challengeJoin.steps);
+        await ChallengeJoin.update({steps:challengeJoin.steps}, {where : {userId:userId,challengeNum:challengeNum }})
+         progress = Math.round(((trueCnt)/challengeJoin.steps.length)*100);
         // console.log(progress);
-
-        // const detailStep = await ChallengeJoin.update({steps:challengeJoin.steps})
         res.status(200).json({
             result:true,
             msg:"스탭체크완료",
-            challengeJoin,answer
+            challengeJoin
         });
     };
-
-
-
          // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
          //  ChallengeJoin이라는 곳에 steps안에 있는 isCheked를 업데이트를 해줘야되는데 
           
