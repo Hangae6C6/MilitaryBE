@@ -48,15 +48,13 @@ const detailPage = async(req,res) => {
 
     const detailSteps = async(req,res) => {
        const {challengeNum,userId,stepNum} = req.query;
-       
-
        let progress = 0;
        const challengeJoin = await ChallengeJoin.findOne({
            attributes:['userId','challengeNum','steps'],
           where: { userId: userId, challengeNum:challengeNum },
-       });  
- 
-        // console.log("111111",challengeJoin.steps); 
+       });
+         
+        console.log("111111",challengeJoin.steps); 
         // console.log("111233232",challengeJoin);
         let answer = [];
         for (let i = 0 ; i < challengeJoin.steps.length; i++) {
@@ -67,7 +65,6 @@ const detailPage = async(req,res) => {
                     challengeJoin.steps[i].isChecked=false;
                     console.log("111",challengeJoin.steps[i].isChecked);
                     await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
-                    
                 }else{
                     challengeJoin.steps[i].isChecked=true;
                     console.log("222",challengeJoin.steps[i].isChecked);
