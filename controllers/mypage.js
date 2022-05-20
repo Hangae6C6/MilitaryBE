@@ -12,7 +12,7 @@ const myPage = async (req, res) => {
                 userId:userId,
             }
         })
-        return res.status(201).json(userchallenge);
+        return res.status(200).json(userchallenge);
         
     }catch(error) {
         console.log(error)
