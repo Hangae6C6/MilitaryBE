@@ -46,21 +46,21 @@ const userProfileread = async (req, res) => {
 //썬더클라이언트 테스트 완료
 const userProfileput = async (req, res) => {
     const {userId} = req.query
-    const {armyCategory} = req.body
-    const {rank} = req.body
+    const {armyCategory,rank} = req.body
+    // const {rank} = req.body
     try {
         
-        const armymodify = await UserData.update({armyCategory:armyCategory},{
+        const armymodify = await UserData.update({armyCategory:armyCategory,rank:rank},{
             where: {
                 userId:userId,
             }
         })
-        const rankmodify = await UserData.update({rank:rank},{
-            where: {
-                userId:userId,
-            }
-        })
-        return res.status(201).json({result:true,msg:"프로필 수정 완료",armymodify,rankmodify});
+        // const rankmodify = await UserData.update({rank:rank},{
+        //     where: {
+        //         userId:userId,
+        //     }
+        // })
+        return res.status(201).json({result:true,msg:"프로필 수정 완료",armymodify});
 
     }catch(error) {
         console.log(error)
