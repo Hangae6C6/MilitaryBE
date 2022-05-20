@@ -81,7 +81,7 @@ const detailPage = async(req,res) => {
         res.status(200).json({
             result:true,
             msg:"스탭체크완료",
-            challengeJoin
+            challengeJoin,progress
         });
     };
          // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
