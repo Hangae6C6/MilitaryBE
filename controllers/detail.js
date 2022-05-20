@@ -74,14 +74,14 @@ const detailPage = async(req,res) => {
                 }
             }
         };
-        console.log("123123123",challengeJoin.steps);
+        // console.log("123123123",challengeJoin.steps);
         await ChallengeJoin.update({steps:challengeJoin.steps}, {where : {userId:userId,challengeNum:challengeNum }})
-         progress = Math.round(((trueCnt)/challengeJoin.steps.length)*100);
-        // console.log(progress);
+        progress = Math.round(((trueCnt)/challengeJoin.steps.length)*100);
+        // console.log("12321321321",progress);
         res.status(200).json({
             result:true,
             msg:"스탭체크완료",
-            challengeJoin,progress
+            challengeJoin
         });
     };
          // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
@@ -90,6 +90,8 @@ const detailPage = async(req,res) => {
           // ChallengeJoin 테이블에 내가 조건을 넣어서 내가 원하는 데이텉를 가져와야함 
           // 가져온것에서 steps에  true값을 바꿔줘야함 -> 화면에서 받은 특정한 스탭번호 
           // ChallengeJoin찍히면 성공 (로그인한 사람이 맞아야함)
+
+       
 
 
 
