@@ -47,10 +47,10 @@ const detailPage = async(req,res) => {
     //   console.log(detailChallenge);
 
     const detailSteps = async(req,res) => {
-       const isChecked = req.body;
        const {challengeNum,userId,stepNum} = req.query;
-       let progress = 0;
+       
 
+       let progress = 0;
        const challengeJoin = await ChallengeJoin.findOne({
            attributes:['userId','challengeNum','steps'],
           where: { userId: userId, challengeNum:challengeNum },
@@ -61,21 +61,23 @@ const detailPage = async(req,res) => {
         let answer = [];
         for (let i = 0 ; i < challengeJoin.steps.length; i++) {
             // console.log("123",challengeJoin.steps);
-            console.log("1231221321313",challengeJoin.steps[i].stepNum==stepNum);
+            // console.log("1231221321313",challengeJoin.steps[i].stepNum==stepNum);
             if(challengeJoin.steps[i].stepNum==stepNum){ //변경해줘야 되는 스텝
                 if(challengeJoin.steps[i].isChecked){ //변경해줘야되는 스텝의 isChecked가 트루인지 확인
                     challengeJoin.steps[i].isChecked=false;
+                    console.log("111",challengeJoin.steps[i].isChecked);
                     await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
                     
                 }else{
                     challengeJoin.steps[i].isChecked=true;
+                    console.log("222",challengeJoin.steps[i].isChecked);
                     await ChallengeJoin.update({isChecked:challengeJoin.steps[i].isChecked}, {where : {userId:userId,challengeNum:challengeNum }})
                 }
             }
              answer.push(challengeJoin.steps[i].isChecked);
         };
         progress = Math.round(((answer.filter(element => true === element).length)/answer.length)*100)
-        console.log(progress);
+        // console.log(progress);
 
         // const detailStep = await ChallengeJoin.update({steps:challengeJoin.steps})
         res.status(200).json({
