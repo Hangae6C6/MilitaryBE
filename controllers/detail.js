@@ -53,7 +53,7 @@ const detailPage = async(req,res) => {
            attributes:['userId','challengeNum','steps'],
           where: { userId: userId, challengeNum:challengeNum },
        });
-        console.log("111111",challengeJoin.steps); 
+        // console.log("111111",challengeJoin.steps); 
         // console.log("111233232",challengeJoin);
         var trueCnt=0;
         for (let i = 0 ; i < challengeJoin.steps.length; i++) {
@@ -62,11 +62,11 @@ const detailPage = async(req,res) => {
             if(challengeJoin.steps[i].stepNum==stepNum){ //변경해줘야 되는 스텝
                 if(challengeJoin.steps[i].isChecked){ //변경해줘야되는 스텝의 isChecked가 트루인지 확인
                     challengeJoin.steps[i].isChecked=false;
-                    console.log("111",challengeJoin.steps[i].isChecked);
+                    // console.log("111",challengeJoin.steps[i].isChecked);
                 }else{
                     trueCnt++;
                     challengeJoin.steps[i].isChecked=true;
-                    console.log("222",challengeJoin.steps[i].isChecked);
+                    // console.log("222",challengeJoin.steps[i].isChecked);
                 }
             }else{
                 if(challengeJoin.steps[i].isChecked){
@@ -84,7 +84,6 @@ const detailPage = async(req,res) => {
             challengeJoin
         });
     };
-        
 
 
          // 화면에서 클라이언트가 체크를 해서 오는 통신이 이곳이고 나는 업데이트를 해주기위해서 isChecked를 업데이트를 하는게 아니라 
