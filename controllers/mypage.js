@@ -1,4 +1,4 @@
-const { Challenge, User, UserData } = require("../models");
+const { Challenge, User, UserData, ChallengeJoin } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like } = sequelize.Op;
 
@@ -7,12 +7,11 @@ const { or, and, like } = sequelize.Op;
 const myPage = async (req, res) => {
     try {
         const {userId} = req.query
-        const userchallenge = await Challenge.findOne({
+        const userchallenge = await ChallengeJoin.findAll({
             where:{
                 userId:userId,
             }
         })
-        console.log(userchallenge)
         return res.status(201).json(userchallenge);
         
     }catch(error) {
