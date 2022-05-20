@@ -120,11 +120,11 @@ const detailJoin = async(req,res) => {
     }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
     try {
-        const existUsers = await ChallengeJoin.findOne({attributes:['userId'],where :{userId:userId}})
+        const existUsers = await ChallengeJoin.findOne({attributes:['userId'],where :{challengeNum:challengeNum}})
         //기존에 참여한 회원이 중복으로 재참여시 못드가게하려함
         // if (!existUsers) {
-            const steps = await Challenge.findOne({attributes:['steps'],where:{userId:userId}})
-            // console.log("1231231",steps.dataValues.steps);
+            const steps = await Challenge.findOne({attributes:['steps'],where:{challengeNum:challengeNum}})
+            console.log("1",steps.dataValues.steps);
             const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
             // steps:steps.dataValues.steps
             res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
@@ -146,7 +146,7 @@ const detailJoinList_id = async(req,res)=> {
             //중첩하여 원하는 데이터 항목 추출 완료
             if (userId) {
                 const joinlist_id = await ChallengeJoin.findAll({attributes:['userId','challengeNum','steps'],where:{userId:userId}})
-                const onlychallengeNum = await ChallengeJoin.findAll({attributes:['challengeNum'],where:{userId:userId}})
+                const onlychallengeNum = await ChallengeJoin.findAll({where:{userId:userId}})
                 const onlychallengetable = await Challenge.findAll()
                 const onlyusernick = await User.findAll()
                 //challengeNum을 비교해서 include시킨다....?!
