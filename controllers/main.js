@@ -123,23 +123,23 @@ const openChallenge1 = async (req, res) => {
   // console.log("111111111", req.body.challenges.steps);
 
   //벨리데이션체크 
-  function strCheck(str,min,max,type){
-    const result = {result:true , msg:""};
-    if(str===undefined || str===null || str===""){
-      result=false;
-      msg=type+" 값이 공백입니다.";
-      return result;
-    }else if(str.length>max){
-      result=false;
-      msg=type+" 값이 최대 입력 값보다 큽니다.";
-      return result;
-    }else if(str.length<min){
-      result=false;
-      msg=type+" 값이 최소 입력 값보다 작습니다.";
-      return result;
-    }
-    return result;
-  };
+  // function strCheck(str,min,max,type){
+  //   const result = {result:true , msg:""};
+  //   if(str===undefined || str===null || str===""){
+  //     result=false;
+  //     msg=type+" 값이 공백입니다.";
+  //     return result;
+  //   }else if(str.length>max){
+  //     result=false;
+  //     msg=type+" 값이 최대 입력 값보다 큽니다.";
+  //     return result;
+  //   }else if(str.length<min){
+  //     result=false;
+  //     msg=type+" 값이 최소 입력 값보다 작습니다.";
+  //     return result;
+  //   }
+  //   return result;
+  // };
   
 
 
