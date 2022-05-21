@@ -118,8 +118,11 @@ const detailJoin = async(req,res) => {
         return
     }
     const {userId,challengeNum} = req.query //로그인하고있는 유저
+    const {challengeCnt} = req.body
     try {
         //!! 추후 findOne -> findAll로 수정해야함 !!
+        //동시성 이슈가 있을수도있다? => a라는 유저,b라는 유저가 72번 챌린지참여를 한번에했을때
+        //DB에 중복해서 쌓일수도있다.
         const existUsers = await ChallengeJoin.findOne({where :{
             userId:userId,
             [Op.and]:[{userId},{challengeNum}]
@@ -129,14 +132,15 @@ const detailJoin = async(req,res) => {
             res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
         }else if (!existUsers) {
         const steps = await Challenge.findOne({attributes:['steps'],where:{challengeNum:challengeNum}})
+        await Challenge.increment({challengeCnt:1}, {where:{challengeNum}})
         const challengejoin = await ChallengeJoin.create({userId,challengeNum,steps:steps.dataValues.steps})
         res.status(201).json({result:true,msg:"챌린지리스트 성공",challengejoin})
         }
+        
+        else {
+            res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
         }
-        // }else {
-        //     res.status(400).json({result:false,msg:"이미 참여하고있는 챌린지입니다."})
-        // }
-    catch(error) {
+    }catch(error) {
         console.log(error,'챌린지리스트 오류')
         res.status(400).json({result:false,msg:"챌린지리스트 실패"})
     }
@@ -208,6 +212,7 @@ const detailJoinout = async(req,res)=> {
     const {userId,challengeNum} = req.query
     try {
         const challengeout = await ChallengeJoin.destroy({where:{userId:userId,challengeNum:challengeNum}})
+        await Challenge.decrement({challengeCnt:1},{where:{challengeNum}})
         res.status(200).json({result:true,msg:"챌린지 나가기 성공"})
     }catch (error) {
         console.log(error,'챌린지 나가기에서 오류남')
