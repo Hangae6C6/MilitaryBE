@@ -1,4 +1,4 @@
-const { Challenge, User } = require("../models");
+const { Challenge, User, ChallengeJoin } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -32,19 +32,29 @@ const mainPage = async (req, res) => {
 const userChallenge = async (req, res) => {
   const { userId } = req.query;
 
-  console.log(userId);
-  const challenge = await Challenge.findAll({
-    where: { userId: userId },
-  });
-  let sum = 0;
-  for (let i = 0; i < challenge.length; i++) {
-    sum += parseInt(challenge[i].dataValues.challengeProgress);
-  }
+  try {
+    console.log(userId);
+    const challenge = await ChallengeJoin.findAll({
+      where: { userId: userId },
+    });
+    // console.log(challenge.length);
+    // console.log("challenge : ", challenge[0].dataValues.progress);
+    let sum = 0;
+    for (let i = 0; i < challenge.length; i++) {
+      sum += parseInt(challenge[i].dataValues.progress);
+    }
 
-  let totalChallengeProgress = Math.round(sum / challenge.length);
-  // // console.log("progressSum: ", sum);
-  // console.log("progressAvg: ", totalChallengeProgress);
-  return res.status(201).json({ userId, totalChallengeProgress });
+    let totalChallengeProgress = Math.round(sum / challenge.length);
+    // // console.log("progressSum: ", sum);
+    // console.log("progressAvg: ", totalChallengeProgress);
+    return res.status(201).json({ userId, totalChallengeProgress });
+  } catch (error) {
+    console.log(error, "메인페이지 토탈챌린지 진행률 가져오기 에러");
+    res.status(400).json({
+      result: false,
+      msg: "메인페이지 토탈챌린지 진행률 가져오기 에러",
+    });
+  }
 };
 
 //사전 테스트 입력 라우터
@@ -113,89 +123,93 @@ const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
 
   const {
-    challengeTitle, // 최대 글자수 7개 
-    challengeType, // 비어있으면 안되게 
+    challengeTitle, // 최대 글자수 7개
+    challengeType, // 비어있으면 안되게
     challengeStartDate, // 숫자만 쓸수있게  월 - 일 - 년도 "-" 값을 넣어주세요  ! 20-05-2022
-    challengeEndDate, // 숫자만 쓸수있게 앞에2개쓰게 
-    steps, // max 10자 빈값안되고 , 널값도 안되고, 글자는 2자 이상! 
+    challengeEndDate, // 숫자만 쓸수있게 앞에2개쓰게
+    steps, // max 10자 빈값안되고 , 널값도 안되고, 글자는 2자 이상!
     challengeLimitNum,
   } = req.body.challenges;
 
   //벨리데이션체크
-  const checTitledLen = /^.{2,7}$/; 
-  const checkStepLen = /^.{2,10}$/; 
+  const checTitledLen = /^.{2,7}$/;
+  const checkStepLen = /^.{2,10}$/;
   const dateExp = RegExp(/^\(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-d{4}$/);
 
-  if(challengeTitle === "" || challengeTitle === undefined || challengeTitle === null) {
+  if (
+    challengeTitle === "" ||
+    challengeTitle === undefined ||
+    challengeTitle === null
+  ) {
     res.status(400).json({
-      msg : "챌린지타이틀을 입력하세요"
+      msg: "챌린지타이틀을 입력하세요",
     });
-     return;
-  } else if (!checTitledLen.test(challengeTitle)){
+    return;
+  } else if (!checTitledLen.test(challengeTitle)) {
     res.status(401).json({
-      msg : "챌린지타이틀은 2~7자 입니다."
-    });
-     return;
-  } else if (challengeType === "" || challengeType === undefined || challengeType === null){
-    res.status(400).json({
-      msg : "챌린지타입을 선택해주세요"
+      msg: "챌린지타이틀은 2~7자 입니다.",
     });
     return;
-  } else if (challengeStartDate === "" || challengeStartDate === undefined || challengeStartDate === null){
+  } else if (
+    challengeType === "" ||
+    challengeType === undefined ||
+    challengeType === null
+  ) {
     res.status(400).json({
-      msg : "시작일을 입력하세요."
-  });
-   return;
-  } else if (!dateExp.test(challengeStartDate)){
-    res.status(400).json({
-     msg : "시작일의형태를 맞춰주세요(MM-DD-YYYY)"
+      msg: "챌린지타입을 선택해주세요",
     });
     return;
-  } else if(challengeEndDate === "" || challengeEndDate === undefined || challengeEndDate === null) {
+  } else if (
+    challengeStartDate === "" ||
+    challengeStartDate === undefined ||
+    challengeStartDate === null
+  ) {
     res.status(400).json({
-      msg : "종료일을 입력하세요."
-  });
-     return;
-  } else if (!dateExp.test(challengeEndDate)){
+      msg: "시작일을 입력하세요.",
+    });
+    return;
+  } else if (!dateExp.test(challengeStartDate)) {
     res.status(400).json({
-     msg : "종료일의형태를 맞춰주세요(MM-DD-YYYY)"
+      msg: "시작일의형태를 맞춰주세요(MM-DD-YYYY)",
+    });
+    return;
+  } else if (
+    challengeEndDate === "" ||
+    challengeEndDate === undefined ||
+    challengeEndDate === null
+  ) {
+    res.status(400).json({
+      msg: "종료일을 입력하세요.",
+    });
+    return;
+  } else if (!dateExp.test(challengeEndDate)) {
+    res.status(400).json({
+      msg: "종료일의형태를 맞춰주세요(MM-DD-YYYY)",
     });
     return;
   }
-   
 
-  if(steps.length==0){
+  if (steps.length == 0) {
     res.status(400).json({
-      msg : "스텝을 최소 1개 이상 입력해주세요"
-     });
-     return;
-  }else{
-    for(var i=0;i<steps.length;i++){
+      msg: "스텝을 최소 1개 이상 입력해주세요",
+    });
+    return;
+  } else {
+    for (var i = 0; i < steps.length; i++) {
       var content = steps[i].stepContent;
-      if(content=='' || content ==null || content == undefined){
+      if (content == "" || content == null || content == undefined) {
         res.status(400).json({
-          msg : i+"번째 스텝의 컨텐츠를 입력해주세요"
-         });
-         return;
-      } else if (!checkStepLen.test(content)){
-        res.status(401).json({
-          msg : "챌린지스탭컨텐츠는 2~10자 입니다."
+          msg: i + "번째 스텝의 컨텐츠를 입력해주세요",
         });
         return;
-    } 
-   }
-  };
-
-
-
-
-
-
-
-
-
-  
-
+      } else if (!checkStepLen.test(content)) {
+        res.status(401).json({
+          msg: "챌린지스탭컨텐츠는 2~10자 입니다.",
+        });
+        return;
+      }
+    }
+  }
 
   // challengeNum은 자동생성,
 
