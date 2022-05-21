@@ -111,35 +111,89 @@ const categoryClick = async (req, res) => {
 //챌린지개설
 const openChallenge1 = async (req, res) => {
   const { userId } = res.locals.user;
+
   const {
     challengeTitle, // 최대 글자수 7개 
     challengeType, // 비어있으면 안되게 
-    challengeStartDate, // 숫자만 쓸수있게  월 - 일 - 년도 "-" 값을 넣어주세요  !
+    challengeStartDate, // 숫자만 쓸수있게  월 - 일 - 년도 "-" 값을 넣어주세요  ! 20-05-2022
     challengeEndDate, // 숫자만 쓸수있게 앞에2개쓰게 
     steps, // max 10자 빈값안되고 , 널값도 안되고, 글자는 2자 이상! 
     challengeLimitNum,
   } = req.body.challenges;
 
-  // console.log("111111111", req.body.challenges.steps);
+  //벨리데이션체크
+  const checTitledLen = /^.{2,7}$/; 
+  const checkStepLen = /^.{2,10}$/; 
+  const dateExp = RegExp(/^\(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-d{4}$/);
 
-  //벨리데이션체크 
-  // function strCheck(str,min,max,type){
-  //   const result = {result:true , msg:""};
-  //   if(str===undefined || str===null || str===""){
-  //     result=false;
-  //     msg=type+" 값이 공백입니다.";
-  //     return result;
-  //   }else if(str.length>max){
-  //     result=false;
-  //     msg=type+" 값이 최대 입력 값보다 큽니다.";
-  //     return result;
-  //   }else if(str.length<min){
-  //     result=false;
-  //     msg=type+" 값이 최소 입력 값보다 작습니다.";
-  //     return result;
-  //   }
-  //   return result;
-  // };
+  if(challengeTitle === "" || challengeTitle === undefined || challengeTitle === null) {
+    res.status(400).json({
+      msg : "챌린지타이틀을 입력하세요"
+    });
+     return;
+  } else if (!checTitledLen.test(challengeTitle)){
+    res.status(401).json({
+      msg : "챌린지타이틀은 2~7자 입니다."
+    });
+     return;
+  } else if (challengeType === "" || challengeType === undefined || challengeType === null){
+    res.status(400).json({
+      msg : "챌린지타입을 선택해주세요"
+    });
+    return;
+  } else if (challengeStartDate === "" || challengeStartDate === undefined || challengeStartDate === null){
+    res.status(400).json({
+      msg : "시작일을 입력하세요."
+  });
+   return;
+  } else if (!dateExp.test(challengeStartDate)){
+    res.status(400).json({
+     msg : "시작일의형태를 맞춰주세요(MM-DD-YYYY)"
+    });
+    return;
+  } else if(challengeEndDate === "" || challengeEndDate === undefined || challengeEndDate === null) {
+    res.status(400).json({
+      msg : "종료일을 입력하세요."
+  });
+     return;
+  } else if (!dateExp.test(challengeEndDate)){
+    res.status(400).json({
+     msg : "종료일의형태를 맞춰주세요(MM-DD-YYYY)"
+    });
+    return;
+  }
+   
+
+  if(steps.length==0){
+    res.status(400).json({
+      msg : "스텝을 최소 1개 이상 입력해주세요"
+     });
+     return;
+  }else{
+    for(var i=0;i<steps.length;i++){
+      var content = steps[i].stepContent;
+      if(content=='' || content ==null || content == undefined){
+        res.status(400).json({
+          msg : i+"번째 스텝의 컨텐츠를 입력해주세요"
+         });
+         return;
+      } else if (!checkStepLen.test(content)){
+        res.status(401).json({
+          msg : "챌린지스탭컨텐츠는 2~10자 입니다."
+        });
+        return;
+    } 
+   }
+  };
+
+
+
+
+
+
+
+
+
   
 
 
