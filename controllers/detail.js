@@ -171,7 +171,7 @@ const detailJoinList_id = async(req,res)=> {
                 let usernicklist1 = usernicklist.join()
                 res.status(200).json({result:true,msg:"참여한 인원 조회 성공",joinlist_id,answer,usernicklist1})
             }else {
-                res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})        
+                res.status(400).json({result:false,msg:"참여한 인원 조회 실패"})
             }
     }catch (error) {
         console.log(error, '참여한 인원 조회 실패...')
