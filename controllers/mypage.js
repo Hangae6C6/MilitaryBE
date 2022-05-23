@@ -46,6 +46,7 @@ const userProfileread = async (req, res) => {
 const userProfileput = async (req, res) => {
     const {userId} = req.query
     const {armyCategory,rank} = req.body
+    const {userNick} = req.body
     // const {rank} = req.body
     try {
         
@@ -54,12 +55,17 @@ const userProfileput = async (req, res) => {
                 userId:userId,
             }
         })
+        const usermodify = await User.update({userNick},{
+            where:{
+                userId:userId,
+            }
+        })
         // const rankmodify = await UserData.update({rank:rank},{
         //     where: {
         //         userId:userId,
         //     }
         // })
-        return res.status(201).json({result:true,msg:"프로필 수정 완료",armymodify});
+        return res.status(201).json({result:true,msg:"프로필 수정 완료",armymodify,usermodify});
 
     }catch(error) {
         console.log(error)

@@ -134,7 +134,7 @@ const openChallenge1 = async (req, res) => {
   //벨리데이션체크
   const checTitledLen = /^.{2,7}$/;
   const checkStepLen = /^.{2,10}$/;
-  const dateExp = RegExp(/^\(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-d{4}$/);
+  // const dateExp = RegExp(/^\(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-d{4}$/);
 
   if (
     challengeTitle === "" ||
