@@ -134,6 +134,7 @@ const detailJoin = async (req, res) => {
         .status(400)
         .json({ result: false, msg: "이미 참여하고있는 챌린지입니다." });
     } else if (!existUsers) {
+      
       const steps = await Challenge.findOne({
         attributes: ["steps"],
         where: { challengeNum: challengeNum },
@@ -142,7 +143,15 @@ const detailJoin = async (req, res) => {
         { challengeCnt: 1 },
         { where: { challengeNum } }
       );
-      const username = await User.findOne({
+      let answer = [];
+      for (let i = 0; i < steps.steps.length; i++) {
+        if (steps.steps[i].isChecked === true) {
+          answer.push(steps.steps[i].isChecked)
+        }
+      }
+      let answer1 = answer.length / steps.steps.length * 100
+      console.log(answer1)
+      const userNick = await User.findOne({
         attributes:["userNick"],
         where:{userId:userId},
       })
@@ -150,12 +159,14 @@ const detailJoin = async (req, res) => {
         userId,
         challengeNum,
         steps: steps.dataValues.steps,
-        username:username.dataValues.userNick,
+        //컬럼명을 맞춰줘야한다...
+        //그래야 생긴다....
+        userNick:userNick.dataValues.userNick,
       });
-      console.log(username.dataValues.userNick)
+      console.log(userNick.dataValues.userNick)
       res
         .status(201)
-        .json({ result: true, msg: "챌린지리스트 성공", challengejoin });
+        .json({ result: true, msg: "챌린지리스트 성공", challengejoin , answer1 });
     } else {
       res
         .status(400)
