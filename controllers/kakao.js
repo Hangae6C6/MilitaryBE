@@ -66,7 +66,7 @@ const kakaoRegister = async (req,res) => {
         }
     
         const loginUser = await User.findOne({where: { userId: userId }});
-        const token = jwt.sign({ userId : loginUser.userId }, `${process.env.KEY}`);
+        const token = jwt.sign({ userId : loginUser[0].userId }, `${process.env.KEY}`);
 
         // redi -> main -> ? 
     

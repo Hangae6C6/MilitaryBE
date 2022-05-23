@@ -113,7 +113,6 @@ const categoryClick = async (req, res) => {
     { challengeViewCnt: 1 },
     { where: { challengeNum } }
   );
-
   // console.log(clickedChallenge.dataValues.challengeViewCnt);
   res.status(201).send({});
 };
@@ -128,13 +127,13 @@ const openChallenge1 = async (req, res) => {
     challengeStartDate, // 숫자만 쓸수있게  월 - 일 - 년도 "-" 값을 넣어주세요  ! 20-05-2022
     challengeEndDate, // 숫자만 쓸수있게 앞에2개쓰게
     steps, // max 10자 빈값안되고 , 널값도 안되고, 글자는 2자 이상!
-    challengeLimitNum,
+    challengeLimitNum, // 최소인원수 2명이상
   } = req.body.challenges;
 
   //벨리데이션체크
   const checTitledLen = /^.{2,7}$/;
   const checkStepLen = /^.{2,10}$/;
-  const dateExp = RegExp(/^(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-d{4}$/);
+  const dateExp = /^(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])-(19|20)\d{2}$/;
 
   if (
     challengeTitle === "" ||
@@ -187,6 +186,11 @@ const openChallenge1 = async (req, res) => {
       msg: "종료일의형태를 맞춰주세요(MM-DD-YYYY)",
     });
     return;
+  } else if (challengeLimitNum <= 2) {
+    res.status(400).json({
+      msg: "최소인원수는 2명이상입니다.",
+    });
+    return;
   }
 
   if (steps.length == 0) {
@@ -195,21 +199,21 @@ const openChallenge1 = async (req, res) => {
     });
     return;
   } else {
-    for (var i = 0; i < steps.length; i++) {
+    for (var i = 1; i < steps.length; i++) {
       var content = steps[i].stepContent;
       if (content == "" || content == null || content == undefined) {
         res.status(400).json({
-          msg: i + "번째 스텝의 컨텐츠를 입력해주세요",
+          msg: i+1 + "번째 스텝의 컨텐츠를 입력해주세요",
         });
         return;
       } else if (!checkStepLen.test(content)) {
-        res.status(401).json({
+        res.status(400).json({
           msg: "챌린지스탭컨텐츠는 2~10자 입니다.",
         });
         return;
       }
     }
-  }
+  };
 
   // challengeNum은 자동생성,
 
