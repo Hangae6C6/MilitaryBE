@@ -128,7 +128,7 @@ const openChallenge1 = async (req, res) => {
     challengeStartDate, // 숫자만 쓸수있게  월 - 일 - 년도 "-" 값을 넣어주세요  ! 20-05-2022
     challengeEndDate, // 숫자만 쓸수있게 앞에2개쓰게
     steps, // max 10자 빈값안되고 , 널값도 안되고, 글자는 2자 이상!
-    challengeLimitNum,
+    challengeLimitNum, // 최소인원수 2명이상
   } = req.body.challenges;
 
   //벨리데이션체크
@@ -197,7 +197,7 @@ const openChallenge1 = async (req, res) => {
     });
     return;
   } else {
-    for (var i = 0; i < steps.length; i++) {
+    for (var i = 1; i < steps.length; i++) {
       var content = steps[i].stepContent;
       if (content == "" || content == null || content == undefined) {
         res.status(400).json({
