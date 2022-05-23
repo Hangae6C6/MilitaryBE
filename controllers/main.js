@@ -213,7 +213,7 @@ const openChallenge1 = async (req, res) => {
         return;
       }
     }
-  }
+  };
 
   // challengeNum은 자동생성,
 
