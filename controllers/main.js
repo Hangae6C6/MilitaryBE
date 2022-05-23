@@ -113,7 +113,6 @@ const categoryClick = async (req, res) => {
     { challengeViewCnt: 1 },
     { where: { challengeNum } }
   );
-
   // console.log(clickedChallenge.dataValues.challengeViewCnt);
   res.status(201).send({});
 };
@@ -135,8 +134,6 @@ const openChallenge1 = async (req, res) => {
   const checTitledLen = /^.{2,7}$/;
   const checkStepLen = /^.{2,10}$/;
   const dateExp = /^(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])-(19|20)\d{2}$/;
-
-  // 날짜 정규식 
 
   if (
     challengeTitle === "" ||
@@ -189,7 +186,12 @@ const openChallenge1 = async (req, res) => {
       msg: "종료일의형태를 맞춰주세요(MM-DD-YYYY)",
     });
     return;
-  };
+  } else if (challengeLimitNum <= 2) {
+    res.status(400).json({
+      msg: "최소인원수는 2명이상입니다.",
+    });
+    return;
+  }
 
   if (steps.length == 0) {
     res.status(400).json({
