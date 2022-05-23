@@ -127,6 +127,7 @@ const detailJoin = async (req, res) => {
         [Op.and]: [{ userId }, { challengeNum }],
       },
     });
+    
     // console.log(existUsers)
     if (existUsers) {
       res
@@ -141,11 +142,17 @@ const detailJoin = async (req, res) => {
         { challengeCnt: 1 },
         { where: { challengeNum } }
       );
+      const username = await User.findOne({
+        attributes:["userNick"],
+        where:{userId:userId},
+      })
       const challengejoin = await ChallengeJoin.create({
         userId,
         challengeNum,
         steps: steps.dataValues.steps,
+        username:username.dataValues.userNick,
       });
+      console.log(username.dataValues.userNick)
       res
         .status(201)
         .json({ result: true, msg: "챌린지리스트 성공", challengejoin });
