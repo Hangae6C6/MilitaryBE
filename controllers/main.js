@@ -189,7 +189,7 @@ const openChallenge1 = async (req, res) => {
       msg: "종료일의형태를 맞춰주세요(MM-DD-YYYY)",
     });
     return;
-  }
+  };
 
   if (steps.length == 0) {
     res.status(400).json({
@@ -201,11 +201,11 @@ const openChallenge1 = async (req, res) => {
       var content = steps[i].stepContent;
       if (content == "" || content == null || content == undefined) {
         res.status(400).json({
-          msg: i + "번째 스텝의 컨텐츠를 입력해주세요",
+          msg: i+1 + "번째 스텝의 컨텐츠를 입력해주세요",
         });
         return;
       } else if (!checkStepLen.test(content)) {
-        res.status(401).json({
+        res.status(400).json({
           msg: "챌린지스탭컨텐츠는 2~10자 입니다.",
         });
         return;
