@@ -104,6 +104,8 @@ const detailSteps = async (req, res) => {
 // 가져온것에서 steps에  true값을 바꿔줘야함 -> 화면에서 받은 특정한 스탭번호
 // ChallengeJoin찍히면 성공 (로그인한 사람이 맞아야함)
 
+
+
 //하나의 챌린지에 누가 참여하고있고 참여한 유저의 챌린지 진행현황 확인할수있는 기능
 //한챌린지에 여러명이 참여할수있고 , 한명이 다양한 챌린지를 참여할수있다.
 //개설한 유저의 정보가 아니라 참여하고있는 유저의 정보가 필요하다.
@@ -277,6 +279,22 @@ const detailJoinout = async (req, res) => {
   }
 };
 
+
+//짬킹성영형님 요청건!....ranking!!
+const challengeRank = async(req,res)=> {
+  const {challengeNum} = req.query
+  try {
+    const rank = await ChallengeJoin.findAll({
+      attributes:['userId','userNick','progress'],
+      where:{challengeNum}
+    })
+    res.status(200).json({result:true,msg:"챌린지 랭킹 성공",rank})
+  }catch (error) {
+    console.log(error)
+    res.status(400).json({result:false,msg:"챌린지 랭킹 실패"})
+  }
+}
+
 //인원수 limit ->  체크해주기
 
 // 참가할때마다 참가자 늘려주기
@@ -288,4 +306,5 @@ module.exports = {
   detailJoinList_challengeNum,
   detailJoinout,
   detailSteps,
+  challengeRank,
 };
