@@ -1,4 +1,4 @@
-const { Challenge, User, ChallengeJoin } = require("../models");
+const { Challenge, User, ChallengeJoin,Test } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -369,6 +369,32 @@ const joinCancelChallenge = async (req, res) => {
   }
 };
 
+//메인페이지에서 테스트 조회한 사람 숫자 POST
+const testCount = async(req,res)=> {
+  const {userId} = req.query
+  try {
+    const click = await Test.findOne({where:{userId}})
+    await Test.increment(
+      {testCount:1},
+      {where:{userId}}
+    )
+    res.status(201).json({result:true,msg:"챌린지",click})
+  }catch (error) {
+    console.log(error)
+    res.status(400).json({result:false,msg:"챌린지 테스트 조회수 실패"})
+  }
+}
+
+//메인페이지에서 테스트 조회한 사람 숫자 GET
+const testCountRead = async(req,res)=> {
+  try {
+    const countread = await Test.findAll()
+    res.status(200).json({result:true,msg:"테스트 조회수 가져오기 성공",countread})
+  }catch (error) {
+    console.log(error)
+    res.status(400).json({result:false,msg:"테스트 조회수 가져오기 실패"})
+  }
+}
 module.exports = {
   mainPage,
   userChallenge,
@@ -376,4 +402,6 @@ module.exports = {
   preTest,
   search,
   openChallenge1,
+  testCount,
+  testCountRead,
 };
