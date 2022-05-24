@@ -56,8 +56,8 @@ const kakaoRegister = async (req,res) => {
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    console.log("222222222",existUser);
-     try{
+    // console.log("222222222",existUser);
+   
         if(!existUser){
             const from = 'kakao'
             // const user = new User({ userId, userNick, from })
@@ -77,12 +77,6 @@ const kakaoRegister = async (req,res) => {
             userId,
             userNick,
         });
-     } catch(error) {
-        console.log("카카오로그인오류"); 
-        console.log(error); 
-        res.status(400).json({ result: "이미 등록된 유저입니다."}); 
-        return;
-     }
 };
 
 module.exports = {kakaoLogin,kakaoRegister};
