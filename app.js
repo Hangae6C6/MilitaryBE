@@ -44,56 +44,37 @@ app.use(cors());
 //   });
 
 const io = new Server(server, {
-  // cors: {
-  //   origin: "http://localhost:3000", //여기에 명시된 서버만 호스트만 내서버로 연결을 허용할거야
-  //   methods: ["GET", "POST"],
-  // },
-});
+  cors:{
+      origin:"http://localhost:3000",
+      methods:["GET","POST"],
+  },
+})
 
-io.on("connection", (socket) => {
+io.on('connection', (socket)=> {
   console.log(`User Connected: ${socket.id}`);
-  //핸드쉐이킹이
-  //핸드쉐이킹이 어디서 일어나는가
-  //네트워크와 관련된 질문 관련된 내용을 공부할것!
-  //스트리밍
-  socket.emit("msg", `${socket.id} 입장하셨습니다.`);
 
-  socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  socket.on("join_room", (data)=> {
+      socket.join(data)
+      console.log(`User with ID: ${socket.id} joined room: ${data}`)
+  })
+
+  socket.on("send_message", (data)=> {
+      socket.to(data.room).emit("receive_message",data)
+  })
+
+  socket.on("disconnect", ()=> {
+      console.log("User Disconnected", socket.id)
+  })
+  socket.on("leave-room", (roomName, done) => {
+      socket.leave(roomName); done();
+      console.log('나 나갔어')
+      // const rooms = getUserRooms();
+      // if (!rooms.includes(roomName)) {
+          io.emit("remove-room", roomName);
+          console.log('방 삭제되었음')
+      // }
   });
-
-  //     //이벤트에관계없이 모든이벤트를 받아서 이벤트의 이름을 찍어본다.
-  //     //2022-05-17 아침에 시도해볼것
-  //     //https://socket.io/docs/v4/listening-to-events/#socketonanylistener(socket.io 공식문서)
-  socket.onAny((eventName, ...args) => {
-    console.log(eventName);
-  });
-
-  socket.on("msg", function (data) {
-    console.log(socket.id, data);
-
-    socket.emit("msg", `Server : "${data}" 받았습니다.`);
-  });
-
-  socket.emit("send_message", `${socket.id} 입장하셨습니다.`);
-
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data);
-  });
-
-  socket.on("leave_room", (room) => {
-    console.log("???");
-    socket.leave(room);
-    console.log(`${socket.id}님께서 나가셨습니다.`);
-  });
-
-  socket.on("disconnect", () => {
-    console.log("나갔니?");
-  });
-});
-//소켓이라는 객체가
-//on-> 이벤트를 보낸다는 의미 // evnets -> eventemiter안에 (on,remove) 속해있음
+})
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
@@ -135,15 +116,7 @@ app.use(bodyParser.json());
 app.use(morgan("combined")); // morgan http 로그 미들웨어 추가
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(hpp());
-// app.disable("x-powered-by");
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
+
 
 //라우터 연결
 app.use("/api", [
@@ -159,5 +132,5 @@ app.use("/api", [
 
 //서버 열기..
 // http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
-server.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+server.listen(3001, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
