@@ -9,6 +9,7 @@ const {
   openChallenge1,
   testCount,
   testCountRead,
+  iconClick,
 } = require("../controllers/main");
 const authMiddleware = require("../middleware/authMiddleWare");
 
@@ -39,5 +40,8 @@ router.post("/main/testCount",testCount);
 //테스트 페이지 조회수 가져오기
 //썬더클라이언트 테스트 완료(황인호)
 router.get("/main/testCountRead",testCountRead);
+
+//클릭시 불들어옴
+router.post("/main/iconclick", iconClick)
 
 module.exports = router;

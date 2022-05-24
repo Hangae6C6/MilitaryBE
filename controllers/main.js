@@ -1,4 +1,4 @@
-const { Challenge, User, ChallengeJoin,Test } = require("../models");
+const { Challenge, User, ChallengeJoin,Test,MainNavs } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -395,6 +395,23 @@ const testCountRead = async(req,res)=> {
     res.status(400).json({result:false,msg:"테스트 조회수 가져오기 실패"})
   }
 }
+
+//메인페이지 클릭시 불들어오게하기 POST
+const iconClick = async(req,res)=> {
+  const {change} = req.query
+  try {
+    const read1 = await MainNavs.findAll()
+    if (change === 1) {
+      
+      await MainNavs.update({change:change},{where:{change}})
+    }
+    res.status(201).json({result:true,msg:"불들어오기 성공!",read1})
+  }catch (error) {
+    console.log(error)
+    res.status(400).json({result:false,msg:"불들어오기 실패!!"})
+  }
+}
+
 module.exports = {
   mainPage,
   userChallenge,
@@ -404,4 +421,5 @@ module.exports = {
   openChallenge1,
   testCount,
   testCountRead,
+  iconClick
 };
