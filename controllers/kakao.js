@@ -1,4 +1,3 @@
-
 const express = require('express');
 const rp = require('request-promise');
 const {User} = require("../models");
