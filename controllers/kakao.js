@@ -56,8 +56,8 @@ const kakaoRegister = async (req,res) => {
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    // console.log("222222222",existUser);
-     try{
+   
+   
         if(!existUser){
             const from = 'kakao'
             // const user = new User({ userId, userNick, from })
@@ -65,21 +65,19 @@ const kakaoRegister = async (req,res) => {
         }
     
         const loginUser = await User.findOne({where: { userId: userId }});
-        const token = jwt.sign({ userId : loginUser[0].userId }, `${process.env.KEY}`); // 이부분 바꿨는데 userId : loginUser.userId --> ? 
+        // console.log("222222222",userId);
+        // console.log("33333333",loginUser.dataValues.userId);
+        const token = jwt.sign({ userId : loginUser.dataValues.userId }, `${process.env.KEY}`); // 이부분 바꿨는데 userId : loginUser.userId --> ? 
 
-        // redi -> main -> ? 
-    
+
+        console.log("12321321",loginUser);
+        // console.log(loginUser)
+
         res.status(200).json({
             token,
             userId,
             userNick,
         });
-     } catch(error) {
-        console.log("카카오로그인오류"); 
-        console.log(error); 
-        res.status(400).json({ result: "이미 등록된 유저입니다."}); 
-        return;
-     }
 };
 
 module.exports = {kakaoLogin,kakaoRegister};
