@@ -29,10 +29,17 @@ const userProfileread = async (req, res) => {
         const {userId} = req.query //보내는곳은 같고, auth(통일)
         // console.log(userId) 
         const userdata = await UserData.findOne({
+            include:{
+                model:User,attributes:['userNick']
+            },
             where:{
                 userId:userId
             },
         })
+        // const userNick = await User.findOne({
+        //     attributes:['userNick'],
+        //     where:{userId},
+        // })
         res.status(200).json({result:true,msg:"프로필 조회 성공",userdata});
     }catch(error) {
         console.log(error)
