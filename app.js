@@ -12,7 +12,7 @@ const helmet = require("helmet");
 const html = "<script>location.href = 'https://gilbut.co.kr'</script>";
 
 const cors = require("cors");
-const port = 3001;
+const port = 3000;
 const app = require("express")();
 const http = require("http");
 const { Server } = require("socket.io");
@@ -133,5 +133,5 @@ app.use("/api", [
 
 //서버 열기..
 // http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
-server.listen(3001, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
+server.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
 // app.listen(4000, ()=> winston.info('4000 포트로 서버가 켜졌어요!'))
