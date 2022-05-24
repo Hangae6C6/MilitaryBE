@@ -56,7 +56,7 @@ const kakaoRegister = async (req,res) => {
     // console.log('userId-->',userId);
     // console.log('userNick-->',userNick);
 
-    // console.log("222222222",existUser);
+    console.log("222222222",existUser);
      try{
         if(!existUser){
             const from = 'kakao'
