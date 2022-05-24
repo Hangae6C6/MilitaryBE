@@ -43,39 +43,39 @@ app.use(cors());
 //     console.error(err);
 //   });
 
-// const io = new Server(server, {
-//   cors:{
-//       origin:"*",
-//       credentials: true,
-//       methods:["GET","POST"],
-//   },
-// })
+const io = new Server(server, {
+  cors:{
+      origin:"*",
+      credentials: true,
+      methods:["GET","POST"],
+  },
+})
 
-// io.on('connection', (socket)=> {
-//   console.log(`User Connected: ${socket.id}`);
+io.on('connection', (socket)=> {
+  console.log(`User Connected: ${socket.id}`);
 
-//   socket.on("join_room", (data)=> {
-//       socket.join(data)
-//       console.log(`User with ID: ${socket.id} joined room: ${data}`)
-//   })
+  socket.on("join_room", (data)=> {
+      socket.join(data)
+      console.log(`User with ID: ${socket.id} joined room: ${data}`)
+  })
 
-//   socket.on("send_message", (data)=> {
-//       socket.to(data.room).emit("receive_message",data)
-//   })
+  socket.on("send_message", (data)=> {
+      socket.to(data.room).emit("receive_message",data)
+  })
 
-//   socket.on("disconnect", ()=> {
-//       console.log("User Disconnected", socket.id)
-//   })
-//   socket.on("leave-room", (roomName, done) => {
-//       socket.leave(roomName); done();
-//       console.log('나 나갔어')
-//       // const rooms = getUserRooms();
-//       // if (!rooms.includes(roomName)) {
-//           io.emit("remove-room", roomName);
-//           console.log('방 삭제되었음')
-//       // }
-//   });
-// })
+  socket.on("disconnect", ()=> {
+      console.log("User Disconnected", socket.id)
+  })
+  socket.on("leave-room", (roomName, done) => {
+      socket.leave(roomName); done();
+      console.log('나 나갔어')
+      // const rooms = getUserRooms();
+      // if (!rooms.includes(roomName)) {
+          io.emit("remove-room", roomName);
+          console.log('방 삭제되었음')
+      // }
+  });
+})
 
 //라우터 불러오기
 const userRouter = require("./routers/user");
