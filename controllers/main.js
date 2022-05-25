@@ -402,7 +402,11 @@ const iconClick = async (req, res) => {
   try {
     console.log(btnNum);
     const btnResult = await MainNav.findOne({ where: { id: 1 } });
-    console.log(btnResult);
+    console.log(
+      btnResult.dataValues.home,
+      btnResult.dataValues.search,
+      btnResult.dataValues.mypage
+    );
 
     if (btnNum === 1) {
       await MainNav.update({ 0: 1 }, { where: { home } });
