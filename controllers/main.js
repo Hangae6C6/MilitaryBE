@@ -397,8 +397,9 @@ const testCountRead = async (req, res) => {
 
 //메인페이지 클릭시 불들어오게하기 POST
 const iconClick = async (req, res) => {
-  const { btnNum, change } = req.query;
+  const { btnNum } = req.query;
   try {
+    console.log(btnNum);
     const btnResult = await MainNavs.findAll();
     if (btnNum === 1) {
       await MainNavs.update({ 0: 1 }, { where: { home } });
