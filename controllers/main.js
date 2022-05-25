@@ -409,18 +409,28 @@ const iconClick = async (req, res) => {
     );
 
     if (btnNum === 1) {
-      await MainNav.update({ home: 1 }, { where: { id: 1 } });
-      await MainNav.update({ search: 0 }, { where: { id: 1 } });
-      await MainNav.update({ mypage: 0 }, { where: { id: 1 } });
+      await MainNav.update(
+        { home: 1, search: 0, mypage: 0 },
+        { where: { id: 1 } }
+      );
     } else if (btnNum === 2) {
-      await MainNav.update({ home: 0 }, { where: { id: 1 } });
-      await MainNav.update({ search: 1 }, { where: { id: 1 } });
-      await MainNav.update({ mypage: 0 }, { where: { id: 1 } });
+      await MainNav.update(
+        { home: 0, search: 1, mypage: 0 },
+        { where: { id: 1 } }
+      );
     } else if (btnNum === 3) {
-      await MainNav.update({ home: 0 }, { where: { id: 1 } });
-      await MainNav.update({ search: 0 }, { where: { id: 1 } });
-      await MainNav.update({ mypage: 1 }, { where: { id: 1 } });
+      await MainNav.update(
+        { home: 0, search: 0, mypage: 1 },
+        { where: { id: 1 } }
+      );
     }
+
+    console.log(
+      btnResult.dataValues.home,
+      btnResult.dataValues.search,
+      btnResult.dataValues.mypage
+    );
+
     res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
   } catch (error) {
     console.log(error);
