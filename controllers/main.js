@@ -398,31 +398,30 @@ const testCountRead = async (req, res) => {
 //메인페이지 클릭시 불들어오게하기 POST
 const iconClick = async (req, res) => {
   const { btnNum } = req.query;
-  console.log("--------->", req.query);
+  // console.log("--------->", req.query);
   try {
-    console.log(btnNum);
+    // console.log(btnNum);
     const btnResult = await MainNav.findOne({ where: { id: 1 } });
-    console.log(
-      btnResult.dataValues.home,
-      btnResult.dataValues.search,
-      btnResult.dataValues.mypage
-    );
+    // console.log(
+    //   btnResult.dataValues.home,
+    //   btnResult.dataValues.search,
+    //   btnResult.dataValues.mypage
+    // );
 
     if (btnNum == 1) {
-      console.log("1");
+      console.log("11111111111");
       await MainNav.update(
         { home: 1, search: 0, mypage: 0 },
         { where: { id: 1 } }
       );
     } else if (btnNum == 2) {
-      console.log("2");
-
+      console.log("22222222222");
       await MainNav.update(
         { home: 0, search: 1, mypage: 0 },
         { where: { id: 1 } }
       );
     } else if (btnNum == 3) {
-      console.log("3");
+      console.log("33333333333");
       await MainNav.update(
         { home: 0, search: 0, mypage: 1 },
         { where: { id: 1 } }
