@@ -50,7 +50,7 @@ const userOptioalData = async (req, res) => {
 //썬더클라이언트 테스트 완료
 const saveTestResult = async (req, res) => {
   const { testResult } = req.body;
-  // const { userId } = res.locals.user;
+  const { userId } = res.locals.user;
 
   const existUser = await UserData.findOne({
     where: { userId: userId },
