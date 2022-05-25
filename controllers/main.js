@@ -400,7 +400,7 @@ const iconClick = async (req, res) => {
   const { btnNum } = req.query;
   try {
     console.log(btnNum);
-    const btnResult = await MainNavs.findOne();
+    const btnResult = await MainNavs.findOne({ where: { id: 1 } });
     console.log(btnResult);
 
     if (btnNum === 1) {
