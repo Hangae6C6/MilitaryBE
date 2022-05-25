@@ -429,15 +429,11 @@ const iconClick = async (req, res) => {
       );
     }
 
-    console.log(
-      btnResult.dataValues.home,
-      btnResult.dataValues.search,
-      btnResult.dataValues.mypage
-    );
+    const clickedResult = await MainNav.findOne({ where: { id: 1 } });
 
-    console.log(btnResult);
+    console.log(clickedResult);
 
-    res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
+    res.status(201).json({ result: true, msg: "clicked Btn", clickedResult });
   } catch (error) {
     console.log(error);
     res.status(400).json({ result: false, msg: "fail to click" });
