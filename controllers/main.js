@@ -388,7 +388,7 @@ const testCount = async(req,res)=> {
 //메인페이지에서 테스트 조회한 사람 숫자 GET
 const testCountRead = async(req,res)=> {
   try {
-    const countread = await Test.findAll()
+    const [countread] = await Test.findAll()
     res.status(200).json({result:true,msg:"테스트 조회수 가져오기 성공",countread})
   }catch (error) {
     console.log(error)
