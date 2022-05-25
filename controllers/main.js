@@ -1,4 +1,4 @@
-const { Challenge, User, ChallengeJoin,Test,MainNavs } = require("../models");
+const { Challenge, User, ChallengeJoin, Test, MainNavs } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -203,7 +203,7 @@ const openChallenge1 = async (req, res) => {
       var content = steps[i].stepContent;
       if (content == "" || content == null || content == undefined) {
         res.status(400).json({
-          msg: i+1 + "번째 스텝의 컨텐츠를 입력해주세요",
+          msg: i + 1 + "번째 스텝의 컨텐츠를 입력해주세요",
         });
         return;
       } else if (!checkStepLen.test(content)) {
@@ -213,7 +213,7 @@ const openChallenge1 = async (req, res) => {
         return;
       }
     }
-  };
+  }
 
   // challengeNum은 자동생성,
 
@@ -370,47 +370,55 @@ const joinCancelChallenge = async (req, res) => {
 };
 
 //메인페이지에서 테스트 조회한 사람 숫자 POST
-const testCount = async(req,res)=> {
-  const {userId} = req.query
+const testCount = async (req, res) => {
+  const { userId } = req.query;
   try {
-    const click = await Test.findOne({where:{userId}})
-    await Test.increment(
-      {testCount:1},
-      {where:{userId}}
-    )
-    res.status(201).json({result:true,msg:"챌린지",click})
-  }catch (error) {
-    console.log(error)
-    res.status(400).json({result:false,msg:"챌린지 테스트 조회수 실패"})
+    const click = await Test.findOne({ where: { userId } });
+    await Test.increment({ testCount: 1 }, { where: { userId } });
+    res.status(201).json({ result: true, msg: "챌린지", click });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ result: false, msg: "챌린지 테스트 조회수 실패" });
   }
-}
+};
 
 //메인페이지에서 테스트 조회한 사람 숫자 GET
-const testCountRead = async(req,res)=> {
+const testCountRead = async (req, res) => {
   try {
-    const [countread] = await Test.findAll()
-    res.status(200).json({result:true,msg:"테스트 조회수 가져오기 성공",countread})
-  }catch (error) {
-    console.log(error)
-    res.status(400).json({result:false,msg:"테스트 조회수 가져오기 실패"})
+    const [countread] = await Test.findAll();
+    res
+      .status(200)
+      .json({ result: true, msg: "테스트 조회수 가져오기 성공", countread });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ result: false, msg: "테스트 조회수 가져오기 실패" });
   }
-}
+};
 
 //메인페이지 클릭시 불들어오게하기 POST
-const iconClick = async(req,res)=> {
-  const {change} = req.query
+const iconClick = async (req, res) => {
+  const { btnNum, change } = req.query;
   try {
-    const read1 = await MainNavs.findAll()
-    if (change === 1) {
-      
-      await MainNavs.update({change:change},{where:{change}})
+    const btnResult = await MainNavs.findAll();
+    if (btnNum === 1) {
+      await MainNavs.update({ 0: 1 }, { where: { home } });
+      await MainNavs.update({ 1: 0 }, { where: { search } });
+      await MainNavs.update({ 1: 0 }, { where: { mypage } });
+    } else if (btnNum === 2) {
+      await MainNavs.update({ 1: 0 }, { where: { home } });
+      await MainNavs.update({ 0: 1 }, { where: { search } });
+      await MainNavs.update({ 1: 0 }, { where: { mypage } });
+    } else if (btnNum === 3) {
+      await MainNavs.update({ 1: 0 }, { where: { home } });
+      await MainNavs.update({ 1: 0 }, { where: { search } });
+      await MainNavs.update({ 0: 1 }, { where: { mypage } });
     }
-    res.status(201).json({result:true,msg:"불들어오기 성공!",read1})
-  }catch (error) {
-    console.log(error)
-    res.status(400).json({result:false,msg:"불들어오기 실패!!"})
+    res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ result: false, msg: "fail to click" });
   }
-}
+};
 
 module.exports = {
   mainPage,
@@ -421,5 +429,5 @@ module.exports = {
   openChallenge1,
   testCount,
   testCountRead,
-  iconClick
+  iconClick,
 };
