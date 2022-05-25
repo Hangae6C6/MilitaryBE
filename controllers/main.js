@@ -409,17 +409,17 @@ const iconClick = async (req, res) => {
     );
 
     if (btnNum === 1) {
-      await MainNav.update({ 0: 1 }, { where: { home } });
-      await MainNav.update({ 1: 0 }, { where: { search } });
-      await MainNav.update({ 1: 0 }, { where: { mypage } });
+      await MainNav.update({ home: 1 }, { where: { home } });
+      await MainNav.update({ search: 0 }, { where: { search } });
+      await MainNav.update({ mypage: 0 }, { where: { mypage } });
     } else if (btnNum === 2) {
-      await MainNav.update({ 1: 0 }, { where: { home } });
-      await MainNav.update({ 0: 1 }, { where: { search } });
-      await MainNav.update({ 1: 0 }, { where: { mypage } });
+      await MainNav.update({ home: 0 }, { where: { home } });
+      await MainNav.update({ search: 1 }, { where: { search } });
+      await MainNav.update({ mypage: 0 }, { where: { mypage } });
     } else if (btnNum === 3) {
-      await MainNav.update({ 1: 0 }, { where: { home } });
-      await MainNav.update({ 1: 0 }, { where: { search } });
-      await MainNav.update({ 0: 1 }, { where: { mypage } });
+      await MainNav.update({ home: 0 }, { where: { home } });
+      await MainNav.update({ search: 0 }, { where: { search } });
+      await MainNav.update({ mypage: 1 }, { where: { mypage } });
     }
     res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
   } catch (error) {
