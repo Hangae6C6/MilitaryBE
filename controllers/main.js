@@ -431,6 +431,8 @@ const iconClick = async (req, res) => {
       btnResult.dataValues.mypage
     );
 
+    console.log(btnResult);
+
     res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
   } catch (error) {
     console.log(error);
