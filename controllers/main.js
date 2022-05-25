@@ -431,8 +431,6 @@ const iconClick = async (req, res) => {
 
     const clickedResult = await MainNav.findOne({ where: { id: 1 } });
 
-    console.log(clickedResult);
-
     res.status(201).json({ result: true, msg: "clicked Btn", clickedResult });
   } catch (error) {
     console.log(error);
