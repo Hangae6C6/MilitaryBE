@@ -10,6 +10,7 @@ const {
   testCount,
   testCountRead,
   iconClick,
+  iconClick2
 } = require("../controllers/main");
 const authMiddleware = require("../middleware/authMiddleWare");
 
@@ -41,7 +42,10 @@ router.post("/main/testCount", testCount);
 //썬더클라이언트 테스트 완료(황인호)
 router.get("/main/testCountRead", testCountRead);
 
-//클릭시 불들어옴
+//클릭시 불들어옴(post)
 router.post("/main/iconclick", iconClick);
+
+//클릭시 불들어옴(get)
+router.get("/main/iconclickRead", iconClick2);
 
 module.exports = router;

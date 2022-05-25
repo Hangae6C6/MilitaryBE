@@ -428,7 +428,6 @@ const iconClick = async (req, res) => {
         { where: { id: 1 } }
       );
     }
-
     const clickedResult = await MainNav.findOne({ where: { id: 1 } });
 
     res.status(201).json({ result: true, msg: "clicked Btn", clickedResult });
@@ -437,6 +436,21 @@ const iconClick = async (req, res) => {
     res.status(400).json({ result: false, msg: "fail to click" });
   }
 };
+
+const iconClick2 = async (req, res) => {
+  try {
+    const [iconRead] = await MainNav.findAll();
+    res
+      .status(200)
+      .json({ result: true, msg: "Nav바 가져오기 성공", iconRead });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ result: false, msg: "Nav바 가져오기 실패" });
+  }
+};
+
+
+
 
 module.exports = {
   mainPage,
@@ -448,4 +462,5 @@ module.exports = {
   testCount,
   testCountRead,
   iconClick,
+  iconClick2
 };
