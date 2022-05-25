@@ -35,13 +35,13 @@ router.post("/challenge", authMiddleware, openChallenge1);
 
 //테스트 페이지 조회수 증가 기능
 //썬더클라이언트 테스트 완료(황인호)
-router.post("/main/testCount",testCount);
+router.post("/main/testCount", testCount);
 
 //테스트 페이지 조회수 가져오기
 //썬더클라이언트 테스트 완료(황인호)
-router.get("/main/testCountRead",testCountRead);
+router.get("/main/testCountRead", testCountRead);
 
 //클릭시 불들어옴
-router.post("/main/iconclick", iconClick)
+router.post("/main/iconclick", iconClick);
 
 module.exports = router;
