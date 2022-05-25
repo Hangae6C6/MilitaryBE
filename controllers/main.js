@@ -408,17 +408,21 @@ const iconClick = async (req, res) => {
       btnResult.dataValues.mypage
     );
 
-    if (btnNum === 1) {
+    if (btnNum == 1) {
+      console.log("1");
       await MainNav.update(
         { home: 1, search: 0, mypage: 0 },
         { where: { id: 1 } }
       );
-    } else if (btnNum === 2) {
+    } else if (btnNum == 2) {
+      console.log("2");
+
       await MainNav.update(
         { home: 0, search: 1, mypage: 0 },
         { where: { id: 1 } }
       );
-    } else if (btnNum === 3) {
+    } else if (btnNum == 3) {
+      console.log("3");
       await MainNav.update(
         { home: 0, search: 0, mypage: 1 },
         { where: { id: 1 } }
