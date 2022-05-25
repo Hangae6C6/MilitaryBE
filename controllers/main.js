@@ -401,6 +401,8 @@ const iconClick = async (req, res) => {
   try {
     console.log(btnNum);
     const btnResult = await MainNavs.findAll();
+    console.log(btnResult);
+
     if (btnNum === 1) {
       await MainNavs.update({ 0: 1 }, { where: { home } });
       await MainNavs.update({ 1: 0 }, { where: { search } });
