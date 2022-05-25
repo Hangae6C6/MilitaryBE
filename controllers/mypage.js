@@ -56,7 +56,6 @@ const userProfileput = async (req, res) => {
     const {userNick} = req.body
     // const {rank} = req.body
     try {
-        
         const armymodify = await UserData.update({armyCategory:armyCategory,rank:rank},{
             where: {
                 userId:userId,
