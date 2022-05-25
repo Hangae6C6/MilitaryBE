@@ -1,4 +1,4 @@
-const { Challenge, User, ChallengeJoin, Test, MainNavs } = require("../models");
+const { Challenge, User, ChallengeJoin, Test, MainNav } = require("../models");
 const sequelize = require("sequelize");
 const { or, and, like, eq } = sequelize.Op;
 
@@ -400,21 +400,21 @@ const iconClick = async (req, res) => {
   const { btnNum } = req.query;
   try {
     console.log(btnNum);
-    const btnResult = await MainNavs.findOne({ where: { id: 1 } });
+    const btnResult = await MainNav.findOne({ where: { id: 1 } });
     console.log(btnResult);
 
     if (btnNum === 1) {
-      await MainNavs.update({ 0: 1 }, { where: { home } });
-      await MainNavs.update({ 1: 0 }, { where: { search } });
-      await MainNavs.update({ 1: 0 }, { where: { mypage } });
+      await MainNav.update({ 0: 1 }, { where: { home } });
+      await MainNav.update({ 1: 0 }, { where: { search } });
+      await MainNav.update({ 1: 0 }, { where: { mypage } });
     } else if (btnNum === 2) {
-      await MainNavs.update({ 1: 0 }, { where: { home } });
-      await MainNavs.update({ 0: 1 }, { where: { search } });
-      await MainNavs.update({ 1: 0 }, { where: { mypage } });
+      await MainNav.update({ 1: 0 }, { where: { home } });
+      await MainNav.update({ 0: 1 }, { where: { search } });
+      await MainNav.update({ 1: 0 }, { where: { mypage } });
     } else if (btnNum === 3) {
-      await MainNavs.update({ 1: 0 }, { where: { home } });
-      await MainNavs.update({ 1: 0 }, { where: { search } });
-      await MainNavs.update({ 0: 1 }, { where: { mypage } });
+      await MainNav.update({ 1: 0 }, { where: { home } });
+      await MainNav.update({ 1: 0 }, { where: { search } });
+      await MainNav.update({ 0: 1 }, { where: { mypage } });
     }
     res.status(201).json({ result: true, msg: "clicked Btn", btnResult });
   } catch (error) {
