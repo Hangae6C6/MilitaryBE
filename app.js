@@ -132,7 +132,7 @@ app.use("/api", [
 ]);
 
 //작동하는지?
-app.use('/', (req,res)=> {
+app.get('/', (req,res)=> {
   res.send("<h1>HI</h1>")
 })
 
