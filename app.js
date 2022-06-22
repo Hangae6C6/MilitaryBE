@@ -131,6 +131,11 @@ app.use("/api", [
   kakaoRouter,
 ]);
 
+//작동하는지?
+app.use('/', (req,res)=> {
+  res.send("<h1>HI</h1>")
+})
+
 //서버 열기..
 // http.listen(port, ()=> winston.info(`${port} 포트로 서버가 켜졌어요!`))
 server.listen(port, () => winston.info(`${port} 포트로 서버가 켜졌어요!`));
