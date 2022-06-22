@@ -12,7 +12,7 @@ const helmet = require("helmet");
 const html = "<script>location.href = 'https://gilbut.co.kr'</script>";
 
 const cors = require("cors");
-const port = 18000;
+const port = 3000;
 const app = require("express")();
 const http = require("http");
 const { Server } = require("socket.io");
@@ -133,7 +133,7 @@ app.use("/api", [
 
 //작동하는지?
 app.get('/', (req,res)=> {
-  res.send("<h1>HI</h1>")
+  res.send("<h1>Docker test 입니다.</h1>")
 })
 
 //서버 열기..
