@@ -12,7 +12,7 @@ const helmet = require("helmet");
 const html = "<script>location.href = 'https://gilbut.co.kr'</script>";
 
 const cors = require("cors");
-const port = 3000;
+const port = 8000;
 const app = require("express")();
 const http = require("http");
 const { Server } = require("socket.io");
